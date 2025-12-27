@@ -1,0 +1,39 @@
+/* ============================================
+   CONDITIONS SECTION
+   ============================================ */
+.conditions {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(135deg, var(--bg-green-light) 0%, var(--bg-light) 100%);
+}
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.condition-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background-color: var(--bg-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.condition-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--box-shadow);
+}
+
+.condition-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.condition-item p {
+    margin: 0;
+    font-weight: 500;
+}

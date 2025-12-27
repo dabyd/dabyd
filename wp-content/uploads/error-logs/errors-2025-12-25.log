@@ -1,0 +1,324 @@
+[2025-12-25 11:52:55] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 563
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(563): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 11:52:55] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 566
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(566): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 11:52:55] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 591
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(591): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 11:52:55] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 611
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(611): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 11:52:55] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(611): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 11:52:55] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 611
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(611): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 565
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(565): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 568
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(568): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 593
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(593): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:30:49] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 565
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(565): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 568
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(568): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 593
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(593): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:31:22] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 565
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(565): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 568
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(568): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 593
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(593): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:36:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(82): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(170): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(157): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 565
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(565): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 568
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(568): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 593
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(593): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 12:49:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 613
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(613): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 569
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(569): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 572
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(572): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 597
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(597): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 617
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(617): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(617): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-25 13:09:51] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 617
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(617): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(83): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/hero_amb_imatge/modul.php(20): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(171): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(158): ikg_load_modul()
+--------------------------------------------------------------------------------
+

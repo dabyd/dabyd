@@ -1,0 +1,36 @@
+/**
+ * Tres Caixes
+ */
+.philosophy {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-cream);
+}
+
+.philosophy {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-cream);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.philosophy-card {
+    background-color: var(--bg-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.philosophy-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.philosophy-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}

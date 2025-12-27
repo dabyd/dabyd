@@ -1,0 +1,241 @@
+[2025-12-22 08:25:29] EXCEPTION: Call to undefined function ikg_image() in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php on line 14
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #3 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #4 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #5 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 403
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(403): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 406
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(406): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 431
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(431): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:26:26] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:29:58] EXCEPTION: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class IkigaiMediaClass does not have a method "custom_jpeg_quality" in /Users/dabyd/www/dabyd/html/wp-includes/class-wp-hook.php on line 341
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/plugin.php(205): WP_Hook->apply_filters()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/class-wp-image-editor.php(288): apply_filters()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/class-wp-image-editor-imagick.php(200): WP_Image_Editor->set_quality()
+  #3 /Users/dabyd/www/dabyd/html/wp-includes/class-wp-image-editor-imagick.php(186): WP_Image_Editor_Imagick->set_quality()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/media.php(4244): WP_Image_Editor_Imagick->load()
+  #5 /Users/dabyd/www/dabyd/html/wp-admin/includes/image.php(471): wp_get_image_editor()
+  #6 /Users/dabyd/www/dabyd/html/wp-admin/includes/image.php(412): _wp_make_subsizes()
+  #7 /Users/dabyd/www/dabyd/html/wp-admin/includes/image.php(588): wp_create_image_subsizes()
+  #8 /Users/dabyd/www/dabyd/html/wp-admin/includes/media.php(437): wp_generate_attachment_metadata()
+  #9 /Users/dabyd/www/dabyd/html/wp-admin/includes/ajax-actions.php(2635): media_handle_upload()
+  #10 /Users/dabyd/www/dabyd/html/wp-admin/async-upload.php(30): wp_ajax_upload_attachment()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 403
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(403): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 406
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(406): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 431
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(431): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:21] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 403
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(403): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 406
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(406): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 431
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(431): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:30:30] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(14): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 403
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(403): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 406
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(406): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] WARNING: foreach() argument must be of type array|object, null given in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 431
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(431): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] DEPRECATED: ltrim(): Passing null to parameter #1 ($string) of type string is deprecated in /Users/dabyd/www/dabyd/html/wp-includes/formatting.php on line 4496
+Stack trace:
+  #0 [internal function](): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/formatting.php(4496): ltrim()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): esc_url()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+--------------------------------------------------------------------------------
+
+[2025-12-22 08:31:17] WARNING: Trying to access array offset on null in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php on line 451
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-media.php(451): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(81): IkigaiMediaClass->img()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/servei/modul.php(15): ikg_get_image()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(154): require()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+--------------------------------------------------------------------------------
+

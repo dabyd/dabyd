@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - David Herrero | Terapias Holísticas</title>
+    <meta name="description" content="Descubre mis servicios de Medicina Tradicional China, PNL, Coaching y Astrología. Tratamientos personalizados para tu bienestar integral.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        .services-hero {
+            padding: 150px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+            text-align: center;
+        }
+        
+        .service-section {
+            padding: var(--spacing-xxl) 0;
+            scroll-margin-top: 100px;
+        }
+        
+        .service-section:nth-child(even) {
+            background-color: var(--bg-cream);
+        }
+        
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .service-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .service-details h3 {
+            color: var(--primary-color);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .service-details ul {
+            list-style: none;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .service-details ul li {
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .service-details ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .benefit-card {
+            background-color: var(--bg-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .benefit-card strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .pricing-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .pricing-box h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .pricing-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .pricing-box .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin: var(--spacing-md) 0;
+        }
+        
+        .pricing-box .btn {
+            background-color: white;
+            color: var(--primary-color);
+            width: 100%;
+        }
+        
+        .process-section {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--bg-light);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-md);
+        }
+        
+        .process-step h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        @media (max-width: 968px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">David Herrero</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="sobre-mi.html" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="servicios.html" class="nav-link active">Servicios</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link nav-cta">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <span class="section-label">Servicios</span>
+            <h1>¿Cómo puedo ayudarte?</h1>
+            <p class="section-subtitle" style="margin: var(--spacing-md) auto;">
+                Cada servicio está diseñado para acompañarte en diferentes aspectos de tu bienestar. 
+                Todos ellos pueden combinarse para crear un tratamiento completamente personalizado.
+            </p>
+        </div>
+    </section>
+
+    <!-- Terapias Manuales Section -->
+    <section class="service-section" id="terapias-manuales">
+        <div class="container">
+            <span class="section-label">Servicio 01</span>
+            <h2 class="section-title">Terapias Manuales Orientales</h2>
+            
+            <div class="service-content">
+                <div class="service-image">
+                    <div class="service-image-placeholder">🤲</div>
+                </div>
+                
+                <div class="service-details">
+                    <p class="section-subtitle">
+                        Las terapias manuales que practico tienen su origen en tradiciones milenarias 
+                        orientales. Son técnicas profundas que trabajan directamente sobre tu cuerpo 
+                        para liberar tensiones, equilibrar tu energía y restaurar tu vitalidad.
+                    </p>
+
+                    <h3>Técnicas que utilizo:</h3>
+                    <ul>
+                        <li><strong>Shiatsu:</strong> Presión con los dedos sobre puntos energéticos específicos para equilibrar el flujo de Qi</li>
+                        <li><strong>Tuina:</strong> Masaje terapéutico chino que combina diferentes técnicas para tratar dolencias musculares y articulares</li>
+                        <li><strong>Sotai-Ho:</strong> Terapia japonesa basada en movimientos suaves y naturales del cuerpo</li>
+                        <li><strong>Itho-Thermie:</strong> Técnica de calor infrarrojo para penetrar profundamente en los tejidos</li>
+                    </ul>
+
+                    <h3>Beneficios que puedes experimentar:</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <strong>Alivio del dolor</strong>
+                            <p>Reduce dolores musculares, contracturas y tensiones acumuladas</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Mejor circulación</strong>
+                            <p>Mejora la circulación sanguínea y linfática</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Equilibrio energético</strong>
+                            <p>Restaura el flujo natural de energía en tu cuerpo</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Relajación profunda</strong>
+                            <p>Reduce el estrés y promueve un estado de calma</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-box">
+                        <h4>Inversión en tu bienestar</h4>
+                        <p>Sesión de terapia manual (60-90 minutos)</p>
+                        <div class="price">Consultar</div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            Cada sesión se adapta a tus necesidades específicas
+                        </p>
+                        <a href="contacto.html" class="btn">Reserva tu sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medicina Tradicional China Section -->
+    <section class="service-section" id="medicina-china">
+        <div class="container">
+            <span class="section-label">Servicio 02</span>
+            <h2 class="section-title">Medicina Tradicional China</h2>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <p class="section-subtitle">
+                        La Medicina Tradicional China es un sistema completo de salud con más de 3000 años 
+                        de antigüedad. No solo trata síntomas, sino que busca restaurar el equilibrio 
+                        energético de tu organismo para que puedas sanar desde la raíz.
+                    </p>
+
+                    <h3>Modalidades que practico:</h3>
+                    <ul>
+                        <li><strong>Acupuntura:</strong> Estimulación de puntos específicos con agujas finísimas para regular el flujo de energía</li>
+                        <li><strong>Moxibustión:</strong> Aplicación de calor mediante artemisa para tonificar y calentar zonas que lo necesitan</li>
+                        <li><strong>Ventosas:</strong> Succión terapéutica que mejora la circulación y libera bloqueos</li>
+                        <li><strong>Auriculoterapia:</strong> Estimulación de puntos reflejos en la oreja</li>
+                        <li><strong>Fitoterapia china:</strong> Uso de plantas medicinales según los principios de la MTC</li>
+                    </ul>
+
+                    <h3>¿Para qué es especialmente efectiva?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <strong>Dolores crónicos</strong>
+                            <p>Migrañas, lumbalgias, ciáticas, dolores articulares</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Problemas ginecológicos</strong>
+                            <p>Dolor menstrual, irregularidades, quistes, infertilidad</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Trastornos emocionales</strong>
+                            <p>Ansiedad, insomnio, depresión, estrés crónico</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Problemas digestivos</strong>
+                            <p>Gastritis, colon irritable, estreñimiento</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Sistema inmune</strong>
+                            <p>Refuerzo de defensas, alergias, resfriados recurrentes</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Fatiga crónica</strong>
+                            <p>Falta de energía, fibromialgia, agotamiento</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-box">
+                        <h4>Inversión en tu salud</h4>
+                        <p>Sesión de Medicina Tradicional China (60-90 minutos)</p>
+                        <div class="price">Consultar</div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            Primera consulta incluye diagnóstico energético completo
+                        </p>
+                        <a href="contacto.html" class="btn">Agenda tu consulta</a>
+                    </div>
+                </div>
+
+                <div class="service-image">
+                    <div class="service-image-placeholder">🌿</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching y PNL Section -->
+    <section class="service-section" id="coaching">
+        <div class="container">
+            <span class="section-label">Servicio 03</span>
+            <h2 class="section-title">Coaching y Programación Neurolingüística (PNL)</h2>
+            
+            <div class="service-content">
+                <div class="service-image">
+                    <div class="service-image-placeholder">🧠</div>
+                </div>
+                
+                <div class="service-details">
+                    <p class="section-subtitle">
+                        A veces, lo que nos limita no está en nuestro cuerpo, sino en nuestra mente. 
+                        A través del Coaching y la PNL, trabajo contigo para identificar y transformar 
+                        los patrones de pensamiento y comportamiento que te impiden alcanzar tu máximo potencial.
+                    </p>
+
+                    <h3>¿En qué consisten las sesiones?</h3>
+                    <p>
+                        En nuestras sesiones de coaching, trabajamos juntos para clarificar tus objetivos, 
+                        superar bloqueos mentales y emocionales, y diseñar estrategias prácticas para que 
+                        puedas crear la vida que deseas. La PNL nos proporciona herramientas concretas 
+                        para reprogramar patrones limitantes y potenciar tus recursos internos.
+                    </p>
+
+                    <h3>¿Cuándo es recomendable?</h3>
+                    <ul>
+                        <li>Cuando sientes que estás estancado y no avanzas en algún área de tu vida</li>
+                        <li>Si quieres superar miedos, fobias o patrones limitantes</li>
+                        <li>Para mejorar tu comunicación y tus relaciones personales</li>
+                        <li>Si buscas claridad sobre tus objetivos y propósito de vida</li>
+                        <li>Para desarrollar mayor confianza y autoestima</li>
+                        <li>Si quieres gestionar mejor tus emociones y tu estado interno</li>
+                    </ul>
+
+                    <h3>Resultados que puedes lograr:</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <strong>Claridad mental</strong>
+                            <p>Visión clara de lo que realmente quieres en tu vida</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Transformación de patrones</strong>
+                            <p>Liberación de creencias y comportamientos limitantes</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Mayor confianza</strong>
+                            <p>Desarrollo de autoestima y seguridad personal</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Mejores relaciones</strong>
+                            <p>Comunicación más efectiva y empática</p>
+                        </div>
+                    </div>
+
+                    <div class="pricing-box">
+                        <h4>Inversión en tu transformación</h4>
+                        <p>Sesión individual de Coaching/PNL (60-90 minutos)</p>
+                        <div class="price">Consultar</div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            También disponible en programas de varias sesiones
+                        </p>
+                        <a href="contacto.html" class="btn">Empieza tu proceso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Astrología Section -->
+    <section class="service-section" id="astrologia">
+        <div class="container">
+            <span class="section-label">Servicio 04</span>
+            <h2 class="section-title">Carta Astral y Consulta Astrológica</h2>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <p class="section-subtitle">
+                        Tu carta astral es tu mapa energético personal. Es una fotografía del cielo 
+                        en el momento exacto de tu nacimiento que revela tu potencial, tus desafíos, 
+                        y los ciclos naturales de tu vida.
+                    </p>
+
+                    <h3>¿Qué incluye una consulta astrológica?</h3>
+                    <ul>
+                        <li><strong>Análisis completo de tu Carta Natal:</strong> Interpretación de tu Sol, Luna, Ascendente y todos los planetas</li>
+                        <li><strong>Comprensión de tu personalidad:</strong> Tus fortalezas, talentos y áreas de crecimiento</li>
+                        <li><strong>Patrones de vida:</strong> Reconocimiento de ciclos que se repiten en tu experiencia</li>
+                        <li><strong>Tránsitos actuales:</strong> Qué energías están activas en tu vida ahora</li>
+                        <li><strong>Orientación práctica:</strong> Cómo fluir con tus ciclos naturales</li>
+                    </ul>
+
+                    <h3>¿Para qué sirve conocer tu carta astral?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <strong>Autoconocimiento profundo</strong>
+                            <p>Comprende quién eres a nivel esencial</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Claridad en decisiones</strong>
+                            <p>Momentos óptimos para iniciar proyectos o hacer cambios</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Relaciones</strong>
+                            <p>Entender dinámicas con parejas, familiares y socios</p>
+                        </div>
+                        <div class="benefit-card">
+                            <strong>Propósito de vida</strong>
+                            <p>Conexión con tu camino y tu misión personal</p>
+                        </div>
+                    </div>
+
+                    <h3>Tipos de consultas astrológicas:</h3>
+                    <p><strong>Carta Natal Completa:</strong> Primera consulta en profundidad (90-120 minutos)</p>
+                    <p><strong>Consulta de Tránsitos:</strong> Análisis de tu momento actual (60 minutos)</p>
+                    <p><strong>Sinastría:</strong> Compatibilidad de pareja o análisis relacional (90 minutos)</p>
+                    <p><strong>Revolución Solar:</strong> Predicción del año personal (60 minutos)</p>
+
+                    <div class="pricing-box">
+                        <h4>Inversión en tu autoconocimiento</h4>
+                        <p>Consulta de Carta Natal completa con informe personalizado</p>
+                        <div class="price">Consultar</div>
+                        <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                            Incluye informe escrito y grabación de la sesión
+                        </p>
+                        <a href="contacto.html" class="btn">Solicita tu carta astral</a>
+                    </div>
+                </div>
+
+                <div class="service-image">
+                    <div class="service-image-placeholder">✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Section -->
+    <section class="process-section">
+        <div class="container">
+            <span class="section-label">Cómo trabajo</span>
+            <h2 class="section-title">Mi proceso de acompañamiento</h2>
+            <p class="section-subtitle">
+                Así es como trabajaremos juntos para que recuperes tu bienestar
+            </p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Primera Consulta</h3>
+                    <p>
+                        Nos conocemos y hablamos en profundidad sobre tu situación, 
+                        tus síntomas y tus objetivos. Realizo un diagnóstico inicial.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Plan Personalizado</h3>
+                    <p>
+                        Diseño un plan de tratamiento específico para ti, combinando 
+                        las técnicas más adecuadas para tu caso particular.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Sesiones de Tratamiento</h3>
+                    <p>
+                        Iniciamos el proceso terapéutico. Cada sesión se adapta a cómo 
+                        vas evolucionando y a lo que necesitas en cada momento.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Seguimiento y Ajustes</h3>
+                    <p>
+                        Evaluamos tu progreso regularmente y ajustamos el tratamiento 
+                        según sea necesario para optimizar resultados.
+                    </p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Autonomía y Bienestar</h3>
+                    <p>
+                        Mi objetivo es que aprendas a cuidar de tu propio bienestar 
+                        y mantengas los resultados de forma duradera.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para comenzar tu proceso de transformación?</h2>
+                <p>No importa en qué punto te encuentres, siempre hay un camino hacia el bienestar.</p>
+                <a href="contacto.html" class="btn btn-primary btn-large">Reserva tu primera consulta</a>
+                <p class="cta-note">Primera sesión sin compromiso para conocernos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>David Herrero</h4>
+                    <p>Terapeuta holístico especializado en Medicina Tradicional China, PNL y Astrología</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html#terapias-manuales">Terapias Manuales</a></li>
+                        <li><a href="servicios.html#medicina-china">Medicina China</a></li>
+                        <li><a href="servicios.html#coaching">Coaching y PNL</a></li>
+                        <li><a href="servicios.html#astrologia">Carta Astral</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>Mataró, Cataluña</p>
+                    <p>info@david-herrero.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 David Herrero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

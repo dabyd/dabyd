@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí - David Herrero | Terapeuta Holístico</title>
+    <meta name="description" content="Conoce mi historia y mi enfoque terapéutico. Combino Medicina Tradicional China, PNL y Astrología para ayudarte a recuperar tu bienestar.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            padding: 150px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+        }
+        
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .about-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .about-text h1 {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-highlight {
+            background-color: var(--bg-green-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .journey {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--bg-white);
+        }
+        
+        .journey-timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-top: var(--spacing-xl);
+        }
+        
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+        }
+        
+        .journey-item {
+            position: relative;
+            margin-bottom: var(--spacing-xl);
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+        }
+        
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary-color);
+            border: 4px solid var(--bg-white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--bg-cream);
+        }
+        
+        .journey-item h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .philosophy {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--bg-cream);
+        }
+        
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .philosophy-card {
+            background-color: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+        }
+        
+        .philosophy-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .philosophy-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .certifications {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--bg-white);
+        }
+        
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .cert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background-color: var(--bg-light);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .cert-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .cert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 968px) {
+            .about-intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .journey-timeline {
+                padding-left: 40px;
+            }
+            
+            .journey-item::before {
+                left: -33px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">David Herrero</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="sobre-mi.html" class="nav-link active">Sobre mí</a></li>
+                    <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link nav-cta">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-intro">
+                <div class="about-text">
+                    <span class="section-label">Sobre mí</span>
+                    <h1>Hola, soy David Herrero</h1>
+                    <p>
+                        Soy terapeuta holístico y mi misión es acompañarte en tu proceso de transformación, 
+                        ayudándote a recuperar el equilibrio natural de tu cuerpo, mente y energía.
+                    </p>
+                    <p>
+                        Durante años, he integrado diferentes disciplinas orientales y occidentales porque 
+                        creo firmemente que cada persona es única y merece un tratamiento personalizado 
+                        que aborde su situación desde múltiples perspectivas.
+                    </p>
+                    <div class="about-highlight">
+                        <p style="margin:0; font-weight: 500;">
+                            No creo en soluciones rápidas ni en tratar solo los síntomas. Creo en entender 
+                            el origen de tu malestar y trabajar juntos para que recuperes tu vitalidad 
+                            de manera profunda y duradera.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        Tu foto aquí
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mi Camino Section -->
+    <section class="journey">
+        <div class="container">
+            <span class="section-label">Mi camino</span>
+            <h2 class="section-title">Cómo llegué hasta aquí</h2>
+            <p class="section-subtitle">
+                Mi viaje en el mundo de las terapias naturales comenzó con una búsqueda personal. 
+                Cada formación y experiencia me ha llevado a desarrollar un enfoque único e integrador.
+            </p>
+
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <h3>El despertar: Mi primer contacto con la Medicina Oriental</h3>
+                    <p>
+                        Todo comenzó cuando experimenté en primera persona el poder transformador de la 
+                        Medicina Tradicional China. Lo que empezó como curiosidad se convirtió en pasión, 
+                        y decidí formarme profesionalmente en estas técnicas milenarias.
+                    </p>
+                </div>
+
+                <div class="journey-item">
+                    <h3>Formación en Medicina Tradicional China</h3>
+                    <p>
+                        Me especialicé en acupuntura, terapias manuales como el Shiatsu y Tuina, y 
+                        profundicé en el conocimiento de la energía vital (Qi) y cómo equilibrarla 
+                        para restaurar la salud.
+                    </p>
+                </div>
+
+                <div class="journey-item">
+                    <h3>Expandiendo horizontes: PNL y Coaching</h3>
+                    <p>
+                        Me di cuenta de que el cuerpo y la mente están profundamente conectados. 
+                        Estudié Programación Neurolingüística y Coaching para poder abordar también 
+                        los patrones mentales y emocionales que influyen en nuestro bienestar.
+                    </p>
+                </div>
+
+                <div class="journey-item">
+                    <h3>La dimensión espiritual: Astrología</h3>
+                    <p>
+                        La astrología me permitió entender los ciclos naturales de cada persona y 
+                        cómo podemos fluir con ellos en lugar de resistirnos. Es una herramienta 
+                        poderosa para el autoconocimiento y la toma de decisiones conscientes.
+                    </p>
+                </div>
+
+                <div class="journey-item">
+                    <h3>Hoy: Un enfoque integral</h3>
+                    <p>
+                        Ahora integro todas estas disciplinas en mi práctica diaria, creando tratamientos 
+                        personalizados que abordan a la persona de manera completa. Cada día sigo 
+                        aprendiendo y perfeccionando mi arte de sanar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mi Filosofía Section -->
+    <section class="philosophy">
+        <div class="container">
+            <span class="section-label">Mi filosofía</span>
+            <h2 class="section-title">Los principios que guían mi trabajo</h2>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🌱</div>
+                    <h3>Respeto por la naturaleza</h3>
+                    <p>
+                        Creo en trabajar con los procesos naturales del cuerpo, no contra ellos. 
+                        La sanación verdadera respeta los tiempos y ritmos de cada persona.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">👤</div>
+                    <h3>Cada persona es única</h3>
+                    <p>
+                        No existen dos personas iguales, por eso no existen dos tratamientos iguales. 
+                        Personalizo cada sesión según tus necesidades específicas.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🔄</div>
+                    <h3>Visión holística</h3>
+                    <p>
+                        El cuerpo, la mente y el espíritu están interconectados. Un verdadero 
+                        bienestar solo se logra cuando trabajamos los tres niveles.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🎯</div>
+                    <h3>Ir a la raíz</h3>
+                    <p>
+                        Los síntomas son mensajeros. Mi objetivo es encontrar y tratar el origen 
+                        del desequilibrio, no solo calmar momentáneamente el malestar.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🤝</div>
+                    <h3>Acompañamiento empático</h3>
+                    <p>
+                        Te acompaño en tu proceso con presencia, escucha activa y sin juicios. 
+                        Juntos exploramos el camino hacia tu bienestar.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">✨</div>
+                    <h3>Empoderamiento personal</h3>
+                    <p>
+                        Mi objetivo no es que dependas de mí, sino que te conviertas en el protagonista 
+                        de tu propia sanación y aprendas a cuidar de tu bienestar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formación y Certificaciones Section -->
+    <section class="certifications">
+        <div class="container">
+            <span class="section-label">Formación</span>
+            <h2 class="section-title">Certificaciones y formación continua</h2>
+            <p class="section-subtitle">
+                La formación continua es fundamental en mi práctica. Sigo actualizándome constantemente 
+                para ofrecerte las mejores técnicas y conocimientos.
+            </p>
+
+            <div class="cert-list">
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Medicina Tradicional China</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Formación completa en acupuntura, moxibustión, ventosas y diagnóstico energético</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Shiatsu y Tuina</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Especialización en terapias manuales orientales</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Programación Neurolingüística (PNL)</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Practitioner y Master en PNL</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Coaching Ontológico</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Certificación profesional en coaching personal</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Astrología</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Estudios avanzados en interpretación de carta natal y tránsitos</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">📜</div>
+                    <div>
+                        <strong>Fitoterapia China</strong>
+                        <p style="margin:0; color: var(--text-light); font-size: 0.9rem;">Conocimiento de plantas medicinales según la MTC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Quieres conocerme mejor?</h2>
+                <p>Reserva una primera consulta sin compromiso y charlemos sobre cómo puedo ayudarte.</p>
+                <a href="contacto.html" class="btn btn-primary btn-large">Contacta conmigo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>David Herrero</h4>
+                    <p>Terapeuta holístico especializado en Medicina Tradicional China, PNL y Astrología</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html#terapias-manuales">Terapias Manuales</a></li>
+                        <li><a href="servicios.html#medicina-china">Medicina China</a></li>
+                        <li><a href="servicios.html#coaching">Coaching y PNL</a></li>
+                        <li><a href="servicios.html#astrologia">Carta Astral</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>Mataró, Cataluña</p>
+                    <p>info@david-herrero.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 David Herrero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

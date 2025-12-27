@@ -1,0 +1,141 @@
+/* ============================================
+   PALETAS AZULES
+   ============================================ */
+
+/* PALETA 4: AZUL CLARO (blau-clar) */
+.paleta-blau-clar {
+    background: linear-gradient(135deg, #F5F8FA 0%, #E8F1F5 100%);
+    color: #2C3E50;
+}
+
+.paleta-blau-clar h1, 
+.paleta-blau-clar h2, 
+.paleta-blau-clar h3, 
+.paleta-blau-clar h4, 
+.paleta-blau-clar h5, 
+.paleta-blau-clar h6 {
+    color: #2C3E50;
+}
+
+.paleta-blau-clar p, 
+.paleta-blau-clar .hero-description, 
+.paleta-blau-clar .section-subtitle {
+    color: #5A6C7D;
+}
+
+.paleta-blau-clar .section-label {
+    color: #4A7C9B;
+}
+
+.paleta-blau-clar .btn-primary {
+    background-color: #4A7C9B;
+    color: white;
+}
+
+.paleta-blau-clar .btn-primary:hover {
+    background-color: #2F5978;
+    box-shadow: 0 8px 25px rgba(74, 124, 155, 0.3);
+}
+
+.paleta-blau-clar .btn-secondary {
+    color: #4A7C9B;
+    border-color: #4A7C9B;
+}
+
+.paleta-blau-clar .btn-secondary:hover {
+    background-color: #4A7C9B;
+    color: white;
+}
+
+.paleta-blau-clar .pain-card h3, 
+.paleta-blau-clar .service-card h3, 
+.paleta-blau-clar .feature-card h4, 
+.paleta-blau-clar .service-link {
+    color: #4A7C9B;
+}
+
+.paleta-blau-clar .service-card::before {
+    background-color: #4A7C9B;
+}
+
+.paleta-blau-clar .service-number {
+    color: #6B9BB9;
+}
+
+.paleta-blau-clar .pain-conclusion {
+    background-color: #E8F1F5;
+    border-left-color: #4A7C9B;
+}
+
+.paleta-blau-clar .faq-icon {
+    background-color: #4A7C9B;
+}
+
+.paleta-blau-clar .faq-item.active .faq-icon {
+    background-color: #2F5978;
+}
+
+.paleta-blau-clar .faq-question:hover {
+    color: #4A7C9B;
+}
+
+/* PALETA 5: AZUL OSCURO (blau-fosc) */
+.paleta-blau-fosc {
+    background-color: #2C3E50;
+    color: white;
+}
+
+.paleta-blau-fosc h1, 
+.paleta-blau-fosc h2, 
+.paleta-blau-fosc h3, 
+.paleta-blau-fosc h4, 
+.paleta-blau-fosc h5, 
+.paleta-blau-fosc h6 {
+    color: white;
+}
+
+.paleta-blau-fosc p, 
+.paleta-blau-fosc .footer-col p,
+.paleta-blau-fosc .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.paleta-blau-fosc .section-label {
+    color: #7BA7BC;
+}
+
+.paleta-blau-fosc a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.paleta-blau-fosc a:hover {
+    color: white;
+}
+
+.paleta-blau-fosc .footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.paleta-blau-fosc .btn-primary {
+    background-color: #7BA7BC;
+    color: white;
+}
+
+.paleta-blau-fosc .btn-primary:hover {
+    background-color: #5A8BA0;
+    box-shadow: 0 8px 25px rgba(123, 167, 188, 0.3);
+}
+
+.paleta-blau-fosc .btn-secondary {
+    color: white;
+    border-color: white;
+}
+
+.paleta-blau-fosc .btn-secondary:hover {
+    background-color: white;
+    color: #2C3E50;
+}
+
+.paleta-blau-fosc .footer-col ul li a:hover {
+    padding-left: 5px;
+}

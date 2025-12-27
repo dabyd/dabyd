@@ -1,0 +1,1 @@
+/Users/dabyd/www/dabyd/html/wp-content/plugins/query-monitor/wp-content/db.php

@@ -1,0 +1,140 @@
+/* ============================================
+   UTILIDADES COMUNES PARA TODAS LAS PALETAS
+   ============================================ */
+
+/* Cards dentro de cualquier paleta */
+[class*="paleta-"] .pain-card:hover,
+[class*="paleta-"] .service-card:hover,
+[class*="paleta-"] .testimonial-card:hover,
+[class*="paleta-"] .feature-card:hover,
+[class*="paleta-"] .condition-item:hover,
+[class*="paleta-"] .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Transiciones suaves para cambios de paleta */
+[class*="paleta-"] {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+[class*="paleta-"] * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ============================================
+   GUÍA DE USO DE PALETAS
+   ============================================ */
+
+/*
+PALETAS DISPONIBLES:
+--------------------
+
+1. VERDES:
+   - paleta-verd-clar: Verde claro degradado (hero sections)
+   - paleta-verd-degradat: Verde con degradado (sections especiales)
+   - paleta-verd-fosc: Verde oscuro (CTAs, footers)
+
+2. AZULES:
+   - paleta-blau-clar: Azul claro degradado (alternativa al verde claro)
+   - paleta-blau-fosc: Azul oscuro (alternativa footer)
+
+3. NEUTRAS:
+   - paleta-blanc: Blanco (sections contenido)
+
+4. CÁLIDAS:
+   - paleta-groc: Amarillo suave (sections destacadas)
+   - paleta-rosa: Rosa suave (sections especiales)
+
+5. OSCURAS:
+   - paleta-negre: Negro/gris oscuro (sections premium/elegantes)
+
+
+EJEMPLOS DE USO:
+----------------
+
+<!-- Hero con verde claro (por defecto) -->
+<section class="hero paleta-verd-clar">
+    ...
+</section>
+
+<!-- Pain points con blanco -->
+<section class="pain-points paleta-blanc">
+    ...
+</section>
+
+<!-- Conditions con amarillo -->
+<section class="conditions paleta-groc">
+    ...
+</section>
+
+<!-- CTA con rosa en lugar de verde oscuro -->
+<section class="cta-section paleta-rosa">
+    ...
+</section>
+
+<!-- Footer con negro -->
+<footer class="footer paleta-negre">
+    ...
+</footer>
+
+<!-- FAQ con azul claro -->
+<section class="faq paleta-blau-clar">
+    ...
+</section>
+
+
+COMBINACIONES RECOMENDADAS:
+---------------------------
+
+Opción 1 (Natural):
+- Hero: paleta-verd-clar
+- Content: paleta-blanc
+- Special: paleta-verd-degradat
+- CTA: paleta-verd-fosc
+- Footer: paleta-blau-fosc
+
+Opción 2 (Cálida):
+- Hero: paleta-groc
+- Content: paleta-blanc
+- Special: paleta-rosa
+- CTA: paleta-negre
+- Footer: paleta-negre
+
+Opción 3 (Fresca):
+- Hero: paleta-blau-clar
+- Content: paleta-blanc
+- Special: paleta-groc
+- CTA: paleta-blau-fosc
+- Footer: paleta-negre
+
+Opción 4 (Elegante):
+- Hero: paleta-negre
+- Content: paleta-blanc
+- Special: paleta-groc
+- CTA: paleta-rosa
+- Footer: paleta-negre
+
+
+CÓMO IMPORTAR EN TU PROYECTO:
+------------------------------
+
+En tu archivo principal HTML (header.php):
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/paletas-verdes.css">
+<link rel="stylesheet" href="css/paletas-azules.css">
+<link rel="stylesheet" href="css/paleta-blanca.css">
+<link rel="stylesheet" href="css/paleta-groga.css">
+<link rel="stylesheet" href="css/paleta-rosa.css">
+<link rel="stylesheet" href="css/paleta-negra.css">
+<link rel="stylesheet" href="css/paletas-utils.css">
+
+O en tu functions.php de WordPress:
+wp_enqueue_style('base-styles', get_stylesheet_directory_uri() . '/css/styles.css');
+wp_enqueue_style('paletas-verdes', get_stylesheet_directory_uri() . '/css/paletas-verdes.css');
+wp_enqueue_style('paletas-azules', get_stylesheet_directory_uri() . '/css/paletas-azules.css');
+wp_enqueue_style('paleta-blanca', get_stylesheet_directory_uri() . '/css/paleta-blanca.css');
+wp_enqueue_style('paleta-groga', get_stylesheet_directory_uri() . '/css/paleta-groga.css');
+wp_enqueue_style('paleta-rosa', get_stylesheet_directory_uri() . '/css/paleta-rosa.css');
+wp_enqueue_style('paleta-negra', get_stylesheet_directory_uri() . '/css/paleta-negra.css');
+wp_enqueue_style('paletas-utils', get_stylesheet_directory_uri() . '/css/paletas-utils.css');
+*/

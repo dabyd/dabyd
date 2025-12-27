@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - David Herrero | Reserva tu consulta</title>
+    <meta name="description" content="Contacta conmigo para reservar tu consulta. Estoy en Mataró, Cataluña. Primera sesión sin compromiso.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        .contact-hero {
+            padding: 150px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+            text-align: center;
+        }
+        
+        .contact-content {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+        
+        .contact-info {
+            position: sticky;
+            top: 120px;
+        }
+        
+        .info-card {
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+        }
+        
+        .info-card p {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .info-card a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .form-container {
+            background-color: var(--bg-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--bg-light);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group small {
+            display: block;
+            margin-top: var(--spacing-xs);
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .form-checkbox input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+        
+        .form-checkbox label {
+            margin: 0;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1.25rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+        }
+        
+        .faq-section {
+            padding: var(--spacing-xxl) 0;
+            background-color: var(--bg-cream);
+        }
+        
+        .faq-list {
+            margin-top: var(--spacing-xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-item {
+            background-color: var(--bg-white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.125rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">David Herrero</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="sobre-mi.html" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link nav-cta active">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <span class="section-label">Contacto</span>
+            <h1>Hablemos de tu bienestar</h1>
+            <p class="section-subtitle" style="margin: var(--spacing-md) auto;">
+                Estoy aquí para escucharte y ayudarte. Cuéntame qué te está pasando 
+                y encontraremos juntos el mejor camino para ti.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>
+                            <span class="info-icon">📍</span>
+                            Ubicación
+                        </h3>
+                        <p>
+                            <strong>Consulta en Mataró</strong><br>
+                            Cataluña, España
+                        </p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                            También ofrezco sesiones online para consultas de coaching, PNL y astrología
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>
+                            <span class="info-icon">✉️</span>
+                            Email
+                        </h3>
+                        <p>
+                            <a href="mailto:info@david-herrero.com">info@david-herrero.com</a>
+                        </p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                            Respondo en menos de 24 horas
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>
+                            <span class="info-icon">📞</span>
+                            Teléfono / WhatsApp
+                        </h3>
+                        <p>
+                            <a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a>
+                        </p>
+                        <p style="color: var(--text-light); font-size: 0.9rem;">
+                            Lunes a Viernes: 10:00 - 20:00h<br>
+                            Sábados: 10:00 - 14:00h
+                        </p>
+                    </div>
+
+                    <div class="info-card" style="background-color: var(--bg-green-light);">
+                        <h3>
+                            <span class="info-icon">⏰</span>
+                            Primera consulta
+                        </h3>
+                        <p>
+                            La primera sesión es una toma de contacto sin compromiso donde podremos 
+                            conocernos y hablar sobre tu situación. Así podré diseñar el mejor 
+                            tratamiento para ti.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="form-container">
+                    <h2 style="margin-bottom: var(--spacing-md);">Reserva tu consulta</h2>
+                    <p style="margin-bottom: var(--spacing-lg); color: var(--text-medium);">
+                        Completa este formulario y me pondré en contacto contigo lo antes posible 
+                        para agendar tu primera sesión.
+                    </p>
+
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                            <small>Opcional, pero ayuda para coordinar mejor la cita</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">¿Qué servicio te interesa? *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="terapias-manuales">Terapias Manuales Orientales</option>
+                                <option value="medicina-china">Medicina Tradicional China</option>
+                                <option value="coaching">Coaching y PNL</option>
+                                <option value="astrologia">Carta Astral / Astrología</option>
+                                <option value="combinado">Tratamiento combinado</option>
+                                <option value="no-seguro">No estoy seguro/a, necesito orientación</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Cuéntame qué te está pasando *</label>
+                            <textarea id="message" name="message" required placeholder="Describe brevemente tu situación, síntomas o lo que te gustaría trabajar..."></textarea>
+                            <small>Esta información me ayudará a preparar mejor tu consulta</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="availability">Disponibilidad horaria</label>
+                            <input type="text" id="availability" name="availability" placeholder="Ej: Lunes por la tarde, Miércoles mañana...">
+                            <small>Dime qué días y horarios te vienen mejor</small>
+                        </div>
+
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">
+                                Acepto la política de privacidad y el tratamiento de mis datos 
+                                personales para que David Herrero pueda contactarme.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar solicitud</button>
+
+                        <p style="text-align: center; margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--text-light);">
+                            Te responderé en menos de 24 horas para confirmar tu cita
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <span class="section-label">Preguntas frecuentes</span>
+            <h2 class="section-title">Dudas antes de reservar</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuánto dura una sesión?</div>
+                    <div class="faq-answer">
+                        Las sesiones suelen durar entre 60 y 90 minutos, dependiendo del tipo de 
+                        tratamiento. La primera consulta puede ser un poco más larga porque incluye 
+                        un diagnóstico completo.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuántas sesiones necesitaré?</div>
+                    <div class="faq-answer">
+                        Cada persona es diferente. Algunos casos mejoran significativamente en pocas 
+                        sesiones, mientras que otros requieren un proceso más largo. Después de la 
+                        primera consulta te daré una estimación más precisa para tu caso.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Ofreces sesiones online?</div>
+                    <div class="faq-answer">
+                        Sí, ofrezco sesiones online para coaching, PNL y consultas astrológicas. 
+                        Para tratamientos de Medicina Tradicional China y terapias manuales es 
+                        necesario acudir presencialmente a la consulta en Mataró.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuál es el precio de las sesiones?</div>
+                    <div class="faq-answer">
+                        Los precios varían según el tipo de tratamiento. Durante nuestra primera 
+                        conversación te daré toda la información sobre tarifas. También ofrezco 
+                        bonos de sesiones con descuento.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Tienes parking cerca?</div>
+                    <div class="faq-answer">
+                        Sí, hay zonas de aparcamiento gratuito cerca de la consulta. Te daré 
+                        indicaciones precisas cuando confirmes tu cita.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Qué debo llevar a la primera sesión?</div>
+                    <div class="faq-answer">
+                        No necesitas traer nada especial. Simplemente ven con ropa cómoda. Si tienes 
+                        informes médicos relevantes, puedes traerlos, pero no es imprescindible.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">¿Puedo cancelar o modificar mi cita?</div>
+                    <div class="faq-answer">
+                        Sí, puedes cancelar o reprogramar tu cita. Te pido que me avises con al menos 
+                        24 horas de antelación para poder ofrecérsela a otra persona que la necesite.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>David Herrero</h4>
+                    <p>Terapeuta holístico especializado en Medicina Tradicional China, PNL y Astrología</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html#terapias-manuales">Terapias Manuales</a></li>
+                        <li><a href="servicios.html#medicina-china">Medicina China</a></li>
+                        <li><a href="servicios.html#coaching">Coaching y PNL</a></li>
+                        <li><a href="servicios.html#astrologia">Carta Astral</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>Mataró, Cataluña</p>
+                    <p>info@david-herrero.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 David Herrero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

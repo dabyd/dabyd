@@ -1,0 +1,151 @@
+/* ============================================
+   HERO SECTION (opcio 0)
+   ============================================ */
+.hero {
+    padding: 150px 0 var(--spacing-xxl);
+    background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.hero-title {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 120px 0 var(--spacing-xl);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
+
+/* ============================================
+   HERO SENSE IMATGE (opcio 1)
+   ============================================ */
+
+
+.services-hero {
+	padding: 150px 0 var(--spacing-xl);
+	background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+	text-align: center;
+}
+
+
+
+/* ============================================
+   HERO AMB IMATGE (opcio 2)
+   ============================================ */
+
+.about-hero {
+	padding: 150px 0 var(--spacing-xl);
+	background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+}
+
+.about-intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--spacing-xl);
+	align-items: center;
+	margin-bottom: var(--spacing-xxl);
+}
+
+.about-image {
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	object-fit: cover;
+}
+
+.about-picture {
+	object-fit: cover;
+	height: 100%;
+}
+
+.about-image-placeholder {
+	width: 100%;
+	max-width: 400px;
+	aspect-ratio: 3/4;
+	background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+}
+
+.about-text h1 {
+	margin-bottom: var(--spacing-md);
+}
+
+.about-text p {
+	font-size: 1.05rem;
+	line-height: 1.8;
+	margin-bottom: var(--spacing-md);
+}
+
+.about-highlight {
+	background-color: var(--bg-green-light);
+	padding: var(--spacing-lg);
+	border-radius: var(--border-radius);
+	border-left: 4px solid var(--primary-color);
+	margin: var(--spacing-lg) 0;
+}
+
+	

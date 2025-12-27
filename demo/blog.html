@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - David Herrero | Artículos sobre salud y bienestar</title>
+    <meta name="description" content="Artículos sobre Medicina Tradicional China, PNL, Astrología y bienestar holístico. Consejos prácticos para mejorar tu salud.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        .blog-hero {
+            padding: 150px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+            text-align: center;
+        }
+        
+        .blog-content {
+            padding: var(--spacing-xxl) 0;
+        }
+        
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-xl);
+        }
+        
+        .blog-posts {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+        
+        .blog-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .blog-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .blog-info {
+            padding: var(--spacing-lg);
+        }
+        
+        .blog-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .blog-category {
+            background-color: var(--bg-green-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .blog-card h3 {
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+        }
+        
+        .blog-card h3:hover {
+            color: var(--primary-color);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-medium);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.7;
+        }
+        
+        .blog-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .blog-link:hover {
+            transform: translateX(5px);
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 120px;
+        }
+        
+        .sidebar-widget {
+            background-color: var(--bg-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .sidebar-widget h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.25rem;
+        }
+        
+        .categories-list {
+            list-style: none;
+        }
+        
+        .categories-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .categories-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-medium);
+            transition: var(--transition);
+        }
+        
+        .categories-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .post-count {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+        
+        .popular-posts {
+            list-style: none;
+        }
+        
+        .popular-post {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .popular-post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .popular-post-number {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .popular-post-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+        
+        .popular-post-info h4:hover {
+            color: var(--primary-color);
+        }
+        
+        .popular-post-date {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        .newsletter-widget {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+        
+        .newsletter-widget h3 {
+            color: white;
+        }
+        
+        .newsletter-widget p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 0.875rem;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-body);
+        }
+        
+        .newsletter-form button {
+            width: 100%;
+            padding: 0.875rem;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 968px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-image-placeholder {
+                height: 200px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav-logo">David Herrero</a>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="sobre-mi.html" class="nav-link">Sobre mí</a></li>
+                    <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link active">Blog</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link nav-cta">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <span class="section-label">Blog</span>
+            <h1>Artículos sobre salud y bienestar</h1>
+            <p class="section-subtitle" style="margin: var(--spacing-md) auto;">
+                Comparto conocimientos, consejos prácticos y reflexiones sobre Medicina Tradicional China, 
+                PNL, Astrología y cómo vivir en armonía con tu naturaleza.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Blog Posts -->
+                <div class="blog-posts">
+                    <!-- Post 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">🌿</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">Medicina China</span>
+                                <span>15 enero 2025</span>
+                            </div>
+                            <h3>5 puntos de acupresión para aliviar el estrés que puedes usar en casa</h3>
+                            <p class="blog-excerpt">
+                                El estrés forma parte de nuestra vida, pero no tiene que controlarte. 
+                                Descubre estos puntos de acupresión que puedes estimular tú mismo para 
+                                encontrar calma en cualquier momento...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">🧠</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">PNL</span>
+                                <span>10 enero 2025</span>
+                            </div>
+                            <h3>Cómo transformar creencias limitantes con PNL</h3>
+                            <p class="blog-excerpt">
+                                Todos tenemos creencias que nos limitan sin darnos cuenta. En este artículo 
+                                te enseño un proceso simple de PNL para identificar y transformar esas 
+                                creencias que te impiden avanzar...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">✨</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">Astrología</span>
+                                <span>5 enero 2025</span>
+                            </div>
+                            <h3>Tu Luna natal: la clave para entender tus emociones</h3>
+                            <p class="blog-excerpt">
+                                Si conoces tu signo solar pero no tu Luna natal, te estás perdiendo una 
+                                pieza fundamental de quién eres. Descubre por qué tu Luna es tan importante 
+                                para comprender tu mundo emocional...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">🍃</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">Bienestar</span>
+                                <span>28 diciembre 2024</span>
+                            </div>
+                            <h3>La importancia del Qi: entendiendo tu energía vital</h3>
+                            <p class="blog-excerpt">
+                                El concepto de Qi es fundamental en la Medicina China. Pero, ¿qué es 
+                                realmente? En este artículo te explico de manera sencilla qué es el Qi 
+                                y cómo puedes cuidarlo para mejorar tu salud...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">💆‍♂️</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">Medicina China</span>
+                                <span>20 diciembre 2024</span>
+                            </div>
+                            <h3>Shiatsu vs Masaje occidental: ¿cuál es la diferencia?</h3>
+                            <p class="blog-excerpt">
+                                Muchas personas me preguntan en qué se diferencia el Shiatsu de un masaje 
+                                convencional. En este artículo te explico las diferencias fundamentales 
+                                y cuándo es más recomendable cada uno...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">🎯</div>
+                        </div>
+                        <div class="blog-info">
+                            <div class="blog-meta">
+                                <span class="blog-category">Coaching</span>
+                                <span>15 diciembre 2024</span>
+                            </div>
+                            <h3>El poder de las preguntas: cómo el coaching puede transformar tu vida</h3>
+                            <p class="blog-excerpt">
+                                El coaching no da respuestas, hace las preguntas correctas. Descubre cómo 
+                                un proceso de coaching puede ayudarte a encontrar tu propia claridad y 
+                                tomar decisiones alineadas con quien realmente eres...
+                            </p>
+                            <a href="#" class="blog-link">
+                                Leer más →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h3>Categorías</h3>
+                        <ul class="categories-list">
+                            <li>
+                                <a href="#">
+                                    <span>Medicina Tradicional China</span>
+                                    <span class="post-count">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>PNL y Coaching</span>
+                                    <span class="post-count">8</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Astrología</span>
+                                    <span class="post-count">10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Bienestar Holístico</span>
+                                    <span class="post-count">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Terapias Manuales</span>
+                                    <span class="post-count">6</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget">
+                        <h3>Artículos populares</h3>
+                        <ul class="popular-posts">
+                            <li class="popular-post">
+                                <div class="popular-post-number">1</div>
+                                <div class="popular-post-info">
+                                    <h4>5 puntos de acupresión para el dolor de cabeza</h4>
+                                    <span class="popular-post-date">2 enero 2025</span>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="popular-post-number">2</div>
+                                <div class="popular-post-info">
+                                    <h4>Cómo leer tu carta astral paso a paso</h4>
+                                    <span class="popular-post-date">28 diciembre 2024</span>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="popular-post-number">3</div>
+                                <div class="popular-post-info">
+                                    <h4>Los 5 elementos en Medicina China</h4>
+                                    <span class="popular-post-date">15 diciembre 2024</span>
+                                </div>
+                            </li>
+                            <li class="popular-post">
+                                <div class="popular-post-number">4</div>
+                                <div class="popular-post-info">
+                                    <h4>Meditación guiada para principiantes</h4>
+                                    <span class="popular-post-date">10 diciembre 2024</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3>📬 Suscríbete</h3>
+                        <p>
+                            Recibe artículos, consejos y recursos directamente en tu email. 
+                            Sin spam, solo contenido de valor.
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Tu email" required>
+                            <button type="submit">Suscribirme</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Quieres dar el primer paso hacia tu bienestar?</h2>
+                <p>Reserva una consulta y empecemos tu proceso de transformación.</p>
+                <a href="contacto.html" class="btn btn-primary btn-large">Agenda tu consulta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>David Herrero</h4>
+                    <p>Terapeuta holístico especializado en Medicina Tradicional China, PNL y Astrología</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="sobre-mi.html">Sobre mí</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="servicios.html#terapias-manuales">Terapias Manuales</a></li>
+                        <li><a href="servicios.html#medicina-china">Medicina China</a></li>
+                        <li><a href="servicios.html#coaching">Coaching y PNL</a></li>
+                        <li><a href="servicios.html#astrologia">Carta Astral</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>Mataró, Cataluña</p>
+                    <p>info@david-herrero.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 David Herrero. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

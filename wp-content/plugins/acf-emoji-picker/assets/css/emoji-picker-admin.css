@@ -1,0 +1,10 @@
+/* emoji-picker-admin.css - styles for admin emoji picker */
+.acf-emoji-picker-wrap{ position:relative; display:flex; align-items:center; gap:8px; }
+.acf-emoji-input{ padding:6px 8px; min-width:160px; }
+.acf-emoji-grid{ position:absolute; top:42px; left:0; z-index:9999; width:420px; max-height:320px; overflow:auto; background:#fff; border:1px solid #ddd; padding:10px; border-radius:6px; box-shadow:0 8px 30px rgba(0,0,0,0.12); }
+.acfp-loading{ padding:20px; text-align:center; color:#666; }
+.acfp-grid{ display:flex; flex-wrap:wrap; gap:6px; padding:6px; }
+.acfp-emoji-btn{ background:transparent; border:1px solid transparent; padding:6px 8px; font-size:18px; line-height:1; cursor:pointer; border-radius:6px; }
+.acfp-emoji-btn:hover{ background:#f3f4f6; border-color:#e6eef8; }
+.acfp-search-wrap{ padding:6px 0; }
+.acfp-search{ width:100%; padding:8px 10px; border:1px solid #e6eef0; border-radius:6px; }

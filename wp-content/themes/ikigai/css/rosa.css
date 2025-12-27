@@ -1,0 +1,95 @@
+/* ============================================
+   PALETA ROSA
+   ============================================ */
+
+/* PALETA 8: ROSA SUAVE (rosa) */
+.paleta-rosa {
+    background: linear-gradient(135deg, #FFF5F8 0%, #FFE8F0 100%);
+    color: #2C3E50;
+}
+
+.paleta-rosa h1, 
+.paleta-rosa h2, 
+.paleta-rosa h3, 
+.paleta-rosa h4, 
+.paleta-rosa h5, 
+.paleta-rosa h6 {
+    color: #2C3E50;
+}
+
+.paleta-rosa p, 
+.paleta-rosa .hero-description, 
+.paleta-rosa .section-subtitle {
+    color: #5A6C7D;
+}
+
+.paleta-rosa .section-label {
+    color: #D4749A;
+}
+
+.paleta-rosa .btn-primary {
+    background-color: #D4749A;
+    color: white;
+}
+
+.paleta-rosa .btn-primary:hover {
+    background-color: #B85D7F;
+    box-shadow: 0 8px 25px rgba(212, 116, 154, 0.3);
+}
+
+.paleta-rosa .btn-secondary {
+    color: #D4749A;
+    border-color: #D4749A;
+}
+
+.paleta-rosa .btn-secondary:hover {
+    background-color: #D4749A;
+    color: white;
+}
+
+.paleta-rosa .pain-card, 
+.paleta-rosa .service-card, 
+.paleta-rosa .testimonial-card, 
+.paleta-rosa .faq-item {
+    background-color: #FFE8F0;
+}
+
+.paleta-rosa .pain-card h3, 
+.paleta-rosa .service-card h3, 
+.paleta-rosa .feature-card h4, 
+.paleta-rosa .service-link {
+    color: #D4749A;
+}
+
+.paleta-rosa .service-card::before {
+    background-color: #D4749A;
+}
+
+.paleta-rosa .service-number {
+    color: #E594B4;
+}
+
+.paleta-rosa .pain-conclusion {
+    background-color: #FFE8F0;
+    border-left-color: #D4749A;
+}
+
+.paleta-rosa .faq-icon {
+    background-color: #D4749A;
+}
+
+.paleta-rosa .faq-item.active .faq-icon {
+    background-color: #B85D7F;
+}
+
+.paleta-rosa .faq-question:hover {
+    color: #D4749A;
+}
+
+.paleta-rosa .condition-item {
+    background-color: #FFFFFF;
+}
+
+.paleta-rosa .condition-icon {
+    color: #D4749A;
+}

@@ -1,0 +1,8 @@
+.bloc-de-texte {
+	padding: var(--spacing-xxl) 0;
+	background-color: var(--bg-light);
+}
+
+.bloc-de-texte ul {
+	padding: 0 50px;
+}

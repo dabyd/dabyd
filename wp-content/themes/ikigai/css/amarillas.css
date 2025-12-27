@@ -1,0 +1,95 @@
+/* ============================================
+   PALETA AMARILLA
+   ============================================ */
+
+/* PALETA 7: AMARILLO SUAVE (groc) */
+.paleta-groc {
+    background: linear-gradient(135deg, #FFFBF0 0%, #FFF8E7 100%);
+    color: #2C3E50;
+}
+
+.paleta-groc h1, 
+.paleta-groc h2, 
+.paleta-groc h3, 
+.paleta-groc h4, 
+.paleta-groc h5, 
+.paleta-groc h6 {
+    color: #2C3E50;
+}
+
+.paleta-groc p, 
+.paleta-groc .hero-description, 
+.paleta-groc .section-subtitle {
+    color: #5A6C7D;
+}
+
+.paleta-groc .section-label {
+    color: #D4A574;
+}
+
+.paleta-groc .btn-primary {
+    background-color: #D4A574;
+    color: white;
+}
+
+.paleta-groc .btn-primary:hover {
+    background-color: #B88A5D;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+.paleta-groc .btn-secondary {
+    color: #D4A574;
+    border-color: #D4A574;
+}
+
+.paleta-groc .btn-secondary:hover {
+    background-color: #D4A574;
+    color: white;
+}
+
+.paleta-groc .pain-card, 
+.paleta-groc .service-card, 
+.paleta-groc .testimonial-card, 
+.paleta-groc .faq-item {
+    background-color: #FFF8E7;
+}
+
+.paleta-groc .pain-card h3, 
+.paleta-groc .service-card h3, 
+.paleta-groc .feature-card h4, 
+.paleta-groc .service-link {
+    color: #D4A574;
+}
+
+.paleta-groc .service-card::before {
+    background-color: #D4A574;
+}
+
+.paleta-groc .service-number {
+    color: #E5C49A;
+}
+
+.paleta-groc .pain-conclusion {
+    background-color: #FFF8E7;
+    border-left-color: #D4A574;
+}
+
+.paleta-groc .faq-icon {
+    background-color: #D4A574;
+}
+
+.paleta-groc .faq-item.active .faq-icon {
+    background-color: #B88A5D;
+}
+
+.paleta-groc .faq-question:hover {
+    color: #D4A574;
+}
+
+.paleta-groc .condition-item {
+    background-color: #FFFFFF;
+}
+
+.paleta-groc .condition-icon {
+    color: #D4A574;
+}

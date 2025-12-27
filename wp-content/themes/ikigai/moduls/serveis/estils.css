@@ -1,0 +1,69 @@
+/* ============================================
+   SERVICES PREVIEW SECTION
+   ============================================ */
+.services-preview {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: scaleY(0);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow);
+}
+
+.service-card:hover::before {
+    transform: scaleY(1);
+}
+
+.service-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.service-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+}
+
+.service-link:hover {
+    transform: translateX(5px);
+}
