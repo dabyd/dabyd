@@ -8,7 +8,8 @@ set('repository', 'https://github.com/dabyd/dabyd.git');
 
 // Configuración del Servidor
 host('omda.es')
-    ->set('remote_user', 'root') 
+    ->hostname('omda.es')
+    ->user('root') 
     ->set('deploy_path', '/var/www/dabyd.com/deploy');
 
 // Carpeta donde Nginx busca la web
@@ -18,44 +19,45 @@ set('current_path', '/var/www/dabyd.com/html');
 set('shared_files', ['wp-config.php', '.htaccess']);
 set('shared_dirs', ['wp-content/uploads']);
 set('writable_dirs', ['wp-content/uploads']);
+// Configura el modo de escritura a 'chmod' o 'chown'
+set('writable_mode', 'chmod');
 
 /**
  * Tareas Personalizadas
  */
 
-// 1. Enlace simbólico para que /html apunte a la release actual
+// Enlace simbólico para que /html apunte a la release actual
 task('deploy:link_html', function () {
     run('ln -sfn {{release_path}} {{current_path}}');
 });
 
-// 2. Limpieza de caché de Nginx
+// Limpieza de caché de Nginx
 task('nginx:reload', function () {
-    // Recarga la configuración y limpia caché interna si se usa fastcgi_cache
     run('systemctl reload nginx'); 
 })->desc('Recargando Nginx...');
 
-/**
- * Flujo de Despliegue Desglosado
- * Sustituimos 'deploy:publish' por sus tareas individuales
- */
-desc('Desplegando WordPress...');
+// Tarea para corregir el dueño de los archivos
+task('deploy:fix_permissions', function () {
+    run('chown -R www-data:www-data {{release_path}}');
+});
+
+// Añádela a tu lista de tareas justo antes del unlock
 task('deploy', [
-    'deploy:prepare',    // Crea carpetas, comprueba conexión
-    'deploy:setup',      // Configura la estructura inicial
-    'deploy:lock',       // Bloquea para que nadie más despliegue a la vez
-    'deploy:release',    // Prepara la nueva carpeta de release
-    'deploy:update_code',// Hace el git clone / pull
-    'deploy:shared',     // Enlaza wp-config.php y uploads
-    'deploy:writable',   // Ajusta permisos de escritura
-    'deploy:symlink',    // Crea el enlace interno 'current' de Deployer
-    'deploy:link_html',  // NUESTRO ENLACE: /html -> release_path
-    'deploy:unlock',     // Desbloquea el deploy
-    'deploy:cleanup',    // Borra releases antiguas (mantiene 5 por defecto)
-    'deploy:success',    // Mensaje de éxito
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:shared',
+    'deploy:writable',
+    'deploy:fix_permissions', // <--- Asegura que Nginx pueda leer
+    'deploy:symlink',
+    'deploy:link_html',
+    'deploy:unlock',
+    'cleanup',
 ]);
 
-// Ejecutar limpieza de Nginx al finalizar todo
-after('deploy:success', 'nginx:reload');
+// Ejecutar recarga de Nginx después de desbloquear
+after('deploy:unlock', 'nginx:reload');
 
-// Si algo falla, desbloquea para poder reintentar
+// Si algo falla, desbloquea
 after('deploy:failed', 'deploy:unlock');
