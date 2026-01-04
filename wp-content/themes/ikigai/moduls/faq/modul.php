@@ -1,3 +1,5 @@
+    <?php // ikg_show_all_metas(); ?>
+
     <!-- Sección FAQ -->
     <section class="faq <?php ikg_get_variant(); ?>">
         <div class="container">

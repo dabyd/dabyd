@@ -1,0 +1,40 @@
+.vc-blanco {
+    /* --- WARM WHITE THEME (Estética Minimalista / Zen) --- */
+    
+    /* Brand Colors: Usamos un Gris Piedra suave para la marca */
+    --color-primary: #2C3E50;           /* Gris Carbono para botones (contraste alto) */
+    --color-primary-light: #455A64;     /* Gris azulado para hovers */
+    --color-primary-dark: #1A252F;      /* Casi negro para estados pulsados */
+    --color-primary-glare: #F5F5F0;     /* Blanco Hueso sutil para capas */
+    --color-primary-border: #E0E0D5;    /* Bordes de marca suaves */
+    --color-accent: #D4A574;            /* Dorado arena para detalles de lujo */
+
+    /* Neutrals: La base del diseño */
+    --color-white: #FFFFFF;
+    --color-bg-cream: #FAF9F6;          /* Fondo principal: Blanco Roto (Off-white) */
+    --color-bg-light: #F2F0E9;          /* Fondo secundario: Color Lino / Hueso */
+    --color-border: #E8E6DF;            /* Bordes de sección muy finos */
+
+    /* Text Colors: Contraste máximo para lectura perfecta */
+    --text-on-primary: #FFFFFF;         /* Texto blanco sobre botón gris oscuro */
+    --text-main: #1A1A1A;               /* Negro puro para títulos */
+    --text-muted: #4A4A4A;              /* Gris oscuro para párrafos */
+    --text-light: #8C8C8C;              /* Gris medio para detalles */
+
+    /* Efectos y Sombras: Muy etéreas */
+    --color-header-bg: #FAF9F6F2;       /* Fondo header con 95% opacidad */
+    --color-shadow-light: #0000000D;    /* Sombra casi imperceptible (5%) */
+    --color-shadow-nav: #00000014;      /* Sombra menú suave (8%) */
+    --color-shadow-glow: #2C3E501A;     /* Resplandor grisáceo tenue */
+}
+
+/* Ajuste de botones para el tema Blanco */
+.vc-blanco .btn-primary {
+    color: var(--text-on-primary);
+    background-color: var(--color-primary);
+}
+
+.vc-blanco .btn-outline {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}

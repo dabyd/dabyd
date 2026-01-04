@@ -46,9 +46,18 @@ class IkigaiFloatingWindow {
             'maximizable' => true,
             'resizable' => true,
             'draggable' => true,
+            'visible' => true, // Nueva opción de visibilidad
             'contentClass' => '', // Clase CSS adicional para el contenido
             'headerClass' => '', // Clase CSS adicional para el header
         ], $options);
+    }
+
+    /**
+     * Retorna el ID de la ventana
+     * @return string
+     */
+    public function getId() {
+        return $this->id;
     }
     
     /**
@@ -173,20 +182,26 @@ HTML;
     private function calculatePosition()
     {
         if ($this->options['position'] === 'center') {
-            return 'top: 50%; left: 50%; transform: translate(-50%, -50%);';
+            $style = 'top: 50%; left: 50%; transform: translate(-50%, -50%);';
         } elseif (is_array($this->options['position'])) {
             $styles = [];
             foreach ($this->options['position'] as $prop => $value) {
                 $styles[] = "{$prop}: {$value}";
             }
-            return implode('; ', $styles) . ';';
+            $style = implode('; ', $styles) . ';';
         } else {
             // Posición automática escalonada
             $offset = (self::$instanceCount - 1) * 30;
             $top = 20 + $offset;
             $right = 20 + $offset;
-            return "top: {$top}px; right: {$right}px;";
+            $style = "top: {$top}px; right: {$right}px;";
         }
+        
+        if (!$this->options['visible']) {
+            $style .= ' display: none;';
+        }
+        
+        return $style;
     }
     
     /**

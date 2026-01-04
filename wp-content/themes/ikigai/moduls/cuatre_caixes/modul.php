@@ -2,6 +2,8 @@
     <section class="pain-points <?php ikg_get_variant(); ?>">
         <div class="container">
             <h2 class="section-title"><?php echo ikg_get_acf_value( 'titol' ); ?></h2>
+            <?php ikg_value( 'texte' ); ?>
+
             <div class="pain-grid">
 				<?php
 					$total = ikg_get_acf_value( 'blocs' );

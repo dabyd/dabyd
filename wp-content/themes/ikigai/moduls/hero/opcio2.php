@@ -1,6 +1,12 @@
-	<?php //ikg_show_all_metas(); ?>
+	<?php 
+        //ikg_show_all_metas(); 
+        $clase = '';
+        if ( ikg_get_acf_value('invertir') ) {
+            $clase = 'is-reversed';
+        }
+    ?>
 	<!-- Hero Section -->
-    <section class="about-hero  <?php ikg_get_variant(); ?>">
+    <section class="about-hero  <?php ikg_get_variant(); ?> <?php echo $clase; ?>">
         <div class="container">
             <div class="about-intro">
                 <div class="about-text">

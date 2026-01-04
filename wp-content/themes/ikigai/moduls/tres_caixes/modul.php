@@ -1,4 +1,5 @@
-    <!-- Mi Filosofía Section -->
+    <!-- Mi Filosofía Section (tres caixes) -->
+    <?php // ikg_show_all_metas(); ?>
     <section class="philosophy <?php ikg_get_variant(); ?>">
         <div class="container">
             <span class="section-label"><?php ikg_value( 'titol_petit' ); ?></span>

@@ -1,0 +1,83 @@
+.cta-and-text {
+	padding: var(--space-xxl) 0 var(--space-xl);
+    background: linear-gradient(135deg, var(--color-bg-cream) 0%, var(--color-bg-light) 100%);
+}
+.cta-and-text ul {
+	padding: 0 50px;
+}
+.cta-and-text-centered {
+	text-align: center;
+}
+.cta-and-text-left {
+	text-align: left;
+}
+.cta-and-text-right {
+	text-align: right;
+}
+.cta-and-text-justified {
+	text-align: justify;
+}
+.cta-and-text-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;     /* Asegura que estén alineados verticalmente entre sí */
+    text-align: center;      /* Opcional: ayuda con la alineación en algunos navegadores antiguos */
+    padding: var(--space-sm) 0;
+}
+.cta-and-text-image {
+    padding: var(--space-sm) 0;
+}
+.cta-and-text-video {
+    padding: var(--space-sm) 0;
+}
+
+/* --- Estilos base para multimedia --- */
+.cta-and-text-image,
+.cta-and-text-video {
+    padding: var(--space-sm) 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cta-and-text-image img,
+.cta-and-text-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave para que la imagen/video rellene el espacio sin deformarse */
+    display: block;
+}
+
+/* --- MODIFICADORES DE ALTURA (1, 2, 3) --- */
+.is-h-100 { height: 100vh; } /* Altura completa */
+.is-h-50  { height: 50vh;  } /* Media altura */
+.is-h-25  { height: 25vh;  } /* Un cuarto */
+
+/* --- MODIFICADORES DE ANCHO (4, 5) --- */
+
+/* 4) Boxed (Comportamiento actual, respeta el padding del container) */
+.cta-and-text-image.is-boxed,
+.cta-and-text-video.is-boxed {
+    max-width: 100%;
+    border-radius: var(--radius-lg); /* Opcional: añade estética de caja */
+}
+
+/* 5) Full Width (Rompe el container de 1200px para ir de borde a borde) */
+.cta-and-text-image.is-full-width,
+.cta-and-text-video.is-full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Si es full width, quitamos los bordes redondeados */
+.is-full-width img, 
+.is-full-width video {
+    border-radius: 0;
+}

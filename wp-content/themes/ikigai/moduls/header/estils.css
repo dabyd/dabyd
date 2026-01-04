@@ -1,123 +1,199 @@
 /* ============================================
-   HEADER Y NAVEGACIÓN
+   HEADER Y NAVEGACIÓN (VERSIÓN FINAL SIN HUECOS)
    ============================================ */
+
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; 
+    left: 0; 
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    height: var(--header-height);
+    background-color: var(--color-header-bg); 
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     z-index: 1000;
-    transition: var(--transition);
+    transition: var(--transition-normal);
+}
+
+/* Compensación Admin Bar WordPress Desktop */
+.logged-in .header { 
+    top: var(--wp-admin-bar-desktop); 
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem var(--spacing-md);
+    padding: 0 var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
 }
 
-.nav-logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary-color);
+/* --- LOGO --- */
+.nav-logo { 
+    display: flex; 
+    align-items: center; 
+    height: 100%; 
+    z-index: 1101; 
+    cursor: pointer; 
 }
 
 .nav-logo img {
     max-width: 350px;
-    height: auto;
+    max-height: calc(var(--header-height) - 20px);
+    width: auto; 
+    height: auto; 
+    display: block;
 }
 
+/* --- LISTA NAVEGACIÓN --- */
 .nav-list {
     display: flex;
-    gap: 2rem;
+    gap: var(--space-md);
     list-style: none;
     align-items: center;
 }
 
 .nav-link {
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 0.95rem;
+    color: var(--text-main);
+    font-weight: var(--fw-semibold);
+    font-size: var(--fz-base);
+    line-height: var(--lh-none);
     position: relative;
+    transition: var(--transition-fast);
+    cursor: pointer;
+    padding: var(--space-xs) 0;
+    text-decoration: none;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
+    content: ''; 
+    position: absolute; 
+    bottom: -5px; 
     left: 0;
-    width: 0;
+    width: 0; 
     height: 2px;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    background-color: var(--color-primary);
+    transition: var(--transition-normal);
 }
 
 .nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-link.active::after { 
+    width: 100%; 
 }
 
+/* --- BOTÓN CTA --- */
 .nav-cta {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-white) !important;
+    padding: var(--space-btn-sm-y) var(--space-btn-sm-x);
+    border-radius: var(--radius-full);
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-semibold);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    text-decoration: none;
 }
 
-.nav-cta::after {
-    display: none;
+.nav-cta::after { 
+    display: none !important; 
 }
 
 .nav-cta:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--color-primary-dark);
     transform: translateY(-2px);
-}
-
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.nav-toggle span {
-    width: 25px;
-    height: 2px;
-    background-color: var(--text-dark);
-    transition: var(--transition);
+    box-shadow: 0 4px 15px var(--color-shadow-glow);
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE MÓVIL (SISTEMA ANTI-HUECO)
    ============================================ */
+
 @media (max-width: 968px) {
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        background-color: white;
-        padding: var(--spacing-lg);
-        box-shadow: var(--box-shadow);
-        transition: var(--transition);
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-list {
-        flex-direction: column;
-        gap: var(--spacing-md);
-        align-items: flex-start;
-    }
     
     .nav-toggle {
-        display: flex;
+        display: flex !important;
+        flex-direction: column; 
+        gap: 5px; 
+        cursor: pointer;
+        z-index: 2000; 
+        padding: 10px;
+    }
+
+    .nav-toggle span { 
+        width: 25px; 
+        height: 2px; 
+        background-color: var(--text-main); 
+        transition: 0.3s; 
+    }
+
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-menu {
+        position: fixed; 
+        left: -100%; 
+        width: 100%;
+        background-color: var(--color-bg-cream);
+        transition: left 0.4s ease; 
+        z-index: 1500;
+        display: flex; 
+        flex-direction: column;
+        padding: var(--space-xl) var(--space-lg);
+        box-sizing: border-box;
+        overflow-y: auto;
+        
+        /* Cálculo preciso: el menú empieza donde acaba el header */
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+    }
+
+    .nav-menu.active { 
+        left: 0; 
+    }
+
+    /* Ajuste para Logged-in Desktop */
+    .logged-in .nav-menu {
+        top: calc(var(--header-height) + var(--wp-admin-bar-desktop));
+        height: calc(100vh - (var(--header-height) + var(--wp-admin-bar-desktop)));
+    }
+
+    .nav-menu .nav-list { 
+        flex-direction: column; 
+        width: 100%; 
+        gap: var(--space-md); 
+    }
+    
+    .nav-menu .nav-cta {
+        width: 100% !important; 
+        margin-top: var(--space-lg);
+        padding: var(--space-md) !important;
+        justify-content: center; 
+        box-sizing: border-box;
+        display: flex; 
+        border-radius: var(--radius-full);
+        text-align: center;
+    }
+    
+    .nav-logo img { 
+        max-width: 220px; 
+    }
+}
+
+/* Ajuste específico para Admin Bar Móvil (46px) */
+@media screen and (max-width: 782px) {
+    .logged-in .header { 
+        top: var(--wp-admin-bar-mobile); 
+    }
+    
+    .logged-in .nav-menu { 
+        top: calc(var(--header-height) + var(--wp-admin-bar-mobile)); 
+        height: calc(100vh - (var(--header-height) + var(--wp-admin-bar-mobile)));
     }
 }

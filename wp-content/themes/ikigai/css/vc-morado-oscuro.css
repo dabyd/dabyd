@@ -1,0 +1,34 @@
+.vc-morado-oscuro {
+    /* --- DEEP PURPLE THEME (Base #7B68A6) --- */
+    --color-primary: #D1C4E9;           /* Fondo del botón (Lavanda claro) */
+    --color-primary-light: #EDE7F6;     /* Hover */
+    --color-primary-dark: #B39DDB;      /* Active / Pressed */
+    --color-primary-glare: #8B79B4;     
+    --color-primary-border: #9D8BBF;    
+    --color-accent: #D4C374;            
+
+    --color-white: #FFFFFF;
+    --color-bg-cream: #7B68A6;          
+    --color-bg-light: #6A5695;          
+    --color-border: #8E7BB8;            
+
+    /* --- TEXTO DEL BOTÓN PRIMARIO --- */
+    /* Sobrescribimos el color del texto para el botón primario cuando este tema esté activo */
+    --text-on-primary: #342C3E;         /* Morado muy oscuro para máxima legibilidad */
+
+    --text-main: #FFFFFF;               
+    --text-muted: #F3E5F5;              
+    --text-light: #CBB9D9;              
+
+    /* Efectos y Sombras */
+    --color-header-bg: #7B68A6F2;       
+    --color-shadow-light: #342C3E4D;    
+    --color-shadow-nav: #342C3E80;      
+    --color-shadow-glow: #D1C4E94D;     
+}
+
+/* Ajuste necesario en tu CSS de botones para que use el nuevo token */
+.vc-morado-oscuro .btn-primary {
+    color: var(--text-on-primary);
+    font-weight: var(--fw-bold); /* Un poco más de peso ayuda a la lectura */
+}

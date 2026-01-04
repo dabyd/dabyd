@@ -554,7 +554,7 @@ class IkigaiMediaClass {
 		if ( '' != $valores['image_id'] && 0 != $valores['image_id'] ) {
 			$valores['src'] = '';
 
-			if ( is_string( $valores['image_id'] ) ) {
+			if ( ! is_numeric( $valores['image_id'] ) ) {
 				if ( preg_match('#^(/|\.{1,2}/|[a-zA-Z]:\\\\)#', $valores['image_id'] ) ) {
 					$valores['src'] = $valores['image_id'];
 					$valores['image_id'] = '';
@@ -621,10 +621,11 @@ class IkigaiMediaClass {
 					}
 				}
 			} else {
-
+				echo `<h1>**1</h1>`;
 				$valores['src'] = get_template_directory_uri() . '/imatges/sense-imatge.jpg';
 			}
 		} else {
+			echo `<h1>**2</h1>`;
 			if ( 0 == $valores['image_id'] ) {
 				$valores['src'] = get_template_directory_uri() . '/imatges/sense-imatge.jpg';
 			}

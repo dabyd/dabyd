@@ -5,9 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
 	</head>
+
 	<body <?php body_class(); ?>>
 		<!-- Header/Navigation -->
-		<header class="header" id="header">
+		<header class="header <?php ikg_get_variant( 'header' ); ?>" id="header">
 		<nav class="nav container">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
 				<?php

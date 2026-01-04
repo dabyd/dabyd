@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Profesional de Ito-Thermie | Transforma Vidas con tus Manos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .8;
+            }
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: reveal 0.8s ease forwards;
+        }
+        
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+        }
+        
+        .benefit-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Hero Section -->
+    <section class="gradient-bg hero-pattern min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-5"></div>
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <div class="inline-block mb-6 px-6 py-2 bg-white bg-opacity-20 rounded-full backdrop-blur-sm">
+                    <span class="text-sm font-semibold">🔥 Técnica ancestral japonesa con certificación oficial</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Despierta el Sanador que Llevas Dentro
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-100 leading-relaxed">
+                    Domina el <strong>Ito-Thermie</strong>, la terapia que combina calor sagrado, plantas medicinales y el poder ancestral japonés para transformar vidas desde la primera sesión
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                    <a href="#inscripcion" class="bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all shadow-2xl">
+                        Reservar Mi Plaza Ahora
+                    </a>
+                    <a href="#programa" class="border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all">
+                        Ver Programa Completo
+                    </a>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 text-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span>Certificación Oficial</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span>Material Incluido</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl">✓</span>
+                        <span>Práctica Real desde Día 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 pulse-animation">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="bg-white py-16 border-b">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">95+</div>
+                    <div class="text-gray-600">Años de Tradición</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">1000+</div>
+                    <div class="text-gray-600">Terapeutas Certificados</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">100%</div>
+                    <div class="text-gray-600">Satisfacción Garantizada</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">5</div>
+                    <div class="text-gray-600">Semanas Intensivas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Agitation Section -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    ¿Sientes que hay algo más que puedes ofrecer al mundo?
+                </h2>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    Miles de personas sufren en silencio: dolor crónico, estrés, fatiga, desequilibrios que la medicina convencional no logra resolver completamente. <strong>Tú puedes ser la respuesta que necesitan.</strong>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">😔</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">El Dolor es Real</h3>
+                    <p class="text-gray-600">Millones buscan alternativas naturales para dolores musculares, rigidez articular, ansiedad y fatiga crónica sin encontrar alivio duradero.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">💡</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">La Solución Existe</h3>
+                    <p class="text-gray-600">El Ito-Thermie lleva casi un siglo sanando cuerpo, mente y espíritu con resultados inmediatos y profundos que perduran.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Tú Puedes Ser el Cambio</h3>
+                    <p class="text-gray-600">En solo 5 semanas dominarás esta técnica ancestral y tendrás el poder de transformar vidas, incluyendo la tuya propia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Ito-Thermie Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                        ¿Qué es el <span class="gradient-text">Ito-Thermie</span>?
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Una revolución terapéutica creada en 1929 por el Dr. Kin-Itsu Ito tras 20 años de investigación: la fusión perfecta entre sabiduría ancestral y ciencia moderna.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-3xl">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-900">Los 4 Pilares Terapéuticos</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">Calor Sagrado</h4>
+                                        <p class="text-gray-600">Emula el calor corporal natural (37°C) penetrando capas profundas para activar la autocuración</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">Fitoterapia Ancestral</h4>
+                                        <p class="text-gray-600">7 plantas medicinales milenarias (artemisa, cedro japonés, canela...) con propiedades comprobadas</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">Presión Terapéutica</h4>
+                                        <p class="text-gray-600">Técnicas de Shiatsu en puntos de acupuntura para liberar bloqueos energéticos</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-1">Aromaterapia Profunda</h4>
+                                        <p class="text-gray-600">El aroma del incienso actúa sobre el sistema nervioso, induciendo relajación inmediata</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-gray-900 text-white p-8 rounded-3xl mb-6">
+                            <h3 class="text-2xl font-bold mb-4">El Instrumento Sagrado: Reionki</h3>
+                            <p class="text-gray-300 mb-4">Varillas de cobre cromado que contienen los inciensos de plantas medicinales. Diseñadas para aplicar calor de forma precisa y personalizada sobre los meridianos energéticos del cuerpo.</p>
+                            <div class="bg-purple-600 p-4 rounded-xl">
+                                <p class="font-semibold">✨ Incluido en el curso: Recibirás tu propio set de Reionkis profesionales para comenzar a practicar desde el primer día</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200">
+                            <p class="text-gray-800 font-semibold text-center">
+                                "Una transfusión de energía vital que restaura el equilibrio natural del cuerpo"
+                            </p>
+                            <p class="text-gray-600 text-sm text-center mt-2">— Dr. Kin-Itsu Ito, creador del método</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Beneficios Transformadores para tus Pacientes
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Resultados visibles desde la primera sesión. Tu reputación como terapeuta se multiplicará cuando tus pacientes experimenten estos cambios:
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">💪</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Alivio del Dolor Inmediato</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Dolores musculares y articulares</li>
+                        <li>✓ Lumbago y dolor de espalda</li>
+                        <li>✓ Cefaleas y migrañas</li>
+                        <li>✓ Artritis y artrosis</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">🧘</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Equilibrio Emocional Profundo</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Reducción del estrés crónico</li>
+                        <li>✓ Alivio de ansiedad y depresión</li>
+                        <li>✓ Relajación mental duradera</li>
+                        <li>✓ Mejora del sueño y descanso</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Revitalización Total</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Recuperación de la fatiga crónica</li>
+                        <li>✓ Aumento de energía vital</li>
+                        <li>✓ Fortalecimiento del sistema inmune</li>
+                        <li>✓ Sensación de bienestar integral</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">🩺</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Salud Circulatoria Óptima</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Mejora de circulación sanguínea</li>
+                        <li>✓ Estimulación linfática</li>
+                        <li>✓ Oxigenación de tejidos</li>
+                        <li>✓ Eliminación de toxinas</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">🌸</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Rejuvenecimiento Facial</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Estimulación de colágeno natural</li>
+                        <li>✓ Reducción de arrugas y líneas</li>
+                        <li>✓ Firmeza y elasticidad</li>
+                        <li>✓ Radiofrecuencia 100% natural</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card bg-white p-8 rounded-2xl shadow-lg card-hover">
+                    <div class="benefit-icon text-6xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Metabolismo Activado</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Activación metabólica</li>
+                        <li>✓ Mejor digestión</li>
+                        <li>✓ Regulación hormonal</li>
+                        <li>✓ Balance energético corporal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-purple-600 to-indigo-600 p-8 rounded-3xl text-white text-center">
+                <h3 class="text-3xl font-bold mb-4">Imagina el Impacto en tu Consulta</h3>
+                <p class="text-lg mb-6">Pacientes que llegan con dolor crónico y se van revitalizados. Personas que recuperan su energía vital después de años de fatiga. Rostros que vuelven a sonreír sin ansiedad.</p>
+                <p class="text-2xl font-bold">Esto es lo que lograrás con Ito-Thermie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Program Section -->
+    <section id="programa" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Programa de Formación Intensiva
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    5 semanas que cambiarán tu vida profesional y personal. Cada sesión incluye práctica real con tus compañeros y una sesión de Ito-Thermie profesional completamente gratis.
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto space-y-6">
+                <!-- Week 1 -->
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-2xl border-l-4 border-purple-600 card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Semana 1 - Fundamentos y Despertar</h3>
+                            <p class="text-gray-700 mb-4">Recibirás tu set personal de Reionkis y el manual completo del terapeuta.</p>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Manejo correcto de los Reionkis</li>
+                                <li>✓ Encendido y limpieza de varillas</li>
+                                <li>✓ Primeros auto-tratamientos</li>
+                                <li>✓ Los 4 elementos de sanación</li>
+                                <li>✓ Principios del calor terapéutico</li>
+                                <li>✓ Tu primera sesión profesional GRATIS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 2 -->
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-2xl border-l-4 border-purple-600 card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Semana 2 - Técnicas Avanzadas</h3>
+                            <p class="text-gray-700 mb-4">Domina el arte de crear llamas terapéuticas perfectas y aprende los puntos críticos del cuerpo.</p>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Creación de llamas pequeñas</li>
+                                <li>✓ Técnica Tensatsu (puntos sensibles)</li>
+                                <li>✓ Técnicas de soplado terapéutico</li>
+                                <li>✓ Puntos básicos del Scope</li>
+                                <li>✓ Práctica supervisada en parejas</li>
+                                <li>✓ Segunda sesión profesional GRATIS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 3 -->
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-2xl border-l-4 border-purple-600 card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Semana 3 - Tratamiento Completo y Fitoterapia</h3>
+                            <p class="text-gray-700 mb-4">Aprende a realizar sesiones completas profesionales y personaliza según cada paciente.</p>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Protocolos de tratamiento completo</li>
+                                <li>✓ Técnica Shimo-Kunjyo</li>
+                                <li>✓ Integración de fitoterapia</li>
+                                <li>✓ Alimentación sanadora complementaria</li>
+                                <li>✓ Adaptación por edad y condición</li>
+                                <li>✓ Tercera sesión profesional GRATIS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 4 -->
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-8 rounded-2xl border-l-4 border-purple-600 card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-600 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Semana 4 - Especialización y Casos Específicos</h3>
+                            <p class="text-gray-700 mb-4">Aprende a tratar condiciones específicas y casos complejos con maestría.</p>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Tratamiento de dolor crónico</li>
+                                <li>✓ Técnicas para estrés y ansiedad</li>
+                                <li>✓ Protocolo de rejuvenecimiento facial</li>
+                                <li>✓ Casos de estudio reales</li>
+                                <li>✓ Diagnóstico energético</li>
+                                <li>✓ Cuarta sesión profesional GRATIS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 5 -->
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-8 rounded-2xl border-l-4 border-yellow-500 card-hover">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-500 text-white text-2xl font-bold w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Semana 5 - Certificación y Lanzamiento Profesional</h3>
+                            <p class="text-gray-700 mb-4">Obtén tu certificación oficial y las herramientas para comenzar tu práctica profesional.</p>
+                            <ul class="grid md:grid-cols-2 gap-3 text-gray-700">
+                                <li>✓ Examen práctico de certificación</li>
+                                <li>✓ Diploma oficial de Ito-Thermie</li>
+                                <li>✓ Marketing para terapeutas</li>
+                                <li>✓ Cómo establecer tu consulta</li>
+                                <li>✓ Red de terapeutas certificados</li>
+                                <li>✓ Quinta sesión profesional GRATIS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-2xl">
+                    <p class="text-xl font-bold">🎁 Valor Total de las 5 Sesiones Profesionales: €350 — Completamente GRATIS para ti</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Todo lo que Recibirás
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    No solo aprenderás la técnica, recibirás todo el equipamiento profesional y soporte necesario para comenzar tu práctica de inmediato
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🔥</div>
+                    <h3 class="text-xl font-bold mb-2">Set Completo de Reionkis</h3>
+                    <p class="text-gray-600 mb-2">Varillas profesionales de cobre cromado para comenzar tus tratamientos</p>
+                    <p class="text-purple-600 font-bold">Valor: €120</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold mb-2">Manual del Terapeuta</h3>
+                    <p class="text-gray-600 mb-2">Guía completa con protocolos, puntos y técnicas para consulta permanente</p>
+                    <p class="text-purple-600 font-bold">Valor: €65</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold mb-2">Inciensos Medicinales</h3>
+                    <p class="text-gray-600 mb-2">Set de inciensos de 7 plantas medicinales para tus primeras sesiones</p>
+                    <p class="text-purple-600 font-bold">Valor: €45</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold mb-2">Certificación Oficial</h3>
+                    <p class="text-gray-600 mb-2">Diploma reconocido internacionalmente que avala tu práctica profesional</p>
+                    <p class="text-purple-600 font-bold">Valor: Invaluable</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">💆</div>
+                    <h3 class="text-xl font-bold mb-2">5 Sesiones Profesionales</h3>
+                    <p class="text-gray-600 mb-2">Experimenta el tratamiento en tu propio cuerpo cada semana del curso</p>
+                    <p class="text-purple-600 font-bold">Valor: €350</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">👥</div>
+                    <h3 class="text-xl font-bold mb-2">Red de Terapeutas</h3>
+                    <p class="text-gray-600 mb-2">Acceso a comunidad exclusiva de terapeutas certificados para soporte continuo</p>
+                    <p class="text-purple-600 font-bold">Valor: €200/año</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">Material de Marketing</h3>
+                    <p class="text-gray-600 mb-2">Plantillas, folletos y recursos para promocionar tu consulta</p>
+                    <p class="text-purple-600 font-bold">Valor: €85</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🎥</div>
+                    <h3 class="text-xl font-bold mb-2">Videos de Repaso</h3>
+                    <p class="text-gray-600 mb-2">Acceso a grabaciones de las sesiones para repasar cuando necesites</p>
+                    <p class="text-purple-600 font-bold">Valor: €120</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold mb-2">Soporte Post-Curso</h3>
+                    <p class="text-gray-600 mb-2">Asesoría durante 6 meses después de tu certificación</p>
+                    <p class="text-purple-600 font-bold">Valor: €180</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 p-10 rounded-3xl text-center text-white shadow-2xl">
+                <p class="text-2xl mb-4">Valor Total del Paquete Completo:</p>
+                <p class="text-6xl font-bold mb-4 line-through opacity-75">€1,165</p>
+                <p class="text-3xl mb-4">Tu Inversión Hoy:</p>
+                <p class="text-7xl font-bold mb-4">€497</p>
+                <p class="text-xl">Ahorro de €668 + Opción de pago en 3 cuotas sin intereses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Historias de Transformación Real
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Esto es lo que dicen quienes ya completaron la formación
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Después de 15 años como fisioterapeuta, el Ito-Thermie revolucionó mi consulta. Mis pacientes con dolor crónico ahora tienen esperanza real. En 3 meses recuperé la inversión."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">MC</div>
+                        <div>
+                            <p class="font-bold">María C.</p>
+                            <p class="text-sm text-gray-600">Fisioterapeuta, Barcelona</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Sin experiencia previa en terapias, el curso me dio todas las herramientas. Hoy tengo mi propia consulta con lista de espera. Mis pacientes me recomiendan constantemente."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">JL</div>
+                        <div>
+                            <p class="font-bold">Jorge L.</p>
+                            <p class="text-sm text-gray-600">Terapeuta Ito-Thermie, Madrid</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Lo que más me impactó fue sentir los resultados en mi propio cuerpo. Llegué con fibromialgia y salí como nueva. Ahora ayudo a otras personas a encontrar ese alivio."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">AS</div>
+                        <div>
+                            <p class="font-bold">Ana S.</p>
+                            <p class="text-sm text-gray-600">Coach de bienestar, Valencia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Preguntas Frecuentes
+                </h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿Necesito experiencia previa en terapias?</summary>
+                    <p class="mt-4 text-gray-600">No, el curso está diseñado desde cero. Comenzarás aprendiendo los fundamentos y avanzarás progresivamente. Muchos de nuestros estudiantes más exitosos no tenían experiencia previa.</p>
+                </details>
+                
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿Cuánto tiempo puedo empezar a practicar profesionalmente?</summary>
+                    <p class="mt-4 text-gray-600">Recibirás tu certificación al finalizar las 5 semanas y podrás comenzar a atender pacientes de inmediato. Muchos estudiantes comienzan con familiares y amigos durante el curso.</p>
+                </details>
+                
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿Qué pasa si pierdo una clase?</summary>
+                    <p class="mt-4 text-gray-600">Tendrás acceso a las grabaciones de todas las sesiones y podrás coordinar una sesión de práctica personalizada con el instructor para ponerte al día.</p>
+                </details>
+                
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿El material está incluido o debo comprarlo aparte?</summary>
+                    <p class="mt-4 text-gray-600">Todo el material está incluido: tu set de Reionkis, inciensos, manual del terapeuta y todos los recursos digitales. No necesitas comprar nada adicional.</p>
+                </details>
+                
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿Puedo combinar Ito-Thermie con otras terapias?</summary>
+                    <p class="mt-4 text-gray-600">Absolutamente. El Ito-Thermie complementa perfectamente masajes, acupuntura, fisioterapia, reiki y cualquier otra práctica holística. Muchos terapeutas lo integran con excelentes resultados.</p>
+                </details>
+                
+                <details class="bg-white p-6 rounded-xl shadow-md">
+                    <summary class="font-bold text-lg cursor-pointer">¿Hay opciones de pago?</summary>
+                    <p class="mt-4 text-gray-600">Sí, ofrecemos pago único de €497 o 3 cuotas mensuales de €169 sin intereses. También aceptamos transferencia bancaria con descuento adicional.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="inscripcion" class="py-20 gradient-bg hero-pattern relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    Tu Momento es Ahora
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 leading-relaxed">
+                    Miles de personas esperan encontrar a alguien como tú: un terapeuta que realmente pueda transformar su vida. El próximo grupo comienza en <strong>2 semanas</strong> y solo quedan <span class="bg-yellow-400 text-purple-900 px-3 py-1 rounded-full font-bold">8 plazas disponibles</span>
+                </p>
+                
+                <div class="bg-white bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl mb-8">
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">✅ Si te inscribes hoy:</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-yellow-400 text-2xl">✓</span>
+                                    <span>Técnica que transforma vidas</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-yellow-400 text-2xl">✓</span>
+                                    <span>Certificación oficial reconocida</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-yellow-400 text-2xl">✓</span>
+                                    <span>Material profesional incluido</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-yellow-400 text-2xl">✓</span>
+                                    <span>Nueva fuente de ingresos</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-yellow-400 text-2xl">✓</span>
+                                    <span>Propósito y realización personal</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">❌ Si esperas:</h3>
+                            <ul class="space-y-3 opacity-80">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 text-2xl">✗</span>
+                                    <span>Perderás tu plaza en este grupo</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 text-2xl">✗</span>
+                                    <span>Próximo curso en 6 meses</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 text-2xl">✗</span>
+                                    <span>Precio aumentará €150 en 2025</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 text-2xl">✗</span>
+                                    <span>Seguirás sin esta herramienta</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-400 text-2xl">✗</span>
+                                    <span>Otros ocuparán tu lugar</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <a href="#" class="inline-block bg-yellow-400 text-purple-900 px-12 py-6 rounded-full font-bold text-2xl hover:bg-yellow-300 transform hover:scale-105 transition-all shadow-2xl">
+                        Sí, Quiero Mi Plaza Ahora
+                    </a>
+                    <p class="text-sm">🔒 Pago seguro | 💳 3 cuotas sin intereses | ✅ Garantía de satisfacción 30 días</p>
+                </div>
+                
+                <div class="mt-12 p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+                    <p class="text-lg mb-2">💡 <strong>Garantía de Satisfacción Total:</strong></p>
+                    <p>Si después de la primera semana sientes que el curso no es para ti, te devolvemos el 100% de tu inversión sin preguntas. Cero riesgo para ti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Ito-Thermie Academy</h3>
+                    <p class="text-gray-400">Formando terapeutas que transforman vidas desde 1929</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contacto</h4>
+                    <p class="text-gray-400 mb-2">📧 info@itothermie-academy.com</p>
+                    <p class="text-gray-400 mb-2">📱 +34 XXX XXX XXX</p>
+                    <p class="text-gray-400">📍 Barcelona, España</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Síguenos</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-500 transition-colors">f</a>
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-500 transition-colors">in</a>
+                        <a href="#" class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-500 transition-colors">ig</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Ito-Thermie Academy. Todos los derechos reservados. | Política de Privacidad | Términos y Condiciones</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

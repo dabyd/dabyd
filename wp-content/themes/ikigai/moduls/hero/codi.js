@@ -15,6 +15,13 @@ window.addEventListener('scroll', () => {
     }
     
     lastScroll = currentScroll;
+
+    // Parallax
+    const parallax = document.querySelector('.hero-parallax');
+    if (parallax) {
+        let scrollPosition = window.pageYOffset;
+        parallax.style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
+    }
 });
 
 console.log('❓ Header: Funcional');

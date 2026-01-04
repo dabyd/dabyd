@@ -1,9 +1,9 @@
 /* ============================================
-   FAQ SECTION
+   FAQ SECTION (SISTEMA COMPLETO: CLARO Y DARK)
    ============================================ */
 .faq {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--bg-white);
+    padding: var(--space-xxl) 0 var(--space-xl);
+    background: linear-gradient(135deg, var(--color-bg-cream) 0%, var(--color-bg-light) 100%);
 }
 
 .faq-container {
@@ -14,18 +14,21 @@
 .faq-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--space-sm);
 }
 
+/* --- ESTILO BASE DEL ITEM --- */
 .faq-item {
-    background-color: var(--bg-light);
-    border-radius: var(--border-radius);
+    background-color: var(--color-bg-cream);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--color-border);
 }
 
 .faq-item:hover {
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--color-primary-glare);
 }
 
 .faq-question {
@@ -38,66 +41,164 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
-    font-family: var(--font-body);
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    transition: var(--transition);
+    gap: var(--space-md);
+    font-family: var(--font-family-heading);
+    font-size: var(--fz-md);
+    font-weight: var(--fw-semibold);
+    color: var(--text-main);
+    transition: var(--transition-fast);
 }
 
 .faq-question:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
+/* --- ICONO CIRCULAR (+) --- */
 .faq-icon {
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    font-weight: 300;
-    transition: var(--transition);
+    font-weight: var(--fw-normal);
+    transition: var(--transition-normal);
+}
+
+/* --- ESTADO ACTIVO (Abierto) --- */
+.faq-item.active {
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
 }
 
 .faq-item.active .faq-icon {
     transform: rotate(45deg);
-    background-color: var(--primary-dark);
+    background-color: var(--color-primary-dark);
 }
 
+.faq-item.active .faq-question {
+    color: var(--color-primary);
+}
+
+/* --- ANIMACIÓN ACORDEÓN --- */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-answer-content {
     padding: 0 2rem 1.5rem 2rem;
-    color: var(--text-medium);
-    line-height: 1.8;
+    color: var(--text-muted);
+    line-height: var(--lh-base);
+    font-size: var(--fz-base);
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px;
+    max-height: 800px; 
 }
 
-.faq-answer p {
-    margin-bottom: var(--spacing-sm);
+/* ============================================
+   VARIANTE: FAQ DARK (Fondo Predominante Oscuro)
+   ============================================ */
+
+/* Solo se aplica si añades la clase .faq-dark a la <section> */
+.faq.vc-azul-oscuro,
+.faq.vc-negro,
+.faq.vc-ombretta,
+.faq.vc-morado-oscuro,
+.faq.vc-verde-oscuro {
+    background-color: var(--color-primary); /* Color predominante (verde/morado) */
 }
 
-.faq-answer p:last-child {
-    margin-bottom: 0;
+.vc-azul-oscuro .faq-item,
+.vc-negro .faq-item,
+.vc-ombretta .faq-item,
+.vc-morado-oscuro .faq-item,
+.vc-verde-oscuro .faq-item {
+    background-color: var(--color-primary-dark); /* Color más oscuro para el item */
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
+.faq.vc-azul-oscuro .section-label,
+.faq.vc-negro .section-label,
+.faq.vc-ombretta .section-label,
+.faq.vc-morado-oscuro .section-label,
+.faq.vc-verde-oscuro .section-label {
+    color: var(--color-primary-light);
+}
+
+.vc-azul-oscuro .faq-question,
+.vc-negro .faq-question,
+.vc-ombretta .faq-question,
+.vc-morado-oscuro .faq-question,
+.vc-verde-oscuro .faq-question {
+    color: var(--color-white);
+}
+
+.vc-azul-oscuro .faq-question:hover,
+.vc-negro .faq-question:hover,
+.vc-ombretta .faq-question:hover,
+.vc-morado-oscuro .faq-question:hover,
+.vc-verde-oscuro .faq-question:hover {
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+.vc-azul-oscuro .faq-icon,
+.vc-negro .faq-icon,
+.vc-ombretta .faq-icon,
+.vc-morado-oscuro .faq-icon,
+.vc-verde-oscuro .faq-icon {
+    background-color: var(--color-white); /* Icono claro sobre fondo oscuro */
+    color: var(--color-primary-dark);
+}
+
+.vc-azul-oscuro .faq-item.active,
+.vc-negro .faq-item.active,
+.vc-ombretta .faq-item.active,
+.vc-morado-oscuro .faq-item.active,
+.vc-verde-oscuro .faq-item.active {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-light);
+}
+
+.vc-azul-oscuro .faq-item.active .faq-icon,
+.vc-negro .faq-item.active .faq-icon,
+.vc-ombretta .faq-item.active .faq-icon,
+.vc-morado-oscuro .faq-item.active .faq-icon,
+.vc-verde-oscuro .faq-item.active .faq-icon {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+}
+
+.vc-azul-oscuro .faq-answer-content,
+.vc-negro .faq-answer-content,
+.vc-ombretta .faq-answer-content,
+.vc-morado-oscuro .faq-answer-content,
+.vc-verde-oscuro .faq-answer-content {
+    color: rgba(255, 255, 255, 0.9); /* Blanco suave para lectura */
+}
+
+.vc-azul-oscuro .faq-item:hover,
+.vc-negro .faq-item:hover,
+.vc-ombretta .faq-item:hover,
+.vc-morado-oscuro .faq-item:hover,
+.vc-verde-oscuro .faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE FAQ
+   ============================================ */
 @media (max-width: 640px) {
     .faq-question {
         padding: 1.25rem 1.5rem;
-        font-size: 1rem;
+        font-size: var(--fz-base);
     }
     
     .faq-answer-content {
@@ -105,8 +206,8 @@
     }
     
     .faq-icon {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         font-size: 1rem;
     }
 }

@@ -1,0 +1,28 @@
+.vc-azul-oscuro {
+    /* --- DEEP BLUE THEME (Base #2C3E50) --- */
+    
+    /* Brand Colors: Ajustados para vibrar sobre el fondo oscuro */
+    --color-primary: #3498DB;           /* Azul brillante para botones y acentos */
+    --color-primary-light: #5DADE2;     /* Para hovers */
+    --color-primary-dark: #2980B9;      /* Para estados pulsados */
+    --color-primary-glare: #3E5871;     /* Fondo sutil (capa intermedia) */
+    --color-primary-border: #455A64;    /* Bordes de marca */
+    --color-accent: #D4A574;            /* Dorado (Toque David Herrero) */
+
+    /* Neutrals: Fondos basados en el color solicitado */
+    --color-white: #FFFFFF;
+    --color-bg-cream: #2C3E50;          /* Fondo principal solicitado */
+    --color-bg-light: #243342;          /* Fondo secundario (más profundo) */
+    --color-border: #1E2D3D;            /* Bordes generales oscuros */
+    
+    /* Text Colors: Invertidos para legibilidad sobre fondo oscuro */
+    --text-main: #FFFFFF;               /* Blanco puro para títulos */
+    --text-muted: #D5DBDB;              /* Gris platino (más claro) para párrafos */
+    --text-light: #95A5A6;              /* Gris azulado para detalles y leyendas */
+
+    /* Efectos y Sombras */
+    --color-header-bg: #2C3E50F2;       /* Hexa con 95% opacidad */
+    --color-shadow-light: #00000040;    /* Sombra densa para modo oscuro */
+    --color-shadow-nav: #00000066;      
+    --color-shadow-glow: #3498DB4D;     /* Resplandor azul al 30% */
+}

@@ -1,28 +1,30 @@
 /* ============================================
-   FOOTER
+   FOOTER (Ajuste de Cursor y Enlaces)
    ============================================ */
 .footer {
-    background-color: var(--text-dark);
-    color: white;
-    padding: var(--spacing-xl) 0 var(--spacing-md);
+    background-color: var(--text-main);
+    color: var(--color-white);
+    padding: var(--space-xl) 0 var(--space-md);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
 .footer-col h4 {
-    color: white;
-    margin-bottom: var(--spacing-md);
-    font-size: 1.125rem;
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+    font-size: var(--fz-lg); 
+    font-family: var(--font-family-heading);
 }
 
 .footer-col p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: var(--spacing-sm);
+    color: var(--color-bg-light);
+    margin-bottom: var(--space-sm);
+    font-size: var(--fz-base); 
 }
 
 .footer-col ul {
@@ -30,34 +32,41 @@
 }
 
 .footer-col ul li {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--space-sm);
 }
 
+/* Ajuste de Enlaces: Forzamos el puntero (la mano) */
 .footer-col ul li a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
+    color: var(--color-bg-light);
+    font-size: var(--fz-base); 
+    transition: var(--transition-normal);
+    display: inline-block; /* Mejora la detección del puntero */
+    cursor: pointer;       /* Forzamos el dedo/mano */
+    text-decoration: none;
 }
 
 .footer-col ul li a:hover {
-    color: white;
+    color: var(--color-white);
     padding-left: 5px;
+    cursor: pointer;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: var(--spacing-md);
+    padding-top: var(--space-md);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.875rem;
+    color: var(--text-light);
+    font-size: var(--fz-sm); 
 }
-/* Contenedor de redes sociales */
+
+/* --- REDES SOCIALES --- */
 .footer-social {
     display: flex;
-    justify-content: space-between;
-    margin-top: var(--spacing-md);
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
     flex-wrap: wrap;
     width: 100%;
 }
@@ -66,52 +75,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.8);
-    transition: var(--transition);
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
+    transition: var(--transition-normal);
+    cursor: pointer; /* Forzamos el dedo/mano */
 }
 
 .footer-social a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     transform: translateY(-3px);
+    box-shadow: 0 4px 10px var(--color-shadow-glow);
 }
 
 .footer-social svg {
     width: 20px;
     height: 20px;
+    fill: currentColor;
+    pointer-events: none; /* Evita que el SVG interfiera con el clic del <a> */
 }
 
+/* ============================================
+   RESPONSIVE FOOTER
+   ============================================ */
 @media (max-width: 640px) {
-    /* Responsive para redes sociales */
-    .footer-social {
-        justify-content: center;
-        margin-top: var(--spacing-sm);
-    }
-    
-    .footer-social a {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .footer-social svg {
-        width: 18px;
-        height: 18px;
-    }
-
     .footer-content {
         text-align: center;
-    }
-    
-    .footer-col {
-        margin-bottom: var(--spacing-lg);
-    }
-    
-    .footer-col:last-child {
-        margin-bottom: 0;
     }
     
     .footer-col ul {
@@ -120,4 +112,7 @@
         align-items: center;
     }
 
+    .footer-social {
+        justify-content: center;
+    }
 }

@@ -1,13 +1,16 @@
-/* Estilos base de testimonios */
+/* ============================================
+   SECCIÓN TESTIMONIOS (Tokens Adaptados)
+   ============================================ */
+
 .testimonials {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--bg-white);
+    padding: var(--space-xxl) 0;
+    background-color: var(--color-bg-cream); /* Usamos el crema suave de fondo */
 }
 
 /* Contenedor del carrusel */
 .testimonials-carousel {
     position: relative;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--space-lg);
     overflow: hidden;
     padding: 0 50px; /* Espacio para las flechas */
 }
@@ -16,35 +19,42 @@
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    transition: transform 0.5s ease-in-out;
+    gap: var(--space-lg);
+    transition: transform var(--transition-normal);
 }
 
 /* Tarjeta de testimonio */
 .testimonial-card {
-    background-color: var(--bg-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    background-color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
     min-width: 300px;
+    border-bottom: 3px solid var(--color-primary-glare);
+    transition: transform var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
 /* Estrellas */
 .testimonial-stars {
-    color: var(--accent-color);
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-md);
+    color: var(--color-accent); /* Tu color dorado/verde de acento */
+    font-size: var(--fz-md);
+    margin-bottom: var(--space-md);
 }
 
 /* Texto del testimonio */
 .testimonial-text {
     font-style: italic;
-    color: var(--text-medium);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    line-height: var(--lh-base);
 }
 
-/* Comillas */
+/* Comillas elegantes */
 .testimonial-quote {
     display: inline;
     quotes: "«" "»";
@@ -55,16 +65,16 @@
     content: open-quote;
     margin-right: 5px;
     font-size: 1.3em;
-    font-weight: 700;
-    vertical-align: baseline;
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
 }
 
 .testimonial-quote::after {
     content: close-quote;
     margin-left: 5px;
     font-size: 1.3em;
-    font-weight: 700;
-    vertical-align: baseline;
+    font-weight: var(--fw-bold);
+    color: var(--color-primary);
 }
 
 /* Autor */
@@ -72,105 +82,102 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    margin-top: var(--space-md);
 }
 
 .testimonial-author strong {
-    color: var(--text-dark);
+    color: var(--text-main);
+    font-weight: var(--fw-bold);
 }
 
 .testimonial-author span {
     color: var(--text-light);
-    font-size: 0.875rem;
+    font-size: var(--fz-sm);
 }
 
-/* --- ESTILOS DEL CARRUSEL --- */
+/* --- ESTILOS DEL CARRUSEL (Controles) --- */
 
 /* Botones de navegación */
 .carousel-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    width: 44px; /* Tamaño optimizado para clic */
+    height: 44px;
+    border-radius: var(--radius-full);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    font-size: var(--fz-lg);
+    transition: all var(--transition-normal);
     z-index: 10;
     user-select: none;
 }
 
 .carousel-nav:hover {
-    background-color: var(--accent-color);
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px var(--color-shadow-glow);
 }
 
 .carousel-nav:active {
     transform: translateY(-50%) scale(0.95);
 }
 
-.carousel-nav.prev {
-    left: 0;
-}
-
-.carousel-nav.next {
-    right: 0;
-}
+.carousel-nav.prev { left: 0; }
+.carousel-nav.next { right: 0; }
 
 .carousel-nav:disabled {
     opacity: 0.3;
     cursor: not-allowed;
-    pointer-events: none;
+    border-color: var(--color-border);
+    color: var(--color-border);
 }
 
 /* Indicadores (dots) */
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: var(--spacing-lg);
+    gap: 12px;
+    margin-top: var(--space-lg);
 }
 
 .carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-border);
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     padding: 0;
 }
 
 .carousel-dot:hover {
-    background-color: #bbb;
-    transform: scale(1.2);
+    background-color: var(--color-primary-light);
 }
 
 .carousel-dot.active {
-    background-color: var(--accent-color);
-    width: 30px;
-    border-radius: 6px;
+    background-color: var(--color-primary);
+    width: 28px; /* Efecto pastilla activa */
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE TESTIMONIALS
+   ============================================ */
 @media (max-width: 768px) {
     .testimonials-carousel {
         padding: 0 40px;
     }
     
     .carousel-nav {
-        width: 35px;
-        height: 35px;
-        font-size: 1.2rem;
+        width: 38px;
+        height: 38px;
     }
     
     .testimonials-grid {
@@ -180,12 +187,10 @@
 
 @media (max-width: 480px) {
     .testimonials-carousel {
-        padding: 0 30px;
+        padding: 0 var(--space-md);
     }
     
     .carousel-nav {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
+        display: none; /* Ocultamos flechas en móviles muy pequeños para dar espacio */
     }
 }

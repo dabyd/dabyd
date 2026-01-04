@@ -1,0 +1,15 @@
+.sp-l {
+    --space-xxl: 8rem;
+    --space-xl: 5.5rem;
+    --space-lg: 4rem;
+    --space-md: 2.5rem;
+}
+
+@media (max-width: 640px) {
+    .sp-l {
+        --space-xxl: 4rem;
+        --space-xl: 2.75rem;
+        --space-lg: 2rem;
+        --space-md: 1.5rem;
+    }
+}

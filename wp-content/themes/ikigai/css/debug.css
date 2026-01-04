@@ -409,6 +409,10 @@ Adaptaciones para ikg media
     color: #50054c;
 }
 
+.ikg-show-module {
+    border: 2px dashed #555;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .sam-floating-content {

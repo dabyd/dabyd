@@ -1,6 +1,7 @@
 <?php
 
 require_once get_template_directory() . '/ikigai-media.php';
+require_once get_template_directory() . '/ikigai-videos.php';
 require_once get_template_directory() . '/ikigai-floating-window.php';
 require_once get_template_directory() . '/ikigai-error-handler.php';
 require_once get_template_directory() . '/ikigai-debug-handler.php';
@@ -25,6 +26,7 @@ $ikg_media_definition = array(
 	)
 );
 $ikg_media = new IkigaiMediaClass( $ikg_media_definition );
+$ikg_videos = new IkigaiVideoClass();
 
 function ikg_get_text( $id, $from_options = false ) {
     return  nl2br( ikg_get_acf_value( $id, $from_options ) );
@@ -76,7 +78,11 @@ function ikg_value( $id, $post_id = null, $debug = false ) {
     echo $tmp;
 }
 
-function ikg_setbase( $base ) {
+function ikg_reset() {
+    ikg_setbase();
+}
+
+function ikg_setbase( $base = '' ) {
 	global $__ikg_base;
 	$__ikg_base = $base;
 }
@@ -84,6 +90,12 @@ function ikg_setbase( $base ) {
 function ikg_get_image( $datos ) {
     global $ikg_media;
     $ikg_media->img( $datos );
+    return;
+}
+
+function ikg_get_video( $datos ) {
+    global $ikg_videos;
+    $ikg_videos->video( $datos );
     return;
 }
 
@@ -95,12 +107,33 @@ function ikg_get_option( $id ) {
     return $tmp;
 }
 
-function ikg_get_acf_modules() {
+function ikg_get_acf_modules( $post_id = 0 ) {
+    if ( 0 == $post_id ) {
+        $post_id = get_the_ID();
+    }
     $ret = [];
-    if ( is_array( get_post_meta( get_the_ID(), 'moduls', true ) ) ) {
-        $ret = get_post_meta( get_the_ID(), 'moduls', true );
+    if ( is_array( get_post_meta( $post_id, 'moduls', true ) ) ) {
+        $ret = get_post_meta( $post_id, 'moduls', true );
     }
     return $ret;
+}
+
+function ikg_put_buttons() {
+    global $__ikg_base;
+    $tmp = $__ikg_base;
+    $base = $__ikg_base;;
+    if ( '' != $base ) {
+        $base .= '_';
+    }
+    $botons = ikg_get_acf_value( 'botons' );
+    for( $n = 0; $n < $botons; $n++ ) {
+        $key = str_replace( '__', '_', $base . 'botons_' . $n . '_' );
+        ikg_setbase( $key );
+        $tipus = ikg_get_acf_value( 'tipus' );
+        $modificacions = ikg_get_acf_value( 'modificacions' );
+        ikg_put_link( 'boto', 'btn ' . $tipus . ' ' . $modificacions ); 
+    }
+    $__ikg_base = $tmp;
 }
 
 function ikg_set_acf_module( $id, $curent_id = 0 ) {
@@ -172,6 +205,8 @@ function ikg_load_modul($module) {
         echo '<h3>El módulo '. $module . ' no existe en (' . $file . ')</h3>';
         echo '</section>';
     } else {
+		ikg_reset();
+        ikg_info_module( $module, $file );
         require( $file );
     }
 }
@@ -322,12 +357,66 @@ function ikg_show_all_metas() {
     }
 }
 
-function ikg_get_variant() {
-    $clase = ikg_get_acf_value('aspecte');
+function ikg_info_module( $module, $file ) {
+    $mostrar = ikg_get_option('mostrar_els_moduls');
+    if ( WP_DEBUG && $mostrar ) {
+        $content = '<div class="ikg-info-module" style="padding-bottom: 40px;">';
+        $content .= '<h3>Module: ' . $module .'</h3>';
+        $content .= '<h5>Paths: ' . $file .'</h5>';
+        $content .= '<button class="fw-btn" style="position: absolute; bottom: 10px; right: 10px; width: auto; padding: 5px 10px; background: #667eea; font-size: 14px;" onclick="this.closest(\'.floating-window\').style.display=\'none\'">Ocultar</button>';
+        $content .= '</div>';
+
+        $title = "Info Module: " . $module;
+        
+        $win = new IkigaiFloatingWindow($title, $content, [
+            'width' => '400px',
+            'height' => 'auto',
+            'icon' => 'ℹ️',
+            'headerClass' => 'ikg-info-header',
+            'minimizable' => true,
+            'visible' => false,
+        ]);
+        
+        $id = $win->getId();
+        echo '<div style="cursor: pointer; display: inline-block; margin: 0 5px; float: left;" onclick="document.getElementById(\'' . $id . '\').style.display=\'flex\'">❓</div>';
+        
+        $win->show();
+    }
+}
+
+function ikg_get_variant( $tipus = '' ) {    
+    ikg_setbase('');
+
+    $clase = '';
+    $clase2 = '';
+    switch ($tipus) {
+        case 'header':
+            $clase = ikg_get_acf_value('aspecte_header_aspecte', true );
+            $clase2 = ikg_get_acf_value('aspecte_header_espaciat', true );
+            break;
+        
+        case 'footer':
+            $clase = ikg_get_acf_value('aspecte_footer_aspecte', true );
+            $clase2 = ikg_get_acf_value('aspecte_footer_espaciat', true );
+            break;
+
+        default:
+            $clase = ikg_get_acf_value('aspecte' );
+            $clase2 = ikg_get_acf_value('espaciat' );
+            break;
+    }
     if ( '-' == $clase ) {
         $clase = '';
     }
-    echo $clase;
+    if ( '-' == $clase2 ) {
+        $clase2 = '';
+    }
+    $clase3 = '';
+    $mostrar = ikg_get_option('mostrar_els_moduls');
+    if ( WP_DEBUG && $mostrar ) {
+        $clase3 = 'ikg-show-module';
+    }
+    echo trim( $clase . ' ' . $clase2 . ' ' . $clase3 );
 }
 
 /**
