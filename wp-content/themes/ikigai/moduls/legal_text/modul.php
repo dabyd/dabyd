@@ -23,11 +23,15 @@
                 
                 <!-- Owner Section -->
                 <section class="legal-page-section" id="owner">
-                    <h2>Titular y Responsable del tratamiento de los Datos</h2>
+                    <h2>Datos identificativos</h2>
+                    <p><?php echo ikg_get_option('cabecera_legal' ); ?></p>
                     <div class="legal-page-contact-box">
-                        <p><strong>Dirección:</strong><br>
+                        <p><strong>Titular:</strong> <?php echo ikg_get_option( 'titular' ); ?></p>
+                        <p><strong>NIF / DNI:</strong> <?php echo ikg_get_option( 'nifdni' ); ?></p>
+                        <p><strong>Domicilio:</strong><br>
 						<?php echo nl2br( ikg_get_option( 'direccio' ) ); ?>
                         <p><strong>Correo electrónico:</strong> <a href="mailto:<?php echo ikg_get_option( 'e-mail' ); ?>"><?php echo ikg_get_option( 'e-mail' ); ?></a></p>
+                        <p><strong>Actividad:</strong> <?php echo ikg_get_option( 'actividad' ); ?></p>
                     </div>
                 </section>
 

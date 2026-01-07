@@ -173,6 +173,26 @@
     color: var(--text-light);
 }
 
+/* Usamos el ID para tener más peso que el reset */
+#privacy {
+    display: block; /* O flex si quieres alinear el checkbox */
+    line-height: 1.5;
+}
+
+/* Seleccionamos el 'a' dentro de ese ID específico */
+#privacy a {
+    display: inline; 
+    text-decoration: underline;
+}
+
+/* Si usas un checkbox nativo, asegúrate de que sea inline-block */
+#privacy input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* ============================================
    RESPONSIVE CONTACTO
    ============================================ */
@@ -189,5 +209,124 @@
     .form-container {
         order: 1;
         padding: var(--space-lg);
+    }
+}
+
+/* ============================================
+   FORM MESSAGES & LOADING STATES
+   ============================================ */
+
+/* Form Messages Container */
+.form-messages {
+    padding: 0;
+    margin: 0 0 var(--space-md) 0;
+    border-radius: var(--radius-md);
+    display: none;
+    font-size: var(--fz-md);
+    line-height: 1.5;
+}
+
+.form-messages.success,
+.form-messages.error {
+    display: block;
+    padding: var(--space-md);
+}
+
+.form-messages.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 1px solid var(--color-primary);
+    color: #155724;
+}
+
+.form-messages.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    border: 1px solid #dc3545;
+    color: #721c24;
+}
+
+/* Spinner Animation */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--color-white);
+    animation: spin 1s ease infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Disabled Button State */
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-submit:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================
+   FIELD VALIDATION STATES
+   ============================================ */
+
+/* Invalid Field State */
+.form-group input.field-invalid,
+.form-group select.field-invalid,
+.form-group textarea.field-invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.form-group input.field-invalid:focus,
+.form-group select.field-invalid:focus,
+.form-group textarea.field-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15);
+}
+
+/* Valid Field State */
+.form-group input.field-valid,
+.form-group select.field-valid,
+.form-group textarea.field-valid {
+    border-color: var(--color-primary);
+}
+
+.form-group input.field-valid:focus,
+.form-group select.field-valid:focus,
+.form-group textarea.field-valid:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-glare);
+}
+
+/* Error Message Below Field */
+.field-error {
+    display: none;
+    color: #dc3545;
+    font-size: var(--fz-sm);
+    margin-top: var(--space-xs);
+    font-weight: var(--fw-medium);
+}
+
+/* Animation for error appearance */
+.field-error[style*="display: block"] {
+    animation: fadeInError 0.2s ease;
+}
+
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

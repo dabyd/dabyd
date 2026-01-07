@@ -75,7 +75,10 @@
 
                 <!-- Contact Form -->
                 <div class="form-container">
-                    <form id="contact-form">
+                    <form id="contact-form" data-form-id="<?php echo esc_attr($form_id); ?>">
+                        <input type="hidden" name="form_id" value="<?php echo esc_attr($form_id); ?>">
+                        <?php wp_nonce_field('ikg_form_submit', 'ikg_form_nonce'); ?>
+                        <div id="form-messages" class="form-messages"></div>
 						<?php
 							for( $n=0; $n < $camps; $n++ ) :
 								ikg_setbase( 'campos_del_formulario_' . $n . '_' );

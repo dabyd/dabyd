@@ -20,6 +20,12 @@ function ikigai_cargar_recursos() {
     // 4. Cargar JS personalizado (ikigai-scripts)
     // El 'true' al final hace que el script se cargue en el footer (mejor para SEO)
     wp_enqueue_script('ikigai-scripts', $minifier_url . 'js');
+    
+    // 5. Pasar variables PHP a JavaScript para AJAX
+    wp_localize_script('ikigai-scripts', 'ikigaiAjax', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'nonce'   => wp_create_nonce('ikg_ajax_nonce')
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'ikigai_cargar_recursos');

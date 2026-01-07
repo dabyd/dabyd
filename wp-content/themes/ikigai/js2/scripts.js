@@ -125,26 +125,67 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ============================================
-// FORMULARIO DE CONTACTO (si existe)
+// FORMULARIO DE CONTACTO - AJAX SUBMIT
 // ============================================
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Aquí puedes añadir la lógica para enviar el formulario
-        // Por ejemplo, usando fetch para enviar a un endpoint
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const messagesDiv = document.getElementById('form-messages');
+        const originalBtnText = submitBtn.innerHTML;
         
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+        // Deshabilitar botón y mostrar loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span> Enviando...';
+        if (messagesDiv) {
+            messagesDiv.innerHTML = '';
+            messagesDiv.className = 'form-messages';
+        }
         
-        console.log('Datos del formulario:', data);
-        
-        // Mostrar mensaje de éxito
-        showMessage('¡Mensaje enviado! Te contactaré pronto.', 'success');
-        
-        // Resetear formulario
-        contactForm.reset();
+        try {
+            const formData = new FormData(contactForm);
+            formData.append('action', 'ikg_submit_form');
+            
+            // Verificar que ikigaiAjax existe
+            if (typeof ikigaiAjax === 'undefined') {
+                throw new Error('Error de configuración. Recarga la página.');
+            }
+            
+            const response = await fetch(ikigaiAjax.ajaxurl, {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                if (messagesDiv) {
+                    messagesDiv.innerHTML = result.data.message;
+                    messagesDiv.classList.add('success');
+                }
+                showMessage(result.data.message, 'success');
+                contactForm.reset();
+            } else {
+                if (messagesDiv) {
+                    messagesDiv.innerHTML = result.data.message;
+                    messagesDiv.classList.add('error');
+                }
+                showMessage(result.data.message, 'error');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            const errorMsg = error.message || 'Error de conexión. Inténtalo de nuevo.';
+            if (messagesDiv) {
+                messagesDiv.innerHTML = errorMsg;
+                messagesDiv.classList.add('error');
+            }
+            showMessage(errorMsg, 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
     });
 }
 

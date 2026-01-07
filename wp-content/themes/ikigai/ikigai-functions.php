@@ -5,6 +5,8 @@ require_once get_template_directory() . '/ikigai-videos.php';
 require_once get_template_directory() . '/ikigai-floating-window.php';
 require_once get_template_directory() . '/ikigai-error-handler.php';
 require_once get_template_directory() . '/ikigai-debug-handler.php';
+require_once get_template_directory() . '/ikigai-form-handler.php';
+require_once get_template_directory() . '/ikigai-form-admin.php';
 
 // Inicializar el error handler
 add_action('init', 'ikigai_init_error_handler');

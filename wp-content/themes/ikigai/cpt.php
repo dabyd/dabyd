@@ -149,3 +149,40 @@ function ikigai_register_cpt_formularios() {
     register_post_type( 'formularios', $args );
 }
 add_action( 'init', 'ikigai_register_cpt_formularios', 0 );
+
+// 5. Registrar el Custom Post Type "Submissions de Formulario" (interno)
+function ikigai_register_cpt_submissions() {
+    $labels = array(
+        'name'                  => 'Formularios enviados',
+        'singular_name'         => 'Formulario enviado',
+        'menu_name'             => 'Formularios enviados',
+        'add_new'               => 'Añadir Nueva',
+        'add_new_item'          => 'Añadir Nueva Formulario enviado',
+        'edit_item'             => 'Ver Formulario enviado',
+        'view_item'             => 'Ver Formulario enviado',
+        'search_items'          => 'Buscar Formularios enviados',
+        'not_found'             => 'No se encontraron formularios enviados',
+        'not_found_in_trash'    => 'No hay formularios enviados en la papelera',
+    );
+
+    $args = array(
+        'label'                 => 'Submission',
+        'labels'                => $labels,
+        'supports'              => array( 'title' ),
+        'hierarchical'          => false,
+        'public'                => false,           // No público
+        'show_ui'               => true,            // Visible en admin para debug
+        'show_in_menu'          => false,           // NO en menú principal (lo mostramos como submenú de formularios)
+        'menu_position'         => null,
+        'menu_icon'             => 'dashicons-email-alt',
+        'show_in_nav_menus'     => false,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => false,
+        'capability_type'       => 'post',
+        'show_in_rest'          => false,
+    );
+
+    register_post_type( 'ikg_submission', $args );
+}
+add_action( 'init', 'ikigai_register_cpt_submissions', 0 );
