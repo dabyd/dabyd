@@ -1,6 +1,12 @@
-<?php // ikg_show_all_metas(); ?>
+<?php 
+// ikg_show_all_metas(); 
+    $center = '';
+    if ( 1 == ikg_get_acf_value('centrar_texte') ) {
+        $center = 'text-center';
+    }
+?>
     <!-- Proceso Section -->
-    <section class="process-sectio <?php ikg_get_variant(); ?>">
+    <section class="process-section <?php ikg_get_variant(); ?> <?php echo $center; ?>">
         <div class="container">
             <span class="section-label"><?php ikg_value('titol_petit'); ?></span>
             <h2 class="section-title"><?php ikg_value('titol_gran'); ?></h2>

@@ -2,7 +2,7 @@
    FAQ SECTION (SISTEMA COMPLETO: CLARO Y DARK)
    ============================================ */
 .faq {
-    padding: var(--space-xxl) 0 var(--space-xl);
+    padding: var(--module-padding-xxl) 0 var(--module-padding-xl);
     background: linear-gradient(135deg, var(--color-bg-cream) 0%, var(--color-bg-light) 100%);
 }
 
@@ -95,7 +95,6 @@
     padding: 0 2rem 1.5rem 2rem;
     color: var(--text-muted);
     line-height: var(--lh-base);
-    font-size: var(--fz-base);
 }
 
 .faq-item.active .faq-answer {
@@ -198,7 +197,6 @@
 @media (max-width: 640px) {
     .faq-question {
         padding: 1.25rem 1.5rem;
-        font-size: var(--fz-base);
     }
     
     .faq-answer-content {

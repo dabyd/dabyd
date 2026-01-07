@@ -1,0 +1,120 @@
+[2026-01-07 07:04:39] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 101
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(101): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:04:39] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 101
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:05:51] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 100
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(100): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:05:51] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 100
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:24:12] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 100
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(100): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:24:12] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 100
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:25:08] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 103
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(103): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:25:08] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 103
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:25:48] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 104
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(104): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:25:48] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 104
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:26:30] WARNING: Undefined variable $ikg_get_acf_value in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 102
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php(102): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-07 07:26:30] EXCEPTION: Value of type null is not callable in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/formulari/modul.php on line 102
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(409): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(394): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+

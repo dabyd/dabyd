@@ -3,7 +3,7 @@
    ============================================ */
 
 .philosophy {
-    padding: var(--space-xxl) 0;
+    padding: var(--module-padding-xxl) 0;
     /* Mantiene el fondo base del tema elegido */
     background-color: var(--color-bg-cream);
 }
@@ -61,7 +61,6 @@
     /* Texto legible sobre fondos oscuros */
     color: var(--text-muted);
     line-height: var(--lh-base);
-    font-size: var(--fz-base);
 }
 
 /* ============================================
@@ -69,7 +68,7 @@
    ============================================ */
 @media (max-width: 768px) {
     .philosophy {
-        padding: var(--space-xl) 0;
+        padding: var(--module-padding-xl) 0;
     }
     
     .philosophy-grid {

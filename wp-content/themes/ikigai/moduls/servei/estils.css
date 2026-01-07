@@ -1,123 +1,187 @@
 /* ============================================
-   SERVEI
+   SERVEI (SISTEMA ADAPTATIVO & FIX CONTRASTE + STICKY IMAGE)
    ============================================ */
 
 .service-section {
-	padding: var(--spacing-xxl) 0;
-	scroll-margin-top: 100px;
+    /* Uso de los tokens de padding dinámicos */
+    padding: var(--module-padding-xxl) 0;
+    scroll-margin-top: 100px;
+    background-color: var(--color-bg-cream);
+    color: var(--text-main);
+    position: relative; /* Necesario para el contexto sticky */
 }
 
+/* Alternancia de fondo usando los tokens del tema */
 .service-section:nth-child(even) {
-	background-color: var(--bg-cream);
+    background-color: var(--color-bg-light);
 }
 
 .service-content {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: var(--spacing-xl);
-	align-items: start;
-	margin-top: var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    margin-top: var(--space-lg);
+}
+
+.service-sticky {
+    /* STICKY EFFECT */
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-md)); /* Se fija debajo del header con un margen */
+    align-self: start; /* Importante para que sticky funcione correctamente */
 }
 
 .service-image {
-	width: 100%;
-	border-radius: var(--border-radius);
-	overflow: hidden;
-	box-shadow: var(--box-shadow);
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-bg-light);
 }
 
-.service-image-placeholder {
-	width: 100%;
-	aspect-ratio: 4/3;
-	background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 3rem;
+/* Ajuste para usuarios logueados en WordPress */
+.logged-in .service-image {
+    top: calc(var(--header-height) + var(--wp-admin-bar-desktop) + var(--space-md));
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Fix para que la imagen dentro del placeholder ocupe todo el espacio */
+.service-image-placeholder .service-picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .service-details h3 {
-	color: var(--primary-color);
-	margin-top: var(--spacing-lg);
-	margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+    font-family: var(--font-family-heading);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .service-details ul {
-	list-style: none;
-	margin: var(--spacing-md) 0;
+    list-style: none;
+    margin: var(--space-md) 0;
 }
 
 .service-details ul li {
-	padding: var(--spacing-sm);
-	margin-bottom: var(--spacing-sm);
-	background-color: var(--bg-light);
-	border-radius: var(--border-radius);
-	padding-left: 2.5rem;
-	position: relative;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    /* Usamos primary-glare para que en temas oscuros resalte sobre el fondo negro */
+    background-color: var(--color-primary-glare); 
+    border-radius: var(--radius-lg);
+    padding-left: calc(var(--space-md) + var(--space-sm));
+    position: relative;
+    color: var(--text-muted);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
 }
 
 .service-details ul li::before {
-	content: '✓';
-	position: absolute;
-	left: 1rem;
-	color: var(--primary-color);
-	font-weight: bold;
-	font-size: 1.2rem;
+    content: '✓';
+    position: absolute;
+    left: var(--space-sm);
+    color: var(--color-primary);
+    font-weight: var(--fw-bold);
+    font-size: var(--fz-md);
 }
 
+/* --- GRID DE BENEFICIOS --- */
 .benefits-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: var(--spacing-md);
-	margin: var(--spacing-lg) 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
 }
 
 .benefit-card {
-	background-color: var(--bg-white);
-	padding: var(--spacing-md);
-	border-radius: var(--border-radius);
-	border-left: 3px solid var(--primary-color);
+    background-color: var(--color-primary-glare);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary);
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--text-muted);
 }
 
+.benefit-card b,
 .benefit-card strong {
-	color: var(--primary-color);
-	display: block;
-	margin-bottom: var(--spacing-xs);
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: var(--fw-bold);
 }
 
+/* --- CAJA DE PRECIOS (PRICING BOX) --- */
 .pricing-box {
-	background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-	color: white;
-	padding: var(--spacing-lg);
-	border-radius: var(--border-radius);
-	margin-top: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .pricing-box h4 {
-	color: white;
-	margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-family-heading);
 }
 
 .pricing-box p {
-	color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .pricing-box .price {
-	font-size: 2.5rem;
-	font-weight: 700;
-	color: white;
-	margin: var(--spacing-md) 0;
+    font-size: var(--fz-xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    margin: var(--space-md) 0;
+    line-height: var(--lh-none);
+    text-align: center;
 }
 
+/* Ajuste específico para el botón dentro del pricing box en modo negro */
 .pricing-box .btn {
-	background-color: white;
-	color: var(--primary-color);
-	width: 100%;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    width: 85%;
+    font-weight: var(--fw-bold);
+    border: none;
 }
 
+.pricing-box .btn:hover {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary-light);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 968px) {
-	.service-content {
-		grid-template-columns: 1fr;
-	}
+    .service-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .service-image {
+        order: -1; /* Imagen arriba en móvil */
+        position: relative; /* Desactivar sticky en móvil */
+        top: auto;
+    }
+}
+
+/* Ajuste específico para Admin Bar Móvil */
+@media screen and (max-width: 782px) {
+    .logged-in .service-image {
+        top: calc(var(--header-height) + var(--wp-admin-bar-mobile) + var(--space-md));
+    }
 }

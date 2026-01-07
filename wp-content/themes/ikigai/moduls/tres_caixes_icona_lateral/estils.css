@@ -2,30 +2,30 @@
  * Tres Caixes icona lateral
  */
 .certifications {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--module-padding-lg) 0;
     background-color: var(--bg-white);
 }
 
 .cert-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
 }
 
 .cert-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    background-color: var(--bg-light);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
 }
 
 .cert-item:hover {
     transform: translateX(10px);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--shadow-md);
 }
 
 .cert-icon {

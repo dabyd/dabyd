@@ -87,20 +87,17 @@
     --space-btn-xl-x: 3.5rem;  --space-btn-xl-y: 1.5rem;
 }
 
-/* ============================================
-   RESETS Y COMPENSACIÓN DE HEADER
-   ============================================ */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
 body {
     font-family: var(--font-family-base);
+    font-size: var(--fz-md);
     background-color: var(--color-bg-cream);
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
+    word-break: normal;     /* Evita romper la palabra en cualquier punto */
+    overflow-wrap: normal; /* Opción estándar moderna para evitar saltos */
+    hyphens: none;         /* Desactiva los guiones automáticos de WordPress/Navegador */
+    white-space: normal;
 }
 
 /* LÓGICA DE EMPUJE DE HEADER: 
@@ -131,7 +128,6 @@ h2 { font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl)); margin-bottom: var(--spa
 h3 { font-size: clamp(var(--fz-md), 4vw, var(--fz-lg)); margin-bottom: var(--space-sm); line-height: var(--lh-heading); }
 
 p {
-    font-size: var(--fz-base);
     line-height: var(--lh-base);
     margin-bottom: var(--space-sm);
     color: var(--text-muted);
@@ -164,7 +160,6 @@ strong { font-weight: var(--fw-bold); }
     padding: var(--space-btn-md-y) var(--space-btn-md-x);
     border-radius: var(--radius-full);
     font-weight: var(--fw-normal);
-    font-size: var(--fz-base);
     line-height: var(--lh-none);
     text-align: center;
     cursor: pointer;

@@ -1,6 +1,16 @@
     <?php 
 		// ikg_show_all_metas(); 
-		$tarjetes = ikg_get_acf_value('tarjetes');
+		$form_id   = ikg_get_acf_value('formulario');
+		$formulari = get_post($form_id );
+		// ikg_show_all_metas($form_id);
+		$tarjetes  = ikg_get_acf_value('tarjetas' , false, false, $form_id );
+		$camps  = ikg_get_acf_value('campos_del_formulario' , false, false, $form_id );
+		$texto_boton = ikg_get_acf_value('icono_del_boton', false, false, $form_id );
+		$texto_boton .= ' ' . ikg_get_acf_value('titulo_del_boton', false, false, $form_id );
+		$texto_boton = trim($texto_boton);
+		if ( '' == $texto_boton ) {
+			$texto_boton = 'Enviar solicitud';
+		}
 	?>
 
     <!-- Contact Content -->
@@ -11,39 +21,46 @@
                 <div class="contact-info">
 					<?php
 						for( $n=0; $n < $tarjetes; $n++ ) :
-							ikg_setbase( 'tarjetes_' . $n . '_' );
+							ikg_setbase( 'tarjetas_' . $n . '_' );
 					?>
 						<div class="info-card">
 							<h2>
-								<span class="info-icon"><?php ikg_value('icona'); ?></span>
-								<?php ikg_value('titol'); ?>
+								<span class="info-icon"><?php ikg_value('icono', $form_id ); ?></span>
+								<?php ikg_value('titulo', $form_id ); ?>
 							</h2>
 							<?php
-								$elements = ikg_get_acf_value('elements' );
+								$elements = ikg_get_acf_value('elementos', false, false, $form_id );
 								for ($i = 0; $i < $elements; $i++):
-									ikg_setbase( 'tarjetes_' . $n . '_elements_' . $i . '_' );
-									switch ( ikg_get_acf_value('tipus')) {
+									ikg_setbase( 'tarjetas_' . $n . '_elementos_' . $i . '_' );
+									switch ( ikg_get_acf_value('tipo', false, false, $form_id ) ) {
 										case '0':
 											// Texte
-											ikg_value('texte');
+											ikg_value('texto', $form_id );
 											break;
 
 										case '1':
 											// Mail
 											echo '<p><a href="mailto:';
-											ikg_value('e-mail');
+											ikg_value('e-mail', $form_id );
 											echo '">';
-											ikg_value('e-mail');
+											ikg_value('e-mail', $form_id );
 											echo '</a></p>';
 											break;
 
 										case '2':
 											// Teléfon
 											echo '<p><a href="https://wa.me/';
-											ikg_value('telefon');
+											ikg_value('telefono', $form_id );
 											echo '?text=Me%20gustar%C3%ADa%20reservar%20una%20cita" target="_blank">';
-											ikg_value('telefon');
+											echo ikg_format_phone_number( ikg_get_acf_value('telefono', false, false, $form_id ) );
 											echo '</a></p>';
+											break;
+
+										case '3':
+											// Ubicación
+											echo '<p>';
+											ikg_value('ubicacion', $form_id );
+											echo '</p>';
 											break;
 
 										default:
@@ -58,66 +75,97 @@
 
                 <!-- Contact Form -->
                 <div class="form-container">
-                    <h2>Agenda tu sesión y empieza a sentir el cambio</h2>
-					<p>Cada persona tiene un camino único hacia el bienestar. Si sientes que tu cuerpo, tus emociones o tu energía necesitan equilibrio, estoy aquí para acompañarte.</p>
-					<p>Completa el formulario y cuéntame brevemente qué te gustaría trabajar o mejorar. Juntos encontraremos la terapia o combinación de técnicas que mejor se adapte a ti.</p>
-					<p>Da el primer paso hacia una vida más consciente, equilibrada y plena.</p>
                     <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre completo *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
+						<?php
+							for( $n=0; $n < $camps; $n++ ) :
+								ikg_setbase( 'campos_del_formulario_' . $n . '_' );
+								$req = ikg_get_acf_value('obligatorio', false, false, $form_id );
+								$tipo = ikg_get_acf_value('tipo_de_campo', false, false, $form_id);
+								$label = ikg_get_acf_value('etiqueta_del_campo', false, false, $form_id);
+								$placeholder = ikg_get_acf_value('placeholder', false, false, $form_id);
+								$instrucciones = ikg_get_acf_value('instrucciones', false, false, $form_id);
+								$opcion_defecto = ikg_get_acf_value('opcion_por_defecto', false, false, $form_id);
+								if ( '' != $placeholder ) {
+									$placeholder = ' placeholder="' . $placeholder . '"';
+								}
+								if ( '' != $instrucciones ) {
+									$instrucciones = '<small>' . $instrucciones . '</small>';
+								}
+								$id = sanitize_title( $label );
+								switch ( $tipo ) {
+									case '0':
+										// Cabecera (h2)
+										echo '<h2>';
+										ikg_value('cabecera', $form_id);
+										echo '</h2>';
+										break;
 
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
+									case '1':
+										// Texto informativo (wysiwyg - sólo mostrar texto)
+										ikg_value('texto_informativo', $form_id);
+										break;
 
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" name="phone">
-                            <small>Opcional, pero ayuda para coordinar mejor la cita</small>
-                        </div>
+									case '2':
+										// Campo de Texto
+										ikg_put_input_with_label('text', $id, $label, $req, $placeholder, $instrucciones);
+										break;
 
-                        <div class="form-group">
-                            <label for="service">¿De qué forma sientes que puedo acompañarte hoy? *</label>
-                            <select id="service" name="service" required>
-								<option value="">Selecciona una opción...</option>
-								<option value="astrologia">Quiero conocerme mejor y entender mis ciclos (Astrología)</option>
-								<option value="integral">Busco recuperar mi equilibrio y bienestar integral (Pack Integral)</option>
-								<option value="coaching">Tengo un objetivo claro y necesito enfoque para lograrlo (Coaching)</option>
-                            </select>
-                        </div>
+									case '3':
+										// Campo de E-mail
+										ikg_put_input_with_label('email', $id, $label, $req, $placeholder, $instrucciones);
+										break;
 
-                        <div class="form-group">
-							<label for="agenda">Preferencia de agenda (Sesiones de 2h aprox.)</label>
-                            <select id="agenda" name="agenda" required>
-								<option value="">¿Cuándo te vendría mejor?</option>
-								<option value="manana">Mañanas (09:00 a 13:00)</option>
-								<option value="tarde">Tardes (15:00 a 19:00)</option>
-								<option value="indiferente">Me adapto a tu primer hueco libre</option>
-							</select>
-                        </div>
+									case '4':
+										// Campo de Teléfono
+										ikg_put_input_with_label('tel', $id, $label, $req, $placeholder, $instrucciones);
+										break;
 
-                        <div class="form-group">
-                            <label for="message">Cuéntame brevemente qué te trae por aquí... *</label>
-                            <textarea id="message" name="message" required placeholder="Describe brevemente tu situación, síntomas o lo que te gustaría trabajar..."></textarea>
-                            <small>Esta información me ayudará a preparar mejor tu consulta</small>
-                        </div>
+									case '5':
+										// Campo de Selector
+										echo '<div class="form-group">';
+										echo '<label for="' . $id . '">' . $label . ($req ? ' *' : '') . '</label>';
+										echo '<select id="' . $id . '" name="' . $id . '" ' . ($req ? 'required' : '') . $placeholder .'>';
+										if ( '' != $opcion_defecto ) {
+											ikg_put_option($opcion_defecto);
+										}
+										$opciones = explode( PHP_EOL, ikg_get_acf_value('opciones', false, false, $form_id ) );
+										foreach ( $opciones as $opcion ) {
+											ikg_put_option($opcion);
+										}
+										echo '</select>';
+										echo $instrucciones;
+										echo '</div>';
+										break;
+
+									case '6':
+										// Campo oculto
+										ikg_put_input_with_label('hidden', $id, $label, $req, $placeholder, $instrucciones);
+										break;
+
+									case '7':
+										// Campo de Textarea
+										ikg_put_input_with_label('textarea', $id, $label, $req, $placeholder, $instrucciones);
+										break;
+
+								}
+							endfor;
+							ikg_reset();
+						?>
 
                         <div class="form-checkbox">
                             <input type="checkbox" id="privacy" name="privacy" required>
                             <label for="privacy">
-                                Acepto la política de privacidad y el tratamiento de mis datos 
-                                personales para que David Herrero pueda contactarme.
+								<?php echo ikg_get_acf_value('frase_de_politica_de_privacidad_del_formulario', true ); ?>
                             </label>
                         </div>
 
-                        <button type="submit" class="btn-submit">Enviar solicitud</button>
+                        <button type="submit" class="btn-submit"><?php echo $texto_boton; ?></button>
 
-                        <p style="text-align: center; margin-top: var(--spacing-md); font-size: 0.9rem; color: var(--text-light);">
-                            Mis servicios no sustituyen en ningún caso el consejo, diagnóstico o tratamiento médico o psicológico profesional. Al enviar este formulario, aceptas que este es un proceso de desarrollo personal y bienestar.
-                        </p>
+						<?php if ( '' != ikg_get_acf_value('texto_del_final_del_formulario', false, false, $form_id ) ) : ?>
+							<p class="form-under-button">
+								<?php echo ikg_get_acf_value('texto_del_final_del_formulario', false, false, $form_id ); ?>
+							</p>
+						<?php endif; ?>
                     </form>
                 </div>
             </div>

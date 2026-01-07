@@ -2,7 +2,7 @@
    CONDITIONS SECTION
    ============================================ */
 .conditions {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--module-padding-xxl) 0;
     background: linear-gradient(135deg, var(--bg-green-light) 0%, var(--bg-light) 100%);
 }
 

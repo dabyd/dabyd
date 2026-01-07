@@ -1,5 +1,5 @@
 /* ============================================
-   HEADER Y NAVEGACIÓN (VERSIÓN FINAL SIN HUECOS)
+   HEADER Y NAVEGACIÓN (VERSIÓN FINAL CON SUBMENÚS)
    ============================================ */
 
 .header {
@@ -56,19 +56,42 @@
     align-items: center;
 }
 
+.nav-item {
+    position: relative;
+}
+
+/* Elementos con submenú */
+.nav-item.has-submenu {
+    position: relative;
+}
+
 .nav-link {
     color: var(--text-main);
     font-weight: var(--fw-semibold);
-    font-size: var(--fz-base);
     line-height: var(--lh-none);
     position: relative;
     transition: var(--transition-fast);
     cursor: pointer;
     padding: var(--space-xs) 0;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.nav-link::after {
+/* Flecha para indicar submenú */
+.nav-link.has-children::after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item.has-submenu.active .nav-link.has-children::after {
+    transform: rotate(180deg);
+}
+
+.nav-link::before {
     content: ''; 
     position: absolute; 
     bottom: -5px; 
@@ -79,9 +102,81 @@
     transition: var(--transition-normal);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after { 
+.nav-link:hover::before,
+.nav-link.active::before { 
     width: 100%; 
+}
+
+/* Anular el ::before en elementos con hijos para que no interfiera */
+.nav-link.has-children::before {
+    display: none;
+}
+
+/* --- SUBMENÚ DESKTOP --- */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-header-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+    min-width: 220px;
+    list-style: none;
+    padding: var(--space-sm) 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: var(--space-sm);
+}
+
+.nav-item.has-submenu:hover .sub-menu,
+.nav-item.has-submenu.active .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sub-menu-item {
+    padding: 0;
+}
+
+.sub-menu-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: var(--fw-medium);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.sub-menu-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+}
+
+.sub-menu-link:hover {
+    background-color: var(--color-bg-light);
+    padding-left: calc(var(--space-md) + 5px);
+}
+
+.sub-menu-link:hover::before {
+    transform: scaleY(1);
+}
+
+.sub-menu-link.active {
+    color: var(--color-primary);
+    font-weight: var(--fw-semibold);
 }
 
 /* --- BOTÓN CTA --- */
@@ -100,6 +195,7 @@
     text-decoration: none;
 }
 
+.nav-cta::before,
 .nav-cta::after { 
     display: none !important; 
 }
@@ -111,7 +207,7 @@
 }
 
 /* ============================================
-   RESPONSIVE MÓVIL (SISTEMA ANTI-HUECO)
+   RESPONSIVE MÓVIL (CON SUBMENÚS)
    ============================================ */
 
 @media (max-width: 968px) {
@@ -168,6 +264,52 @@
         flex-direction: column; 
         width: 100%; 
         gap: var(--space-md); 
+        align-items: stretch;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Flecha en móvil */
+    .nav-link.has-children::after {
+        content: '▼';
+        font-size: 12px;
+        margin-left: auto;
+    }
+
+    /* SUBMENÚ MÓVIL - Siempre visible y con indentación */
+    .sub-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 0;
+        margin-top: var(--space-xs);
+        margin-left: var(--space-md);
+        border-left: 2px solid var(--color-primary-light);
+        min-width: auto;
+        width: calc(100% - var(--space-md));
+    }
+
+    .sub-menu-link {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .sub-menu-link::before {
+        display: none;
+    }
+
+    .sub-menu-link:hover {
+        background-color: var(--color-primary-glare);
+        padding-left: var(--space-md);
     }
     
     .nav-menu .nav-cta {

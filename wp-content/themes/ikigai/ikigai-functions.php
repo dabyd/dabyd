@@ -101,10 +101,234 @@ function ikg_get_video( $datos ) {
 
 function ikg_get_option( $id ) {
     $tmp = get_option( 'options_' . $id );
-    if ( is_array( $tmp ) ) {
-        $tmp = $tmp[0];
-    }
+//    if ( is_array( $tmp ) ) {
+//        $tmp = $tmp[0];
+//    }
     return $tmp;
+}
+
+/**
+ * Genera el enlace social con SVG basado en el tipo y la configuración
+ * * @param string $type facebook|instagram|substack|whatsapp|telegram|mail
+ * @return string HTML del enlace o cadena vacía si no hay datos
+ */
+function ikg_render_social_link($type) {
+    // Obtenemos la opción mediante tu función
+    $option = ikg_get_option($type);
+
+    // Si no hay nada, no pintamos nada
+    if (empty($option)) {
+        echo '';
+        return;
+    }
+
+    $url = '';
+    $aria_label = ucfirst($type);
+    $target = '_blank';
+    $rel = 'noopener noreferrer';
+    $default_text = rawurlencode("Quiero más información sobre ");
+
+    // 1. Procesamos la URL según si es Array o String
+    if (is_array($option)) {
+        $url = $option['url'] ?? '';
+        $target = $option['target'] ?? '_blank';
+        $aria_label = $option['title'] ?? $aria_label;
+    } else {
+        // Es un string (teléfono, usuario o mail)
+        $clean_val = trim($option);
+        $target = '_blank'; // Por defecto lo abro en otra ventana
+        
+        switch ($type) {
+            case 'whatsapp':
+                // Limpiamos espacios o símbolos del teléfono
+                $phone = preg_replace('/[^0-9]/', '', $clean_val);
+                $url = "https://wa.me/{$phone}?text={$default_text}";
+                break;
+            case 'telegram':
+                // Quitamos la @ si el usuario la incluyó
+                $user = ltrim($clean_val, '@');
+                $url = "https://t.me/{$user}"; 
+                // Nota: Telegram no soporta texto predefinido vía URL de forma estándar como WA
+                break;
+            case 'mail':
+                $url = "mailto:{$clean_val}?subject={$default_text}";
+                $target = '_self'; // El mail no suele abrirse en blank
+                break;
+            case 'facebook':
+                $url = "https://facebook.com/{$clean_val}";
+                break;
+            case 'instagram':
+                $user = ltrim($clean_val, '@');
+                $url = "https://instagram.com/{$user}";
+                break;
+            case 'substack':
+                $user = ltrim($clean_val, '@');
+                $url = "https://substack.com/@{$user}";
+                break;
+        }
+    }
+
+    if (empty($url)) return '';
+
+    // 2. Definición de los SVGs
+    $svgs = [
+        'facebook'  => '<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>',
+        'instagram' => '<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>',
+        'substack'  => '<path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>',
+        'whatsapp'  => '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>',
+        'telegram'  => '<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>',
+        'mail'      => '<path d="M0 3v18h24V3H0zm6.623 7.929L2.26 6.405A1.01 1.01 0 0 1 2.25 5h19.5c.004 0 .007.001.011.001L17.377 10.93c-1.33 1.163-3.414 1.171-4.755.013l-1.015-.877-1.015.877c-1.34 1.157-3.426 1.15-4.754-.014zM2 19V8.528l5.964 5.253a5.412 5.412 0 0 0 3.447 1.22c1.272 0 2.503-.437 3.465-1.23L22 8.528V19H2z"/>'
+    ];
+
+    $path = $svgs[$type] ?? '';
+
+    // 3. Montamos el HTML final
+    echo sprintf(
+        '<a href="%s" target="%s" rel="%s" aria-label="%s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                %s
+            </svg>
+        </a>',
+        esc_url($url),
+        esc_attr($target),
+        esc_attr($rel),
+        esc_attr($aria_label),
+        $path
+    );
+    return;
+}
+
+/**
+ * Formatea un número de teléfono según su código de país
+ * 
+ * @param string $phone Número de teléfono (puede incluir +, espacios, guiones, etc.)
+ * @return string Número formateado o el original si no se reconoce el formato
+ */
+function ikg_format_phone_number( $phone ) {
+    // Limpiar el número: eliminar espacios, guiones, paréntesis, puntos
+    $clean = preg_replace('/[^0-9+]/', '', $phone);
+    
+    // Si está vacío, devolver cadena vacía
+    if ( empty($clean) ) {
+        return '';
+    }
+    
+    // Detectar y formatear según el código de país
+    
+    // España (+34) - 9 dígitos
+    if ( preg_match('/^\+?34(\d{9})$/', $clean, $matches) ) {
+        return '+34 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // España sin prefijo - asumir que es +34
+    if ( preg_match('/^(\d{9})$/', $clean, $matches) ) {
+        return '+34 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // Estados Unidos / Canadá (+1) - 10 dígitos
+    if ( preg_match('/^\+?1(\d{10})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+1 (' . substr($num, 0, 3) . ') ' . substr($num, 3, 3) . '-' . substr($num, 6);
+    }
+    
+    // Reino Unido (+44) - 10 dígitos
+    if ( preg_match('/^\+?44(\d{10})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+44 ' . substr($num, 0, 4) . ' ' . substr($num, 4, 3) . ' ' . substr($num, 7);
+    }
+    
+    // Francia (+33) - 9 dígitos
+    if ( preg_match('/^\+?33(\d{9})$/', $clean, $matches) ) {
+        return '+33 ' . chunk_split($matches[1], 2, ' ');
+    }
+    
+    // Alemania (+49) - Variable, pero común 10-11 dígitos
+    if ( preg_match('/^\+?49(\d{10,11})$/', $clean, $matches) ) {
+        return '+49 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // Italia (+39) - 10 dígitos
+    if ( preg_match('/^\+?39(\d{10})$/', $clean, $matches) ) {
+        return '+39 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // México (+52) - 10 dígitos
+    if ( preg_match('/^\+?52(\d{10})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+52 ' . substr($num, 0, 3) . ' ' . substr($num, 3, 3) . ' ' . substr($num, 6);
+    }
+    
+    // Argentina (+54) - 10 dígitos
+    if ( preg_match('/^\+?54(\d{10})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+54 9 ' . substr($num, 0, 3) . ' ' . substr($num, 3, 4) . '-' . substr($num, 7);
+    }
+    
+    // Colombia (+57) - 10 dígitos
+    if ( preg_match('/^\+?57(\d{10})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+57 ' . substr($num, 0, 3) . ' ' . substr($num, 3, 3) . ' ' . substr($num, 6);
+    }
+    
+    // Chile (+56) - 9 dígitos
+    if ( preg_match('/^\+?56(\d{9})$/', $clean, $matches) ) {
+        return '+56 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // Perú (+51) - 9 dígitos
+    if ( preg_match('/^\+?51(\d{9})$/', $clean, $matches) ) {
+        return '+51 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // Brasil (+55) - 11 dígitos
+    if ( preg_match('/^\+?55(\d{11})$/', $clean, $matches) ) {
+        $num = $matches[1];
+        return '+55 (' . substr($num, 0, 2) . ') ' . substr($num, 2, 5) . '-' . substr($num, 7);
+    }
+    
+    // Portugal (+351) - 9 dígitos
+    if ( preg_match('/^\+?351(\d{9})$/', $clean, $matches) ) {
+        return '+351 ' . chunk_split($matches[1], 3, ' ');
+    }
+    
+    // Formato genérico para otros países
+    // Si tiene +XX al inicio, formatear con espacios cada 3 dígitos
+    if ( preg_match('/^\+(\d{1,3})(\d+)$/', $clean, $matches) ) {
+        return '+' . $matches[1] . ' ' . chunk_split($matches[2], 3, ' ');
+    }
+    
+    // Si no coincide con ningún patrón, devolver el número limpio con +
+    if ( strpos($clean, '+') === 0 ) {
+        return $clean;
+    }
+    
+    // Si no tiene +, asumir España (+34) por defecto
+    return '+34 ' . chunk_split($clean, 3, ' ');
+}
+
+function ikg_put_input_with_label( $type, $id, $label, $req, $placeholder, $instrucciones ) {
+    echo '<div class="form-group">';
+    if ( '' != $label ) {
+        echo '<label for="' . $id . '">' . $label . ($req ? ' *' : '') . '</label>';
+    }
+    if ( 'textarea' == $type ) {
+        echo '<textarea id="' . $id . '" name="' . $id . '" ' . ($req ? 'required' : '') . $placeholder .'></textarea>';
+    } else {
+        echo '<input type="' . $type . '" id="' . $id . '" name="' . $id . '" ' . ($req ? 'required' : '') . $placeholder .'>';
+    }
+    echo $instrucciones;
+    echo '</div>';
+}
+
+function ikg_put_option($opt) {
+    $opt = explode(' : ', $opt);
+    $value = $opt[0];
+    $label = $opt[0];
+    if (2 == count($opt)) {
+        $value = $opt[0];
+        $label = $opt[1];
+    }
+    echo '<option value="' . $value . ' ">' . $label . '</option>';
 }
 
 function ikg_get_acf_modules( $post_id = 0 ) {
@@ -287,19 +511,21 @@ function ikg_is_html($string){
     return ($string != strip_tags($string));
 }
 
-function ikg_show_all_metas() {
+function ikg_show_all_metas( $id = null, $is_modul = true ) {
     global $__ikg_acf_module, $__ikg_modul_name, $__ikg_values;
 
     // Solo ejecutamos en entorno de desarrollo
     if ( isDevelopedEnvironment()) {
-        $post_id = get_the_ID();
+        $post_id = $id ? $id : get_the_ID();
         $tots = get_post_meta($post_id);
         $final = [];
         $key_prefix = 'moduls_' . $__ikg_acf_module . '_';
         
         foreach( $tots as $k => $value ) {
-            if ( str_starts_with( $k, $key_prefix ) ) {
+            if ( $is_modul && str_starts_with( $k, $key_prefix ) ) {
                 $final[ str_replace( $key_prefix, '', $k ) ] = $value;
+            } else {
+                $final[ $k ] = $value;
             }
         }
 

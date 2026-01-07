@@ -1,0 +1,342 @@
+[2026-01-05 11:34:28] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(18): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:34:28] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(19): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:34:28] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(20): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:35:24] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(18): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:35:24] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(19): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:35:24] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 105
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(105): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(117): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(20): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:36:15] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(120): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(18): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:36:15] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(120): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(19): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:36:15] WARNING: Undefined array key 0 in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php on line 108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(120): ikg_get_option()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(20): ikg_render_social_link()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:37:20] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:37:20] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:37:20] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:37:20] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:47] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:47] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:47] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:47] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:52] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:52] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:52] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:38:52] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:39:44] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:39:44] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:39:44] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:39:44] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:40:39] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:40:39] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:40:39] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:40:39] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:06] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:06] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:06] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:06] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:06] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php on line 9
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(9): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/template.php(814): require_once()
+  #3 /Users/dabyd/www/dabyd/html/wp-includes/template.php(749): load_template()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/general-template.php(92): locate_template()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:34] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:34] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/header/modul.php(27): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/header.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:34] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(29): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+
+[2026-01-05 11:42:34] WARNING: Array to string conversion in /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php on line 1108
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-includes/taxonomy.php(1108): IkigaiErrorHandler->handle_error()
+  #1 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(33): get_term_by()
+  #2 /Users/dabyd/www/dabyd/html/wp-includes/nav-menu.php(716): wp_get_nav_menu_object()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/footer/modul.php(5): wp_get_nav_menu_items()
+  #4 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/footer.php(2): require_once()
+--------------------------------------------------------------------------------
+

@@ -15,14 +15,15 @@
 ?>
     <!-- Terapias Manuales Section -->
     <section class="service-section <?php ikg_get_variant(); ?>" id="<?php echo get_post_field( 'post_name', $servei->ID ); ?>">
-        <div class="container">
-            <span class="section-label"><?php echo $texto; ?></span>
-            <h2 class="section-title"><?php echo $servei->post_title; ?></h2>
-            
+        <div class="container">            
             <div class="service-content">
 				<?php if ( 0 == ikg_get_acf_value('layout_invertit') ) : ?>
-					<div class="service-image">
-						<div class="service-image-placeholder"><?php ikg_get_image(['image_id'=>$img ]); ?></div>
+					<div class="service-sticky">
+						<span class="section-label"><?php echo $texto; ?></span>
+						<h2 class="section-title"><?php echo $servei->post_title; ?></h2>
+						<div class="service-image">
+							<div class="service-image-placeholder"><?php ikg_get_image(['image_id'=>$img]); ?></div>
+						</div>
 					</div>
 				<?php endif; ?>
                 
@@ -66,7 +67,7 @@
                         <h4>Inversión en tu bienestar</h4>
                         <p><?php echo $txt_inversion; ?></p>
                         <div class="price"><?php echo $precio; ?></div>
-                        <p style="font-size: 0.9rem; margin-bottom: var(--spacing-md);">
+                        <p class="section-subtitle">
                             Cada sesión se adapta a tus necesidades específicas
                         </p>
                         <a href="contacto.html" class="btn">Reserva tu sesión</a>
@@ -74,8 +75,12 @@
                 </div>
 
 				<?php if ( 1 == ikg_get_acf_value('layout_invertit') ) : ?>
-					<div class="service-image">
-						<div class="service-image-placeholder"><?php ikg_get_image(['image_id'=>$img]); ?></div>
+					<div class="service-sticky">
+						<span class="section-label"><?php echo $texto; ?></span>
+						<h2 class="section-title"><?php echo $servei->post_title; ?></h2>
+						<div class="service-image">
+							<div class="service-image-placeholder"><?php ikg_get_image(['image_id'=>$img]); ?></div>
+						</div>
 					</div>
 				<?php endif; ?>
 

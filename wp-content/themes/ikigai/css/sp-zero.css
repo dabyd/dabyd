@@ -1,8 +1,10 @@
 .sp-zero {
-    --space-xxl: 0px;
-    --space-xl: 0px;
-    --space-lg: 0px;
-    --space-md: 0px;
-    --space-sm: 0px;
-    --space-xs: 0px;
+    --module-padding-xxl: 0px;
+    --module-padding-xl: 0px;
+    --module-padding-lg: 0px;
+    --module-padding-md: 0px;
+    --module-padding-sm: 0px;
+    --module-padding-xs: 0px;
+    
+    --module-padding: 0px;
 }

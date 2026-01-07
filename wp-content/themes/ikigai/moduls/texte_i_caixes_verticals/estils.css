@@ -2,8 +2,8 @@
    APPROACH SECTION
    ============================================ */
 .approach {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--bg-cream);
+    padding: var(--module-padding-xxl) 0;
+    background-color: var(--color-bg-cream);
 }
 
 .approach-content {

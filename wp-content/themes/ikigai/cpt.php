@@ -49,7 +49,7 @@ function ikigai_register_taxonomia_servicios() {
         'search_items'      => 'Buscar Tipos',
         'all_items'         => 'Todos los Tipos',
         'parent_item'       => 'Tipo Padre',
-        'parent_item_colon' => 'Tipo Padre:',
+        'parent_item_colon' => 'Tipo Padre:', 
         'edit_item'         => 'Editar Tipo de Servicio',
         'update_item'       => 'Actualizar Tipo de Servicio',
         'add_new_item'      => 'Añadir Nuevo Tipo de Servicio',
@@ -110,3 +110,42 @@ function ikigai_register_cpt_testimonios() {
     register_post_type( 'testimonios', $args );
 }
 add_action( 'init', 'ikigai_register_cpt_testimonios', 0 );
+
+// 4. Registrar el Custom Post Type "Formularios"
+function ikigai_register_cpt_formularios() {
+
+    $labels = array(
+        'name'                  => 'Formularios',
+        'singular_name'         => 'Formulario',
+        'menu_name'             => 'Formularios',
+        'add_new'               => 'Añadir Nuevo',
+        'add_new_item'          => 'Añadir Nuevo Formulario',
+        'edit_item'             => 'Editar Formulario',
+        'new_item'              => 'Nuevo Formulario',
+        'view_item'             => 'Ver Formulario',
+        'search_items'          => 'Buscar Formularios',
+        'not_found'             => 'No se encontraron formularios',
+        'not_found_in_trash'    => 'No hay formularios en la papelera',
+    );
+
+    $args = array(
+        'label'                 => 'Formulario',
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor' ), // Título y contenido
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 7, // Justo debajo de Testimonios
+        'menu_icon'             => 'dashicons-feedback', // Icono de formulario
+        'show_in_nav_menus'     => false,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'post',
+        'show_in_rest'          => true, 
+    );
+
+    register_post_type( 'formularios', $args );
+}
+add_action( 'init', 'ikigai_register_cpt_formularios', 0 );

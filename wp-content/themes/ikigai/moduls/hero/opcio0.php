@@ -1,5 +1,5 @@
 	<?php 
-        //ikg_show_all_metas(); 
+        // ikg_show_all_metas(); 
         $clase = '';
         if ( ikg_get_acf_value('invertir') ) {
             $clase = 'is-reversed';
@@ -14,16 +14,7 @@
 					<?php ikg_value( 'texte' ); ?>
                 </p>
                 <div class="hero-buttons">
-					<?php
-                        $boto_1 = ikg_get_acf_value('boto_1');
-                        $boto_2 = ikg_get_acf_value('boto_2');
-                        if ( is_array( $boto_1 ) ) {
-                            ikg_put_link( 'boto_1', 'btn btn-primary' ); 
-                        }
-                        if ( is_array( $boto_2 ) ) {
-                            ikg_put_link( 'boto_2', 'btn btn-secondary' );
-                        }
-                    ?>
+                    <?php ikg_put_buttons(); ?>
                 </div>
             </div>
             <div class="hero-image">

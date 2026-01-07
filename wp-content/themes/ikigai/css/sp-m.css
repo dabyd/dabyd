@@ -1,16 +1,24 @@
 /* Este coincide con tus variables de base.css */
 .sp-m {
-    --space-xxl: 6rem;
-    --space-xl: 4rem;
-    --space-lg: 3rem;
-    --space-md: 2rem;
+    --module-padding-xxl: 6rem;
+    --module-padding-xl: 4rem;
+    --module-padding-lg: 3rem;
+    --module-padding-md: 2rem;
+    --module-padding-sm: 1rem;
+    --module-padding-xs: 0.5rem;
+    
+    --module-padding: var(--module-padding-xxl);
 }
 
 @media (max-width: 640px) {
     .sp-m {
-        --space-xxl: 3rem;
-        --space-xl: 2rem;
-        --space-lg: 1.5rem;
-        --space-md: 1rem;
+        --module-padding-xxl: 3rem;
+        --module-padding-xl: 2rem;
+        --module-padding-lg: 1.5rem;
+        --module-padding-md: 1rem;
+        --module-padding-sm: 0.5rem;
+        --module-padding-xs: 0.25rem;
+        
+        --module-padding: var(--module-padding-xxl);
     }
 }

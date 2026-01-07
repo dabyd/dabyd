@@ -3,7 +3,7 @@
    ============================================ */
 
 .pain-points {
-    padding: var(--space-xxl) 0;
+    padding: var(--module-padding-xxl) 0;
     /* Usa el fondo base del tema (Negro, Verde, Morado o Azul) */
     background-color: var(--color-bg-cream);
 }
@@ -60,7 +60,6 @@
 
 .pain-card p {
     color: var(--text-muted);
-    font-size: var(--fz-base);
     line-height: var(--lh-base);
 }
 
@@ -83,7 +82,7 @@
    ============================================ */
 @media (max-width: 768px) {
     .pain-points {
-        padding: var(--space-xl) 0;
+        padding: var(--module-padding-xl) 0;
     }
     
     .pain-grid {
@@ -92,7 +91,6 @@
     }
 
     .pain-conclusion {
-        font-size: var(--fz-base);
         margin-top: var(--space-lg);
         padding: var(--space-md);
     }

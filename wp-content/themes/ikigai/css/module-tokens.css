@@ -1,0 +1,26 @@
+:root {
+    /* Default module paddings (fallback to base spacing) */
+    --module-padding-xxl: var(--space-xxl);
+    --module-padding-xl: var(--space-xl);
+    --module-padding-lg: var(--space-lg);
+    --module-padding-md: var(--space-md);
+    --module-padding-sm: var(--space-sm);
+    --module-padding-xs: var(--space-xs);
+
+    /* Default main padding alias */
+    --module-padding: var(--module-padding-xxl);
+}
+
+@media (max-width: 640px) {
+    :root {
+        /* Mobile defaults */
+        --module-padding-xxl: var(--space-lg); /* 3rem */
+        --module-padding-xl: var(--space-md); /* 2rem */
+        --module-padding-lg: var(--space-sm); /* 1rem */
+        --module-padding-md: var(--space-sm); /* 1rem */
+        --module-padding-sm: var(--space-xs); /* 0.5rem */
+        --module-padding-xs: 0.25rem;
+        
+        --module-padding: var(--module-padding-xxl);
+    }
+}

@@ -24,7 +24,6 @@
 .footer-col p {
     color: var(--color-bg-light);
     margin-bottom: var(--space-sm);
-    font-size: var(--fz-base); 
 }
 
 .footer-col ul {
@@ -38,7 +37,6 @@
 /* Ajuste de Enlaces: Forzamos el puntero (la mano) */
 .footer-col ul li a {
     color: var(--color-bg-light);
-    font-size: var(--fz-base); 
     transition: var(--transition-normal);
     display: inline-block; /* Mejora la detección del puntero */
     cursor: pointer;       /* Forzamos el dedo/mano */
@@ -49,6 +47,47 @@
     color: var(--color-white);
     padding-left: 5px;
     cursor: pointer;
+}
+
+.footer-legal {
+    text-align: center;
+    padding: var(--space-sm);
+}
+
+/* Contenedor principal */
+.footer-legal ul {
+    display: flex;
+    flex-wrap: wrap;       /* Para que en móviles se adapte si es necesario */
+    list-style: none;      /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Centra los enlaces (opcional) */
+}
+
+/* Estilo de los elementos de la lista */
+.footer-legal li {
+    display: flex;
+    align-items: center;
+}
+
+/* El separador | */
+.footer-legal li:not(:last-child)::after {
+    content: "|";
+    margin: 0 10px;        /* Espacio a los lados del separador */
+    color: var(--text-muted);           /* Color del separador (ajústalo a tu diseño) */
+    font-size: var(--fz-sm);     /* Un poco más pequeño para que quede elegante */
+}
+
+/* Estilo de los enlaces (opcional, adáptalo a tus rem) */
+.footer-legal li a {
+    text-decoration: none;
+    color: var(--text-muted);        /* Hereda el color del texto del footer */
+    font-size: var(--fz-sm);
+    cursor:pointer;
+}
+
+.footer-legal li a:hover {
+    text-decoration: underline;
 }
 
 .footer-bottom {

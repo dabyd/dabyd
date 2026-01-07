@@ -121,3 +121,18 @@ textarea {
 :where([draggable="true"]) {
 	-webkit-user-drag : element;
 }
+/* Restaurar el comportamiento de depuración para print_r */
+pre {
+    all: revert; /* Devuelve los estilos originales del navegador */
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace; /* Tipografía de código */
+    white-space: pre; /* ¡ESTA ES LA CLAVE! Mantiene los saltos de línea */
+    margin: 1em 0;
+    background: #f4f4f4; /* Opcional: fondo gris para leer mejor */
+    padding: 10px;       /* Opcional: un poco de aire */
+    border: 1px solid #ddd;
+    line-height: 1.5;    /* Para que no esté todo pegado */
+    text-wrap: nowrap;   /* Evita que el código "rebote" y se amontone */
+    overflow-x: auto;    /* Si el array es muy grande, permite scroll lateral */
+}

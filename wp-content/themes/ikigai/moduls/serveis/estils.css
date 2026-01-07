@@ -1,69 +1,126 @@
 /* ============================================
-   SERVICES PREVIEW SECTION
+   SERVICE SECTION (SISTEMA ADAPTATIVO)
    ============================================ */
-.services-preview {
-    padding: var(--spacing-xxl) 0;
-    background-color: var(--bg-white);
+
+/*
+.service-section {
+    padding: var(--module-padding-xxl) 0;
+    scroll-margin-top: 100px;
 }
 
-.services-grid {
+.service-section:nth-child(even) {
+    background-color: var(--color-bg-cream);
+}
+
+.service-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    margin-top: var(--space-lg);
 }
 
-.service-card {
-    background-color: var(--bg-light);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    position: relative;
+.service-image {
+    width: 100%;
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: var(--transition);
+    box-shadow: var(--shadow-md);
 }
 
-.service-card::before {
-    content: '';
+.service-image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.service-details h3 {
+    color: var(--color-primary);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.service-details ul {
+    list-style: none;
+    margin: var(--space-md) 0;
+}
+
+.service-details ul li {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.service-details ul li::before {
+    content: '✓';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background-color: var(--primary-color);
-    transform: scaleY(0);
-    transition: var(--transition);
+    left: var(--space-sm);
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: var(--fz-md);
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--box-shadow);
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
 }
 
-.service-card:hover::before {
-    transform: scaleY(1);
+.benefit-card {
+    background-color: var(--color-bg-light);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary);
 }
 
-.service-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-light);
-    opacity: 0.3;
-    line-height: 1;
-    margin-bottom: var(--spacing-sm);
+.benefit-card strong {
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: var(--space-xs);
 }
 
-.service-card h3 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-md);
+.pricing-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--primary-dark) 100%);
+    color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-lg);
 }
 
-.service-link {
-    display: inline-block;
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-top: var(--spacing-sm);
+.pricing-box h4 {
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
 }
 
-.service-link:hover {
-    transform: translateX(5px);
+.pricing-box p {
+    color: rgba(255, 255, 255, 0.9);
 }
+
+.pricing-box .price {
+    font-size: var(--fz-xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    margin: var(--space-md) 0;
+}
+
+.pricing-box .btn {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    width: 100%;
+}
+
+@media (max-width: 968px) {
+    .service-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+*/

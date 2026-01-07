@@ -33,7 +33,7 @@
                             // Texte amb format
                             $alineacio = ikg_get_acf_value('alineacio');
                             echo '<p class="section-subtitle ' . $alineacio . '">';
-                            echo ikg_get_text( 'texte_amb_format' );
+                            ikg_value( 'texte_amb_format' );
                             echo '</p>';
                             break;
                         case '3':

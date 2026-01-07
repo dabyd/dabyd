@@ -4,7 +4,7 @@
 
 /* 1. Fondo del contenedor principal */
 .evolution-box {
-	padding: var(--space-xxl) 0 var(--space-xl);
+	padding: var(--module-padding-xxl) 0 var(--module-padding-xl);
     background: linear-gradient(135deg, var(--color-bg-cream) 0%, var(--color-bg-light) 100%);
 }
 
@@ -40,7 +40,8 @@
 .evolution-card p,
 .evolution-card li,
 .evolution-card span,
-.evolution-card strong {
+.evolution-card strong,
+.evolution-card b {
     color: var(--text-muted); /* Hereda el gris claro en azul-oscuro */
 }
 

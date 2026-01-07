@@ -1,15 +1,23 @@
 .sp-xl {
-    --space-xxl: 10rem;
-    --space-xl: 7rem;
-    --space-lg: 5rem;
-    --space-md: 3.5rem;
+    --module-padding-xxl: 10rem;
+    --module-padding-xl: 7rem;
+    --module-padding-lg: 5rem;
+    --module-padding-md: 3.5rem;
+    --module-padding-sm: 2.5rem;
+    --module-padding-xs: 1.5rem;
+    
+    --module-padding: var(--module-padding-xxl);
 }
 
 @media (max-width: 640px) {
     .sp-xl {
-        --space-xxl: 5rem; /* Se reduce a la mitad en móvil */
-        --space-xl: 3.5rem;
-        --space-lg: 2.5rem;
-        --space-md: 2rem;
+        --module-padding-xxl: 5rem;
+        --module-padding-xl: 3.5rem;
+        --module-padding-lg: 2.5rem;
+        --module-padding-md: 2rem;
+        --module-padding-sm: 1.5rem;
+        --module-padding-xs: 1rem;
+        
+        --module-padding: var(--module-padding-xxl);
     }
 }
