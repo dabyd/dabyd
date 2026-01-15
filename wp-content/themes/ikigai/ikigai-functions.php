@@ -818,20 +818,24 @@ function ikg_auto_deactivate_query_monitor() {
         return; // La opción no está activada
     }
     
-    // Verificar si Query Monitor está activo
+    // Cargar funciones de plugins si no están disponibles
     if ( ! function_exists( 'is_plugin_active' ) ) {
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
     }
     
-    $plugin_file = 'query-monitor/query-monitor.php';
+    // Lista de plugins de desarrollo a desactivar en producción
+    $plugins_to_deactivate = array(
+        'query-monitor/query-monitor.php',
+        'profiling-tool-for-wp/profiling-tool-for-wp.php',
+    );
     
-    if ( is_plugin_active( $plugin_file ) ) {
-        // Desactivar el plugin
-        deactivate_plugins( $plugin_file );
-        
-        // Log opcional para debugging
-        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-            error_log( 'Ikigai: Query Monitor desactivado automáticamente en producción' );
+    foreach ( $plugins_to_deactivate as $plugin_file ) {
+        if ( is_plugin_active( $plugin_file ) ) {
+            deactivate_plugins( $plugin_file );
+            
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                error_log( 'Ikigai: ' . $plugin_file . ' desactivado automáticamente en producción' );
+            }
         }
     }
 }
