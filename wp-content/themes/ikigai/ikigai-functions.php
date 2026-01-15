@@ -80,6 +80,24 @@ function ikg_value( $id, $post_id = null, $debug = false ) {
     echo $tmp;
 }
 
+/**
+ * Comprueba si un campo ACF tiene un valor no vacío.
+ * 
+ * @param string $id El identificador del campo ACF.
+ * @param bool $from_options Si se debe buscar en las opciones globales.
+ * @return bool True si el campo tiene un valor, false en caso contrario.
+ */
+function ikg_has_value( $id, $from_options = false ) {
+    $value = ikg_get_acf_value( $id, $from_options );
+    
+    // Comprobar si está vacío (considera cadenas vacías, null, 0, arrays vacíos)
+    if ( is_array( $value ) ) {
+        return ! empty( $value );
+    }
+    
+    return ( $value !== '' && $value !== null && $value !== false );
+}
+
 function ikg_reset() {
     ikg_setbase();
 }

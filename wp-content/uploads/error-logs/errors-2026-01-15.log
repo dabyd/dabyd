@@ -1,0 +1,22 @@
+[2026-01-15 17:15:53] EXCEPTION: Call to undefined function ikg_has_value() in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/big_hero/modul.php on line 41
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(436): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(421): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+
+[2026-01-15 17:16:11] EXCEPTION: Call to undefined function ikg_has_value() in /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/moduls/big_hero/modul.php on line 41
+Stack trace:
+  #0 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(436): require()
+  #1 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/ikigai-functions.php(421): ikg_load_modul()
+  #2 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/index.php(13): ikg_pinta_pagina_acf()
+  #3 /Users/dabyd/www/dabyd/html/wp-content/themes/ikigai/page.php(2): require_once()
+  #4 /Users/dabyd/www/dabyd/html/wp-includes/template-loader.php(125): include()
+  #5 /Users/dabyd/www/dabyd/html/wp-blog-header.php(19): require_once()
+  #6 /Users/dabyd/www/dabyd/html/index.php(17): require()
+--------------------------------------------------------------------------------
+

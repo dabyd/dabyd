@@ -129,6 +129,19 @@
     margin-right: auto;
 }
 
+/* Links inside services-hero (except buttons) */
+.services-hero a:not(.btn) {
+    color: var(--color-primary-light);
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+}
+
+.services-hero a:not(.btn):hover {
+    color: var(--color-primary);
+}
+
 /* --- Opción 2: About Hero (Imagen Lateral) --- */
 .about-hero {
     padding: var(--space-lg) 0 var(--space-lg);

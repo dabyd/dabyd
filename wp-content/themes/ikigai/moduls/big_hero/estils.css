@@ -1,0 +1,351 @@
+/* ==========================================================
+   BIG HERO MODULE - Full-screen hero with background media
+   ========================================================== */
+
+/* --- Base Container --- */
+.big-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--space-lg) 0;
+}
+
+/* --- Background Wrapper --- */
+.big-hero__bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.big-hero__bg-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Video specific */
+.big-hero__bg-wrapper video.big-hero__bg-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* --- Overlay Variants --- */
+.big-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.big-hero__overlay.overlay-dark {
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.big-hero__overlay.overlay-light {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.big-hero__overlay.overlay-gradient {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+}
+
+.big-hero__overlay.overlay-none {
+    background: transparent;
+}
+
+/* --- Content Container --- */
+.big-hero .container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.big-hero__content {
+    max-width: 800px;
+}
+
+/* Alignment variants */
+.big-hero.align-center .big-hero__content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.big-hero.align-left .big-hero__content {
+    margin-right: auto;
+    text-align: left;
+}
+
+.big-hero.align-right .big-hero__content {
+    margin-left: auto;
+    text-align: right;
+}
+
+/* --- Label (Small title above main title) --- */
+.big-hero__label {
+    display: inline-block;
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+}
+
+/* --- Title --- */
+.big-hero__title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-md);
+    color: #FFFFFF;
+}
+
+/* Multi-color support - spans inside title */
+.big-hero__title span {
+    /* Default highlight color - can be overridden with inline styles */
+    color: var(--color-primary);
+}
+
+/* Strong text uses main text color for contrast */
+.big-hero__title strong {
+    color: var(--color-primary);
+    font-weight: inherit;
+}
+
+/* --- Description --- */
+.big-hero__description {
+    font-size: var(--fz-md);
+    line-height: var(--lh-loose);
+    max-width: 600px;
+    margin-bottom: var(--space-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.big-hero.align-center .big-hero__description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Buttons Container --- */
+.big-hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+/* Grid layout for fixed columns per row */
+.big-hero__buttons.cols-2,
+.big-hero__buttons.cols-3,
+.big-hero__buttons.cols-4 {
+    display: grid;
+    width: 100%;
+}
+
+.big-hero__buttons.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.big-hero__buttons.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.big-hero__buttons.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Ensure buttons fill their grid cells */
+.big-hero__buttons.cols-2 .btn,
+.big-hero__buttons.cols-3 .btn,
+.big-hero__buttons.cols-4 .btn {
+    width: auto;
+    text-align: center;
+}
+
+.big-hero.align-center .big-hero__buttons {
+    justify-content: center;
+}
+
+.big-hero.align-right .big-hero__buttons {
+    justify-content: flex-end;
+}
+
+/* Ghost button style for big-hero */
+.big-hero .btn-outline,
+.big-hero .btn-secondary {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background: transparent;
+}
+
+.big-hero .btn-outline:hover,
+.big-hero .btn-secondary:hover {
+    background: #FFFFFF;
+    color: var(--text-main);
+}
+
+/* --- CONTRAST LOGIC: Dark Overlay (default for big-hero) --- */
+.big-hero:has(.overlay-dark) .big-hero__label,
+.big-hero:has(.overlay-gradient) .big-hero__label {
+    color: var(--color-primary-light);
+}
+
+.big-hero:has(.overlay-dark) .big-hero__title,
+.big-hero:has(.overlay-dark) .big-hero__description,
+.big-hero:has(.overlay-gradient) .big-hero__title,
+.big-hero:has(.overlay-gradient) .big-hero__description {
+    color: #FFFFFF;
+}
+
+/* --- CONTRAST LOGIC: Light Overlay --- */
+.big-hero:has(.overlay-light) .big-hero__label {
+    color: var(--color-primary);
+}
+
+.big-hero:has(.overlay-light) .big-hero__title,
+.big-hero:has(.overlay-light) .big-hero__description {
+    color: var(--text-main);
+}
+
+.big-hero:has(.overlay-light) .btn-outline,
+.big-hero:has(.overlay-light) .btn-secondary {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.big-hero:has(.overlay-light) .btn-outline:hover,
+.big-hero:has(.overlay-light) .btn-secondary:hover {
+    background: var(--text-main);
+    color: #FFFFFF;
+}
+
+/* --- COLOR VARIANTS COMPATIBILITY --- */
+/* Dark variants - ensure white text */
+.big-hero.vc-negro .big-hero__title,
+.big-hero.vc-azul-oscuro .big-hero__title,
+.big-hero.vc-morado-oscuro .big-hero__title,
+.big-hero.vc-verde-oscuro .big-hero__title,
+.big-hero.vc-ombretta .big-hero__title {
+    color: #FFFFFF;
+}
+
+/* --- ANIMATIONS --- */
+.big-hero__content {
+    animation: bigHeroFadeIn 0.8s ease-out forwards;
+}
+
+.big-hero__label {
+    opacity: 0;
+    animation: bigHeroFadeInUp 0.6s ease-out 0.2s forwards;
+}
+
+.big-hero__title {
+    opacity: 0;
+    animation: bigHeroFadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.big-hero__description {
+    opacity: 0;
+    animation: bigHeroFadeInUp 0.6s ease-out 0.4s forwards;
+}
+
+.big-hero__buttons {
+    opacity: 0;
+    animation: bigHeroFadeInUp 0.6s ease-out 0.5s forwards;
+}
+
+@keyframes bigHeroFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bigHeroFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .big-hero {
+        min-height: 70vh;
+    }
+
+    .big-hero__content {
+        max-width: 100%;
+    }
+
+    .big-hero.align-right .big-hero__content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .big-hero.align-right .big-hero__buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .big-hero {
+        min-height: 60vh;
+        padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .big-hero__title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .big-hero__description {
+        font-size: var(--fz-base);
+    }
+
+    .big-hero__buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Grid layouts collapse to single column on mobile */
+    .big-hero__buttons.cols-2,
+    .big-hero__buttons.cols-3,
+    .big-hero__buttons.cols-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .big-hero__buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Center all alignments on mobile */
+    .big-hero.align-left .big-hero__content,
+    .big-hero.align-right .big-hero__content {
+        text-align: center;
+    }
+
+    .big-hero.align-left .big-hero__buttons,
+    .big-hero.align-right .big-hero__buttons {
+        justify-content: center;
+    }
+}
