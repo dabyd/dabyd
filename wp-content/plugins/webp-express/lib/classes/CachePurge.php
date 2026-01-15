@@ -6,6 +6,9 @@ use \WebPExpress\Convert;
 use \WebPExpress\FileHelper;
 use \WebPExpress\DismissableMessages;
 use \WebPExpress\Paths;
+use WebPExpress\MediaLibraryHelper;
+
+
 
 // TODO! Needs to be updated to work with the new "destination-structure" setting
 
@@ -22,7 +25,8 @@ class CachePurge
 
         $filter = [
             'only-png' => $onlyPng,
-            'only-with-corresponding-original' => false
+            'only-with-corresponding-original' => false,
+            'check-if-registered' => ($config['destination-folder'] === 'mingled')
         ];
 
         $numDeleted = 0;
@@ -51,7 +55,6 @@ class CachePurge
         //$successInRemovingCacheDir = FileHelper::rrmdir(Paths::getCacheDirAbs());
 
     }
-
 
     /**
      *  Purge webp files in a dir
@@ -92,6 +95,12 @@ class CachePurge
                     // filter: It must be a webp
                     if (!$skipThis && !preg_match('#\.webp$#', $filename)) {
                         $skipThis = true;
+                    }
+
+                    // filter: never delete media library originals
+                    if (!$skipThis && $filter['check-if-registered'] && MediaLibraryHelper::isRegisteredAttachmentOrThumbnail($dir . '/' . $filename)) {
+                        $skipThis = true;
+
                     }
 
                     // filter: only with corresponding original

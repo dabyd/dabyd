@@ -699,3 +699,99 @@ function ikg_get_post_position($post_id) {
 
     return false;
 }
+
+
+/**
+ * AJAX handler para vaciar el cache de CSS/JS
+ */
+function ikg_ajax_clear_cache() {
+    // Verificar nonce de seguridad
+    if ( ! wp_verify_nonce( $_POST['nonce'], 'ikg_clear_cache_nonce' ) ) {
+        wp_send_json_error( 'Nonce inválido' );
+    }
+    
+    // Verificar permisos
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_send_json_error( 'Sin permisos' );
+    }
+    
+    $cache_dir = get_template_directory() . '/cache-ikigai';
+    
+    if ( ! is_dir( $cache_dir ) ) {
+        wp_send_json_success( 'La carpeta de cache no existe o ya está vacía' );
+    }
+    
+    $files = glob( $cache_dir . '/*' );
+    $deleted = 0;
+    $errors = 0;
+    
+    foreach ( $files as $file ) {
+        if ( is_file( $file ) ) {
+            if ( unlink( $file ) ) {
+                $deleted++;
+            } else {
+                $errors++;
+            }
+        }
+    }
+    
+    if ( $errors > 0 ) {
+        wp_send_json_error( "Se han borrado $deleted archivos, pero hubo $errors errores" );
+    } else {
+        wp_send_json_success( "Cache vaciado con éxito. $deleted archivos eliminados" );
+    }
+}
+add_action( 'wp_ajax_ikg_clear_cache', 'ikg_ajax_clear_cache' );
+
+/**
+ * Cargar script para el botón ACF de vaciar cache en admin
+ */
+function ikg_admin_cache_button_script() {
+    ?>
+    <script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+            // Buscar el campo ACF por su ID
+            var $cacheBtn = $('[data-key="vaciar_cache_css__js"] .acf-button, [data-name="vaciar_cache_css__js"] button, #acf-vaciar_cache_css__js');
+            
+            // También buscar por el wrapper del campo
+            if (!$cacheBtn.length) {
+                $cacheBtn = $('.acf-field[data-name="vaciar_cache_css__js"] button');
+            }
+            
+            // Añadir evento click
+            $(document).on('click', '[data-name="vaciar_cache_css__js"] button, [data-key="vaciar_cache_css__js"] button', function(e) {
+                e.preventDefault();
+                
+                var $btn = $(this);
+                var originalText = $btn.text();
+                
+                $btn.prop('disabled', true).text('Vaciando cache...');
+                
+                $.ajax({
+                    url: ajaxurl,
+                    type: 'POST',
+                    data: {
+                        action: 'ikg_clear_cache',
+                        nonce: '<?php echo wp_create_nonce( "ikg_clear_cache_nonce" ); ?>'
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            alert('✅ ' + response.data);
+                        } else {
+                            alert('❌ Error: ' + response.data);
+                        }
+                        $btn.prop('disabled', false).text(originalText);
+                    },
+                    error: function() {
+                        alert('❌ Se ha producido un error de conexión');
+                        $btn.prop('disabled', false).text(originalText);
+                    }
+                });
+            });
+        });
+    })(jQuery);
+    </script>
+    <?php
+}
+add_action( 'acf/input/admin_footer', 'ikg_admin_cache_button_script' );

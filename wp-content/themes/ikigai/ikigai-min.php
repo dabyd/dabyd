@@ -3,14 +3,14 @@
  * ikigai-min.php v2.5 - Compresión avanzada de selectores y espacios
  */
 
-// --- 1. CONFIGURACIÓN ---
-define('ENABLE_COMPRESSION', false);
-define('CACHE_ENABLED', false);
+// --- 1. CONFIGURACIÓN BÁSICA ---
 define('CACHE_DIR', __DIR__ . '/cache-ikigai');
 define('MODULS_DIR', __DIR__ . '/moduls');
 
 $version = isset($_GET['v']) ? $_GET['v'] : '1.0'; 
 $clear_cache = isset($_GET['clear_cache']);
+$type    = isset($_GET['t']) ? $_GET['t'] : 'css';
+$post_id = isset($_GET['i']) ? intval($_GET['i']) : 0;
 
 if (!is_dir(CACHE_DIR)) { mkdir(CACHE_DIR, 0755, true); }
 
@@ -20,25 +20,27 @@ if ($clear_cache) {
     if (!isset($_GET['t'])) exit('Caché borrada correctamente.');
 }
 
-$type    = isset($_GET['t']) ? $_GET['t'] : 'css';
-$post_id = isset($_GET['i']) ? intval($_GET['i']) : 0;
 if ($type !== 'css' && $type !== 'js') exit;
-
-$cache_filename = "cache_{$post_id}_{$type}_v" . str_replace('.', '-', $version) . ".{$type}";
-$cache_path = CACHE_DIR . '/' . $cache_filename;
-
-if (CACHE_ENABLED && file_exists($cache_path) && !$clear_cache) {
-    header("Content-type: " . ($type === 'css' ? 'text/css' : 'application/javascript') . "; charset: UTF-8");
-    header("X-Cache: HIT - Ikigai Cache");
-    echo file_get_contents($cache_path);
-    exit;
-}
 
 // --- 2. CARGAR ENTORNO ---
 $wp_load_path = __DIR__ . '/../../../wp-load.php'; 
 if (file_exists($wp_load_path)) { require_once($wp_load_path); } else { exit('WordPress no encontrado'); }
 
 require_once(get_template_directory() . '/ikigai-functions.php');
+
+// --- 3. CONFIGURACIÓN DESDE OPTIONS ---
+$ENABLE_COMPRESSION = (bool) ikg_get_option('comprimir_css_js');
+$CACHE_ENABLED = (bool) ikg_get_option('activar_cache_css_js');
+
+$cache_filename = "cache_{$post_id}_{$type}_v" . str_replace('.', '-', $version) . ".{$type}";
+$cache_path = CACHE_DIR . '/' . $cache_filename;
+
+if ($CACHE_ENABLED && file_exists($cache_path) && !$clear_cache) {
+    header("Content-type: " . ($type === 'css' ? 'text/css' : 'application/javascript') . "; charset: UTF-8");
+    header("X-Cache: HIT - Ikigai Cache");
+    echo file_get_contents($cache_path);
+    exit;
+}
 
 $main_dir    = get_template_directory() . '/' . $type;
 $extension   = '.' . $type;
@@ -150,7 +152,7 @@ foreach ($files_to_load as $file) {
 }
 
 // --- 5. MINIFICACIÓN Y LIMPIEZA DE ESPACIOS ---
-if (ENABLE_COMPRESSION) {
+if ($ENABLE_COMPRESSION) {
     if ($type === 'css') {
         // Eliminar comentarios de bloque
         $final_content = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $final_content);
@@ -173,7 +175,7 @@ if (ENABLE_COMPRESSION) {
     }
 }
 
-if (CACHE_ENABLED && !empty($final_content)) { file_put_contents($cache_path, $final_content); }
+if ($CACHE_ENABLED && !empty($final_content)) { file_put_contents($cache_path, $final_content); }
 
 header("Content-type: " . ($type === 'css' ? 'text/css' : 'application/javascript') . "; charset: UTF-8");
 echo $final_content;
