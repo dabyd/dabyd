@@ -423,5 +423,7 @@ function ikigai_get_error_log_path() {
 }
 
 function ikigai_enqueue_error_handler_styles() {
-	wp_enqueue_style('ikigai-debug', get_template_directory_uri() . '/css/debug.css', array(), '1.0.0');
+    if ( isDevelopedEnvironment()) {
+	    wp_enqueue_style('ikigai-debug', get_template_directory_uri() . '/css/debug.css', array(), '1.0.0');
+    }
 }
