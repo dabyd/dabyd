@@ -795,3 +795,44 @@ function ikg_admin_cache_button_script() {
     <?php
 }
 add_action( 'acf/input/admin_footer', 'ikg_admin_cache_button_script' );
+
+/**
+ * Desactivar Query Monitor automáticamente en producción
+ * Solo si la opción 'desactivar_automaticamente_query_monitor' está activada
+ */
+function ikg_auto_deactivate_query_monitor() {
+    // Solo ejecutar en admin y si no estamos en desarrollo
+    if ( ! is_admin() ) {
+        return;
+    }
+    
+    // Verificar si estamos en entorno de desarrollo
+    if ( function_exists( 'isDevelopedEnvironment' ) && isDevelopedEnvironment() ) {
+        return; // No hacer nada en desarrollo
+    }
+    
+    // Verificar la opción
+    $auto_deactivate = ikg_get_option( 'desactivar_automaticamente_query_monitor' );
+    
+    if ( ! $auto_deactivate ) {
+        return; // La opción no está activada
+    }
+    
+    // Verificar si Query Monitor está activo
+    if ( ! function_exists( 'is_plugin_active' ) ) {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    }
+    
+    $plugin_file = 'query-monitor/query-monitor.php';
+    
+    if ( is_plugin_active( $plugin_file ) ) {
+        // Desactivar el plugin
+        deactivate_plugins( $plugin_file );
+        
+        // Log opcional para debugging
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( 'Ikigai: Query Monitor desactivado automáticamente en producción' );
+        }
+    }
+}
+add_action( 'admin_init', 'ikg_auto_deactivate_query_monitor' );

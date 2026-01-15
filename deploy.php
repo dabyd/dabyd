@@ -38,7 +38,15 @@ task('nginx:reload', function () {
 
 // Tarea para corregir el dueño de los archivos
 task('deploy:fix_permissions', function () {
+    // Permisos en la release actual
     run('chown -R www-data:www-data {{release_path}}');
+    
+    // Permisos en la carpeta shared (donde está uploads realmente)
+    run('chown -R www-data:www-data {{deploy_path}}/shared');
+    
+    // Asegurar que uploads sea escribible (755 para dirs, 644 para archivos)
+    run('find {{deploy_path}}/shared/wp-content/uploads -type d -exec chmod 755 {} \;');
+    run('find {{deploy_path}}/shared/wp-content/uploads -type f -exec chmod 644 {} \;');
 });
 
 // Añádela a tu lista de tareas justo antes del unlock
