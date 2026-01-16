@@ -20,7 +20,7 @@
 ?>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer <?php ikg_get_variant( 'footer' ); ?>">
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-col">

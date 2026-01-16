@@ -1,0 +1,246 @@
+/* ==========================================================
+   HERO SLIDER MODULE - Based on Big Hero with Background Slider
+   ========================================================== */
+
+/* --- Base Container --- */
+.hero-slider {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+    padding: var(--space-lg) 0;
+    background-color: var(--color-bg-cream); /* Fallback */
+}
+
+/* --- Background Slider Wrapper --- */
+/* --- Background Slider Wrapper (Carousel Strip) --- */
+.hero-slider__bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    
+    /* Flex Layout for Horizontal Scroll */
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 1s ease-in-out; /* Smooth scroll default */
+    will-change: transform;
+}
+
+/* --- Slides --- */
+.hero-slider__slide {
+    position: relative; /* Not absolute anymore */
+    min-width: 100%;    /* Each slide takes full width */
+    height: 100%;
+    opacity: 1;         /* Always visible */
+    z-index: 0;
+    flex-shrink: 0;     /* Don't shrink */
+}
+
+.hero-slider__slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-slider__bg-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Video specific centering if needed */
+.hero-slider__bg-wrapper video.hero-slider__bg-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* --- Overlay Content --- */
+.hero-slider__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Above slides, below content */
+}
+
+.hero-slider__overlay.overlay-dark {
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.hero-slider__overlay.overlay-light {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.hero-slider__overlay.overlay-gradient {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+}
+
+.hero-slider__overlay.overlay-none {
+    background: transparent;
+}
+
+/* --- Content Container --- */
+.hero-slider .container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Bottom */
+    align-items: flex-end;     /* Right */
+    padding-bottom: var(--space-xl);
+}
+
+.hero-slider__content {
+    max-width: 800px;
+    text-align: right;
+    margin-right: var(--space-md);
+    margin-bottom: var(--space-lg);
+    /* Force internal alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Children Alignment Enforcement */
+.hero-slider__content h1,
+.hero-slider__content p,
+.hero-slider__content .hero-slider__label,
+.hero-slider__title,
+.hero-slider__description {
+    text-align: right !important;
+    width: 100%;
+}
+
+/* --- Typography & Buttons (Inheriting style from big-hero) --- */
+.hero-slider__label {
+    display: inline-block;
+    font-size: var(--fz-sm);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+}
+
+.hero-slider__title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-md);
+    color: #FFFFFF;
+}
+
+.hero-slider__description {
+    font-size: var(--fz-md);
+    line-height: var(--lh-loose);
+    max-width: 600px;
+    margin-bottom: var(--space-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-slider__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: flex-end; /* Force buttons to right */
+    width: 100%; /* Ensure container fills width to allow alignment */
+}
+
+/* Grid layout for buttons columns */
+.hero-slider__buttons.cols-2 { grid-template-columns: repeat(2, 1fr); display: grid; width: 100%; }
+.hero-slider__buttons.cols-3 { grid-template-columns: repeat(3, 1fr); display: grid; width: 100%; }
+.hero-slider__buttons.cols-4 { grid-template-columns: repeat(4, 1fr); display: grid; width: 100%; }
+
+.hero-slider__buttons.cols-2 .btn,
+.hero-slider__buttons.cols-3 .btn,
+.hero-slider__buttons.cols-4 .btn {
+    width: auto;
+    text-align: center;
+}
+
+/* Ghost button style */
+.hero-slider .btn-outline,
+.hero-slider .btn-secondary {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background: transparent;
+}
+
+.hero-slider .btn-outline:hover,
+.hero-slider .btn-secondary:hover {
+    background: #FFFFFF;
+    color: var(--text-main);
+}
+
+/* --- Contrast Logic --- */
+.hero-slider:has(.overlay-light) .hero-slider__title,
+.hero-slider:has(.overlay-light) .hero-slider__description {
+    color: var(--text-main);
+}
+
+.hero-slider:has(.overlay-light) .hero-slider__label {
+    color: var(--color-primary);
+}
+
+.hero-slider:has(.overlay-light) .btn-outline,
+.hero-slider:has(.overlay-light) .btn-secondary {
+    border-color: var(--text-main);
+    color: var(--text-main);
+}
+
+.hero-slider:has(.overlay-light) .btn-outline:hover,
+.hero-slider:has(.overlay-light) .btn-secondary:hover {
+    background: var(--text-main);
+    color: #FFFFFF;
+}
+
+/* --- Animations --- */
+.hero-slider__content { animation: heroSliderFadeIn 0.8s ease-out forwards; }
+.hero-slider__label { opacity: 0; animation: heroSliderFadeInUp 0.6s ease-out 0.2s forwards; }
+.hero-slider__title { opacity: 0; animation: heroSliderFadeInUp 0.6s ease-out 0.3s forwards; }
+.hero-slider__description { opacity: 0; animation: heroSliderFadeInUp 0.6s ease-out 0.4s forwards; }
+.hero-slider__buttons { opacity: 0; animation: heroSliderFadeInUp 0.6s ease-out 0.5s forwards; }
+
+@keyframes heroSliderFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes heroSliderFadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 968px) {
+    .hero-slider { min-height: 70vh; }
+    .hero-slider__content { max-width: 100%; }
+    /* Keeping simplified responsive logic */
+    .hero-slider .container { align-items: center; justify-content: center; }
+    .hero-slider__content { text-align: center; margin: 0 auto; align-items: center; }
+    .hero-slider__buttons { justify-content: center; }
+    
+    .hero-slider__content h1,
+    .hero-slider__content p,
+    .hero-slider__content .hero-slider__label,
+    .hero-slider__title,
+    .hero-slider__description {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-slider { min-height: 60vh; padding: var(--space-xl) 0 var(--space-lg); }
+    .hero-slider__title { font-size: clamp(1.75rem, 8vw, 2.5rem); }
+    .hero-slider__buttons { flex-direction: column; align-items: stretch; }
+    .hero-slider__buttons .btn { width: 100%; text-align: center; }
+}

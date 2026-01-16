@@ -61,6 +61,27 @@ add_action('wp_enqueue_scripts', 'ikigai_cargar_recursos');
 // ============================================
 
 function ikigai_admin_styles() {
+    $should_load = false;
+    
+    // 1. Siempre cargar en admin
+    if ( is_admin() ) {
+        $should_load = true;
+    } 
+    // 2. Cargar en front si es desarrollo Y la opción de desactivar QM está activa
+    else {
+        $is_dev = function_exists('isDevelopedEnvironment') && isDevelopedEnvironment();
+        // Nota: ikg_get_option está en functions-core.php que ya está cargado
+        $option_active = function_exists('ikg_get_option') && ikg_get_option('desactivar_automaticamente_query_monitor');
+        
+        if ( $is_dev && $option_active ) {
+            $should_load = true;
+        }
+    }
+    
+    if ( ! $should_load ) {
+        return;
+    }
+
     wp_enqueue_style(
         'ikigai-admin-styles',
         get_template_directory_uri() . '/admin/css/admin.css',
@@ -70,6 +91,7 @@ function ikigai_admin_styles() {
 }
 
 add_action('admin_enqueue_scripts', 'ikigai_admin_styles');
+add_action('wp_enqueue_scripts', 'ikigai_admin_styles');
 
 // ============================================
 // CONFIGURACIÓN DEL TEMA

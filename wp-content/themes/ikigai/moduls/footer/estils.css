@@ -2,9 +2,10 @@
    FOOTER (Ajuste de Cursor y Enlaces)
    ============================================ */
 .footer {
-    background-color: var(--text-main);
-    color: var(--color-white);
+    background-color: var(--color-bg-light) !important;
+    color: var(--text-main) !important;
     padding: var(--space-xl) 0 var(--space-md);
+    border-top: 1px solid var(--color-border);
 }
 
 .footer-content {
@@ -15,14 +16,14 @@
 }
 
 .footer-col h4 {
-    color: var(--color-white);
+    color: var(--text-main) !important;
     margin-bottom: var(--space-md);
     font-size: var(--fz-lg); 
     font-family: var(--font-family-heading);
 }
 
 .footer-col p {
-    color: var(--color-bg-light);
+    color: var(--text-muted) !important;
     margin-bottom: var(--space-sm);
 }
 
@@ -36,7 +37,7 @@
 
 /* Ajuste de Enlaces: Forzamos el puntero (la mano) */
 .footer-col ul li a {
-    color: var(--color-bg-light);
+    color: var(--text-muted) !important;
     transition: var(--transition-normal);
     display: inline-block; /* Mejora la detección del puntero */
     cursor: pointer;       /* Forzamos el dedo/mano */
@@ -44,10 +45,14 @@
 }
 
 .footer-col ul li a:hover {
-    color: var(--color-white);
+    color: var(--color-primary) !important;
     padding-left: 5px;
     cursor: pointer;
 }
+
+/* ... skipped lines ... */
+
+/* Bloque de redes sociales movido al final del archivo para consolidación */
 
 .footer-legal {
     text-align: center;
@@ -116,9 +121,10 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: transparent; 
+    border: 1px solid var(--text-muted); /* Borde sutil */
     border-radius: var(--radius-full);
-    color: var(--color-white);
+    color: var(--text-main) !important; /* Mismo color que las letras */
     transition: var(--transition-normal);
     cursor: pointer; /* Forzamos el dedo/mano */
 }

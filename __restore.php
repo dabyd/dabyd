@@ -145,9 +145,16 @@ function getDbCredentials($configPath) {
 // Si no se ha enviado la confirmación, mostrar botón
 if (!isset($_POST['confirm'])) {
     ?>
-    <form method="POST">
-        <p>¿Estás seguro de que deseas restaurar la base de datos?</p>
-        <button type="submit" name="confirm" value="1">Confirmar y Restaurar</button>
+    <form method="POST" enctype="multipart/form-data">
+        <p>Selecciona el archivo de copia de seguridad (dump.zip o backup_full.zip):</p>
+        <div style="margin-bottom: 20px;">
+            <input type="file" name="backup_file" required accept=".zip" style="padding: 10px; border: 1px solid #ccc; width: 100%;">
+        </div>
+        <p style="font-size: 0.9em; color: #666;">
+            <strong>Nota:</strong> Si subes un <em>backup_full.zip</em>, se restaurará la base de datos y la carpeta <em>uploads</em>.<br>
+            Si subes un <em>dump.zip</em>, solo se restaurará la base de datos.
+        </p>
+        <button type="submit" name="confirm" value="1">Subir y Restaurar</button>
     </form>
     <?php
 } else {
@@ -160,24 +167,44 @@ if (!isset($_POST['confirm'])) {
     
     log_message('🔄 Iniciando proceso de restauración...', 'info');
     
-    // Verificar que existe dump.zip
-    if (!file_exists(__DIR__ . '/dump.zip')) {
-        log_message('✗ Error: No se encontró el archivo dump.zip', 'error');
+    $zipFile = __DIR__ . '/restore_package.zip';
+    
+    // 1. Manejar subida de archivo
+    if (isset($_FILES['backup_file']) && $_FILES['backup_file']['error'] === UPLOAD_ERR_OK) {
+        log_message('📤 Archivo recibido: ' . $_FILES['backup_file']['name'], 'info');
+        
+        // Mover archivo subido
+        if (move_uploaded_file($_FILES['backup_file']['tmp_name'], $zipFile)) {
+            log_message('✓ Archivo subido correctamente', 'success');
+        } else {
+            log_message('✗ Error al mover el archivo subido', 'error');
+            echo '</div></div></body></html>';
+            exit;
+        }
+    } elseif (file_exists(__DIR__ . '/dump.zip')) {
+        // Fallback: Si existe dump.zip localmente y no se subió nada (aunque el form lo requiere)
+        log_message('⚠️ No se subió archivo, usando dump.zip local existente', 'warning');
+        copy(__DIR__ . '/dump.zip', $zipFile);
+    } else {
+        log_message('✗ Error: No se recibió ningún archivo válido', 'error');
         echo '</div></div></body></html>';
         exit;
     }
     
-    log_message('✓ dump.zip encontrado', 'success');
-    
-    // Descomprimir dump.zip
-    log_message('📦 Descomprimiendo dump.zip...', 'info');
+    // 2. Descomprimir
+    log_message('📦 Descomprimiendo paquete...', 'info');
     $zip = new ZipArchive();
-    if ($zip->open(__DIR__ . '/dump.zip') === TRUE) {
+    if ($zip->open($zipFile) === TRUE) {
         $zip->extractTo(__DIR__);
         $zip->close();
-        log_message('✓ dump.zip descomprimido correctamente', 'success');
+        log_message('✓ Paquete descomprimido correctamente', 'success');
+        
+        // Verificar si se restauró uploads (carpeta wp-content/uploads existe en el zip)
+        if (is_dir(__DIR__ . '/wp-content/uploads')) {
+            log_message('📂 Carpeta uploads detectada y restaurada', 'success');
+        }
     } else {
-        log_message('✗ Error: No se pudo descomprimir dump.zip', 'error');
+        log_message('✗ Error: No se pudo descomprimir el archivo', 'error');
         echo '</div></div></body></html>';
         exit;
     }
@@ -311,10 +338,14 @@ if (!isset($_POST['confirm'])) {
         log_message('⚠️ No se pudo eliminar dump.sql', 'warning');
     }
     
-    if (unlink(__DIR__ . '/dump.zip')) {
-        log_message('✓ dump.zip eliminado', 'success');
-    } else {
-        log_message('⚠️ No se pudo eliminar dump.zip', 'warning');
+    if (file_exists(__DIR__ . '/restore_package.zip')) {
+        unlink(__DIR__ . '/restore_package.zip');
+        log_message('✓ Archivo temporal (zip) eliminado', 'success');
+    }
+    
+    // Opcional: Eliminar dump.zip local si existía, para evitar confusiones futuras
+    if (file_exists(__DIR__ . '/dump.zip')) {
+        unlink(__DIR__ . '/dump.zip');
     }
     
     log_message('✅ Proceso de restauración completado exitosamente', 'success');

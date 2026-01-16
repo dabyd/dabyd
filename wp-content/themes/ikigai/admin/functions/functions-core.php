@@ -735,7 +735,27 @@ add_action( 'wp_ajax_ikg_clear_cache', 'ikg_ajax_clear_cache' );
  * Enqueue Admin Scripts
  */
 function ikg_enqueue_admin_scripts() {
-    // Admin JS principal
+    $should_load = false;
+    
+    // 1. Siempre cargar en admin
+    if ( is_admin() ) {
+        $should_load = true;
+    } 
+    // 2. Cargar en front si es desarrollo Y la opción de desactivar QM está activa
+    else {
+        $is_dev = function_exists('isDevelopedEnvironment') && isDevelopedEnvironment();
+        $option_active = ikg_get_option('desactivar_automaticamente_query_monitor');
+        
+        if ( $is_dev && $option_active ) {
+            $should_load = true;
+        }
+    }
+    
+    if ( ! $should_load ) {
+        return;
+    }
+
+    // Admin JS principal 
     wp_enqueue_script(
         'ikg-admin-js', 
         get_template_directory_uri() . '/admin/js/admin.js', 
@@ -761,6 +781,7 @@ function ikg_enqueue_admin_scripts() {
     ));
 }
 add_action('admin_enqueue_scripts', 'ikg_enqueue_admin_scripts');
+add_action('wp_enqueue_scripts', 'ikg_enqueue_admin_scripts');
 
 /**
  * Desactivar Query Monitor automáticamente en producción

@@ -41,12 +41,49 @@
         /**
          * Actualiza el efecto parallax
          */
+        /**
+         * Actualiza el efecto parallax (Soporte Multi-instancia y Posición Relativa)
+         */
         function updateParallax() {
-            const parallax = document.querySelector('.hero-parallax');
-            if (!parallax) return;
+            const parallaxes = document.querySelectorAll('.hero-parallax');
             
-            const scrollPosition = window.pageYOffset;
-            parallax.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            parallaxes.forEach(element => {
+                const container = element.closest('.services-hero') || element.closest('.hero-bg-wrapper').parentElement;
+                if (!container) return;
+
+                const rect = container.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Solo calcular si está visible (o cerca)
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    // Cálculo relativo: 0 cuando el elemento está en la parte superior del viewport
+                    // Para que esté centrado visualmente cuando el módulo está en pantalla.
+                    
+                    // Fórmula: (Scroll Global - Offset del Elemento) * Velocidad
+                    // Podemos usar rect.top para obtener la posición relativa al viewport sin recalcular global scroll
+                    // rect.top es positivo si está abajo, negativo si hemos hecho scroll más allá.
+                    
+                    // Queremos que cuando rect.top sea 0 (top viewport), el desplazamiento sea 0 (o ajustado).
+                    // Pero para suavidad, usamos una variación continua.
+                    
+                    // Invertimos rect.top porque al scrollear hacia abajo, rect.top disminuye, 
+                    // y queremos que el background baje (translate positivo) para efecto profundidad.
+                    // Espera, parallax standard: background se mueve + lento.
+                    // Si contenido sube 100px, fondo sube 70px (si translateY es +30px).
+                    
+                    // Queremos que el parallax esté centrado (translateY=0) cuando el módulo está en el centro de la pantalla.
+                    // rect.top es la posición del borde superior del contenedor respecto al viewport.
+                    
+                    const center = (viewportHeight - rect.height) / 2;
+                    const delta = rect.top - center;
+                    
+                    // Velocidad reducida para asegurar que no se salga de los límites del 130% de altura
+                    // Con speed 0.15 y altura extra del 30% (+/- 15%), cubrimos la mayoría de pantallas.
+                    const speed = 0.15;
+                    
+                    element.style.transform = `translateY(${delta * speed}px)`;
+                }
+            });
         }
 
         /**

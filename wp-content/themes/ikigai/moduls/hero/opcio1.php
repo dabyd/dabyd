@@ -19,7 +19,7 @@ $clase_parallax = $parallax ? ' has-parallax has-media' : '';
                 } else {
                     ikg_get_video([ 
                         'video_id' => ikg_get_acf_value('video_parallax'), 
-                        'class' => 'hero-bg-media hero-parallax', 
+                        'class' => 'hero-bg-media', 
                         'autoplay' => true, 
                         'loop' => true, 
                         'muted' => true, 

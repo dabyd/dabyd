@@ -107,6 +107,18 @@ if (is_dir($main_dir)) {
             add_file_to_load($file, $files_to_load);
         }
     }
+    
+    // Cargar variantes si existen (solo CSS)
+    $variants_dir = $main_dir . '/variants';
+    if ($type === 'css' && is_dir($variants_dir)) {
+        $variant_files = glob($variants_dir . '/*' . $extension);
+        if ($variant_files) {
+            sort($variant_files);
+            foreach ($variant_files as $file) {
+                add_file_to_load($file, $files_to_load);
+            }
+        }
+    }
 }
 
 if ($post_id > 0) {
