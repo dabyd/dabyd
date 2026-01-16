@@ -1,0 +1,21 @@
+# Backups
+dump.zip
+backup_full.zip
+dump.sql
+restore_package.zip
+*.zip
+*.sql
+*.gz
+
+# Logs inside Uploads
+html/wp-content/uploads/accessibility-logs/
+html/wp-content/uploads/debug-logs/
+html/wp-content/uploads/error-logs/
+
+# General Logs
+*.log
+html/error_log
+html/wp-content/debug.log
+
+# System
+.DS_Store
