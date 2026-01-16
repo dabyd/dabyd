@@ -1,0 +1,191 @@
+/* ============================================
+   PALETAS VERDES
+   ============================================ */
+
+/* PALETA 1: VERDE CLARO (verd-clar) */
+.paleta-verd-clar {
+    background: linear-gradient(135deg, #FAF8F5 0%, #F4F7F6 100%);
+    color: #2C3E50;
+}
+
+.paleta-verd-clar h1, 
+.paleta-verd-clar h2, 
+.paleta-verd-clar h3, 
+.paleta-verd-clar h4, 
+.paleta-verd-clar h5, 
+.paleta-verd-clar h6 {
+    color: #2C3E50;
+}
+
+.paleta-verd-clar p, 
+.paleta-verd-clar .hero-description, 
+.paleta-verd-clar .section-subtitle {
+    color: #5A6C7D;
+}
+
+.paleta-verd-clar .section-label {
+    color: #4A7C59;
+}
+
+.paleta-verd-clar .btn-primary {
+    background-color: #4A7C59;
+    color: white;
+}
+
+.paleta-verd-clar .btn-primary:hover {
+    background-color: #2F5940;
+    box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+}
+
+.paleta-verd-clar .btn-secondary {
+    color: #4A7C59;
+    border-color: #4A7C59;
+}
+
+.paleta-verd-clar .btn-secondary:hover {
+    background-color: #4A7C59;
+    color: white;
+}
+
+.paleta-verd-clar .pain-card h3,
+.paleta-verd-clar .service-card h3,
+.paleta-verd-clar .feature-card h4,
+.paleta-verd-clar .service-link {
+    color: #4A7C59;
+}
+
+.paleta-verd-clar .service-card::before {
+    background-color: #4A7C59;
+}
+
+.paleta-verd-clar .service-number {
+    color: #6B9B7F;
+}
+
+.paleta-verd-clar .faq-icon {
+    background-color: #4A7C59;
+}
+
+.paleta-verd-clar .faq-item.active .faq-icon {
+    background-color: #2F5940;
+}
+
+.paleta-verd-clar .faq-question:hover {
+    color: #4A7C59;
+}
+
+/* PALETA 2: VERDE DEGRADADO (verd-degradat) */
+.paleta-verd-degradat {
+    background: linear-gradient(135deg, #E8F5E9 0%, #F4F7F6 100%);
+    color: #2C3E50;
+}
+
+.paleta-verd-degradat h1, 
+.paleta-verd-degradat h2, 
+.paleta-verd-degradat h3, 
+.paleta-verd-degradat h4, 
+.paleta-verd-degradat h5, 
+.paleta-verd-degradat h6 {
+    color: #2C3E50;
+}
+
+.paleta-verd-degradat p {
+    color: #5A6C7D;
+}
+
+.paleta-verd-degradat .section-label {
+    color: #4A7C59;
+}
+
+.paleta-verd-degradat .condition-item,
+.paleta-verd-degradat .pain-card,
+.paleta-verd-degradat .service-card {
+    background-color: #FFFFFF;
+}
+
+.paleta-verd-degradat .condition-icon {
+    color: #4A7C59;
+}
+
+.paleta-verd-degradat .btn-primary {
+    background-color: #4A7C59;
+    color: white;
+}
+
+.paleta-verd-degradat .btn-primary:hover {
+    background-color: #2F5940;
+    box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+}
+
+.paleta-verd-degradat .pain-card h3,
+.paleta-verd-degradat .service-card h3,
+.paleta-verd-degradat .feature-card h4,
+.paleta-verd-degradat .service-link {
+    color: #4A7C59;
+}
+
+.paleta-verd-degradat .service-card::before {
+    background-color: #4A7C59;
+}
+
+.paleta-verd-degradat .service-number {
+    color: #6B9B7F;
+}
+
+/* PALETA 3: VERDE OSCURO (verd-fosc) */
+.paleta-verd-fosc {
+    background: linear-gradient(135deg, #4A7C59 0%, #2F5940 100%);
+    color: white;
+}
+
+.paleta-verd-fosc h1, 
+.paleta-verd-fosc h2, 
+.paleta-verd-fosc h3, 
+.paleta-verd-fosc h4, 
+.paleta-verd-fosc h5, 
+.paleta-verd-fosc h6 {
+    color: white;
+}
+
+.paleta-verd-fosc p, 
+.paleta-verd-fosc .cta-content p,
+.paleta-verd-fosc .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.paleta-verd-fosc .section-label {
+    color: #A3C4D9;
+}
+
+.paleta-verd-fosc .btn-primary {
+    background-color: white;
+    color: #4A7C59;
+}
+
+.paleta-verd-fosc .btn-primary:hover {
+    background-color: #FAF8F5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.paleta-verd-fosc .btn-secondary {
+    color: white;
+    border-color: white;
+}
+
+.paleta-verd-fosc .btn-secondary:hover {
+    background-color: white;
+    color: #4A7C59;
+}
+
+.paleta-verd-fosc .cta-note {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.paleta-verd-fosc a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.paleta-verd-fosc a:hover {
+    color: white;
+}

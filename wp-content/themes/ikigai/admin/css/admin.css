@@ -1,0 +1,527 @@
+/**
+ * Ikigai Admin Styles
+ * CSS consolidado para el backoffice de WordPress
+ * 
+ * Incluye estilos de:
+ * - Log Viewer
+ * - Form Submissions
+ * - Floating Windows
+ * - General Admin UI
+ */
+
+/* ============================================
+   LOG VIEWER STYLES
+   ============================================ */
+
+.ikg-log-viewer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.ikg-log-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0;
+}
+
+.ikg-log-tab {
+    padding: 12px 24px;
+    background: #f0f0f1;
+    border: 1px solid #c3c4c7;
+    border-bottom: none;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px 4px 0 0;
+    margin-right: -1px;
+}
+
+.ikg-log-tab.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    z-index: 1;
+    position: relative;
+}
+
+.ikg-log-tab:hover:not(.active) {
+    background: #e5e5e5;
+}
+
+.ikg-log-panel {
+    display: none;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 0 4px 4px 4px;
+}
+
+.ikg-log-panel.active {
+    display: block;
+}
+
+.ikg-log-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.ikg-log-select {
+    min-width: 250px;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+}
+
+.ikg-log-content {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: 500px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.ikg-log-info {
+    font-size: 12px;
+    color: #646970;
+    margin-top: 10px;
+}
+
+.ikg-log-empty {
+    padding: 40px;
+    text-align: center;
+    color: #646970;
+    background: #f6f7f7;
+    border-radius: 4px;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.ikg-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid;
+}
+
+.ikg-btn-primary {
+    background: #2271b1;
+    color: #fff;
+    border-color: #2271b1;
+}
+
+.ikg-btn-primary:hover {
+    background: #135e96;
+}
+
+.ikg-btn-danger {
+    background: #d63638;
+    color: #fff;
+    border-color: #d63638;
+}
+
+.ikg-btn-danger:hover {
+    background: #b32d2e;
+}
+
+.ikg-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   FORM SUBMISSIONS TABLE
+   ============================================ */
+
+.ikg-submissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.ikg-submissions-table th,
+.ikg-submissions-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.ikg-submissions-table th {
+    background: #f1f1f1;
+    font-weight: 600;
+}
+
+.ikg-submissions-table tr:hover {
+    background: #f9f9f9;
+}
+
+.ikg-submission-detail {
+    display: none;
+    background: #fafafa;
+}
+
+.ikg-submission-detail.active {
+    display: table-row;
+}
+
+.ikg-toggle-btn {
+    cursor: pointer;
+    color: #0073aa;
+    text-decoration: underline;
+}
+
+.ikg-toggle-btn:hover {
+    color: #005a87;
+}
+
+.ikg-data-table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: collapse;
+}
+
+.ikg-data-table td {
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #e0e0e0;
+}
+
+.ikg-data-table td:first-child {
+    font-weight: bold;
+    width: 180px;
+    background: #f5f5f5;
+}
+
+.ikg-email-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.ikg-email-status.sent {
+    background: #d4edda;
+    color: #155724;
+}
+
+.ikg-email-status.failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.ikg-meta-info {
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* ============================================
+   ADMIN CARD STYLES
+   ============================================ */
+
+.ikg-admin-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.ikg-admin-card-header {
+    padding: 15px 20px;
+    background: #f6f7f7;
+    border-bottom: 1px solid #ccd0d4;
+}
+
+.ikg-admin-card-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.ikg-admin-card-body {
+    padding: 0;
+}
+
+.ikg-empty-message {
+    padding: 20px;
+    color: #666;
+}
+
+/* ============================================
+   FLOATING WINDOW STYLES
+   ============================================ */
+
+.floating-window {
+    position: fixed;
+    min-width: 300px;
+    min-height: 200px;
+    background: #ffffff;
+    border: 1px solid #d0dae6;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 18px;
+    color: #000000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.floating-window:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.floating-window.fw-active {
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.floating-window.fw-dragging {
+    transition: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.floating-window.fw-minimized {
+    height: auto !important;
+    width: 300px !important;
+}
+
+.floating-window.fw-minimized .fw-content,
+.floating-window.fw-minimized .fw-resize-handle {
+    display: none;
+}
+
+.floating-window.fw-maximized {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    transform: none !important;
+}
+
+.fw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    cursor: move;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.fw-header:active {
+    cursor: grabbing;
+}
+
+.fw-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.fw-icon {
+    font-size: 22px;
+}
+
+.fw-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.fw-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 18px;
+    padding: 0;
+}
+
+.fw-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.fw-minimize-icon {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.fw-maximize-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.floating-window.fw-maximized .fw-maximize-icon::before {
+    content: '❐';
+}
+
+.fw-content {
+    flex: 1;
+    overflow: auto;
+    padding: 16px;
+    background: #ffffff;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* High contrast styles for debug content */
+.fw-content pre,
+.fw-content code {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1a1a1a;
+}
+
+.fw-content pre {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
+
+/* Resize handles */
+.fw-resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 10;
+}
+
+.fw-resize-n, .fw-resize-s {
+    width: 100%;
+    height: 8px;
+    cursor: ns-resize;
+    left: 0;
+}
+
+.fw-resize-n { top: 0; }
+.fw-resize-s { bottom: 0; }
+
+.fw-resize-e, .fw-resize-w {
+    height: 100%;
+    width: 8px;
+    cursor: ew-resize;
+    top: 0;
+}
+
+.fw-resize-e { right: 0; }
+.fw-resize-w { left: 0; }
+
+.fw-resize-ne, .fw-resize-nw, .fw-resize-se, .fw-resize-sw {
+    width: 16px;
+    height: 16px;
+}
+
+.fw-resize-ne {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+}
+
+.fw-resize-nw {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+}
+
+.fw-resize-se {
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize;
+}
+
+.fw-resize-sw {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+}
+
+.floating-window.fw-maximized .fw-resize-handle {
+    display: none;
+}
+
+/* Scrollbar */
+.fw-content::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.fw-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.fw-content::-webkit-scrollbar-thumb {
+    background: #8892a0;
+    border-radius: 6px;
+}
+
+.fw-content::-webkit-scrollbar-thumb:hover {
+    background: #6c7580;
+}
+
+/* Animations */
+@keyframes fwSlideIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.floating-window {
+    animation: fwSlideIn 0.2s ease-out;
+}
+
+@keyframes fwSlideOut {
+    to {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-window {
+        width: 95vw !important;
+        max-width: 95vw !important;
+    }
+}

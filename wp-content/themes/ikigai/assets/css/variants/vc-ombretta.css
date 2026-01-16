@@ -1,0 +1,35 @@
+.vc-ombretta {
+    /* --- OMBRETTA NATURE (Base #919374) --- */
+    
+    /* Brand Colors: Contrastes basados en el verde seco y crema */
+    --color-primary: #3D4435;           /* Verde bosque muy oscuro (para botones y legibilidad) */
+    --color-primary-light: #4A5241;     /* Hover */
+    --color-primary-dark: #2C3227;      /* Pressed */
+    --color-primary-glare: #9DA082;     /* Variante aclarada del fondo para capas sutiles */
+    --color-primary-border: #7B7D5F;    /* Bordes de marca integrados */
+    --color-accent: #E5E2D9;            /* Crema/Lino para acentos de luz */
+
+    /* Neutrals: Basados en tu paleta solicitada */
+    --color-white: #FFFFFF;
+    --color-bg-cream: #919374;          /* Fondo principal solicitado */
+    --color-bg-light: #A4B68C;          /* Fondo secundario solicitado */
+    --color-border: #828466;            /* Bordes sutilmente más oscuros que el fondo */
+    
+    /* Text Colors: Ajustados para lectura sobre fondo verde oliva */
+    --text-on-primary: #FFFFFF;         /* Texto blanco sobre el botón verde oscuro */
+    --text-main: #FFFFFF;               /* Títulos en blanco para máxima limpieza */
+    --text-muted: #F2F2EB;              /* Crema muy claro para párrafos (lectura suave) */
+    --text-light: #C1C3A8;              /* Verde pálido para detalles */
+
+    /* Efectos y Sombras: Basadas en tonos tierra profundos */
+    --color-header-bg: #919374F2;       /* Fondo header con 95% opacidad */
+    --color-shadow-light: #3D443533;    /* Sombra verde oscuro al 20% */
+    --color-shadow-nav: #3D44354D;      /* Sombra menú al 30% */
+    --color-shadow-glow: #A4B68C66;     /* Resplandor del fondo secundario */
+}
+
+/* Ajuste específico para asegurar legibilidad en el botón primario */
+.vc-ombretta .btn-primary {
+    color: var(--text-on-primary);
+    background-color: var(--color-primary);
+}

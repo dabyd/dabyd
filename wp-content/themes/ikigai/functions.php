@@ -1,8 +1,35 @@
 <?php
-require_once( __DIR__ . '/ikigai-functions.php' );
+/**
+ * Ikigai Theme - Functions Entry Point
+ * 
+ * Este archivo carga todos los módulos del core del tema
+ */
+
+// ============================================
+// CARGAR CORE DEL TEMA
+// ============================================
+
+// Clases
+require_once __DIR__ . '/admin/classes/class-media.php';
+require_once __DIR__ . '/admin/classes/class-videos.php';
+require_once __DIR__ . '/admin/classes/class-floating-window.php';
+require_once __DIR__ . '/admin/classes/class-error-handler.php';
+require_once __DIR__ . '/admin/classes/class-debug-handler.php';
+
+// Funciones
+require_once __DIR__ . '/admin/functions/functions-core.php';
+require_once __DIR__ . '/admin/functions/functions-form-handler.php';
+require_once __DIR__ . '/admin/functions/functions-form-admin.php';
+
+// Custom Post Types
+require_once __DIR__ . '/cpt.php';
+
+// ============================================
+// CARGAR RECURSOS DEL TEMA
+// ============================================
 
 function ikigai_cargar_recursos() {
-    $minifier_url = get_stylesheet_directory_uri() . '/ikigai-min.php?i=' . get_the_ID() . '&t=';
+    $minifier_url = get_stylesheet_directory_uri() . '/admin/functions/functions-minifier.php?i=' . get_the_ID() . '&t=';
 
     // 1. Preconnect para Google Fonts (Mejora de rendimiento)
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
@@ -18,7 +45,6 @@ function ikigai_cargar_recursos() {
     wp_enqueue_style('ikigai-styles', $minifier_url . 'css');
 
     // 4. Cargar JS personalizado (ikigai-scripts)
-    // El 'true' al final hace que el script se cargue en el footer (mejor para SEO)
     wp_enqueue_script('ikigai-scripts', $minifier_url . 'js');
     
     // 5. Pasar variables PHP a JavaScript para AJAX
@@ -30,8 +56,26 @@ function ikigai_cargar_recursos() {
 
 add_action('wp_enqueue_scripts', 'ikigai_cargar_recursos');
 
+// ============================================
+// CARGAR ESTILOS DE ADMIN
+// ============================================
+
+function ikigai_admin_styles() {
+    wp_enqueue_style(
+        'ikigai-admin-styles',
+        get_template_directory_uri() . '/admin/css/admin.css',
+        array(),
+        '1.0.0'
+    );
+}
+
+add_action('admin_enqueue_scripts', 'ikigai_admin_styles');
+
+// ============================================
+// CONFIGURACIÓN DEL TEMA
+// ============================================
+
 function ikigai_configurar_tema() {
-    // Esto activa la opción de "Menús" en el panel de Apariencia
     register_nav_menus( array(
         'menu-principal' => 'Menú Principal Ikigai',
         'menu-footer'    => 'Menú del Pie de Página'
@@ -40,10 +84,12 @@ function ikigai_configurar_tema() {
 
 add_action( 'after_setup_theme', 'ikigai_configurar_tema' );
 
+// ============================================
+// FILTROS
+// ============================================
+
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-require_once( __DIR__ . '/cpt.php' );

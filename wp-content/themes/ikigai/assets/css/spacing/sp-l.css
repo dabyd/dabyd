@@ -1,0 +1,23 @@
+.sp-l {
+    --module-padding-xxl: 8rem;
+    --module-padding-xl: 5.5rem;
+    --module-padding-lg: 4rem;
+    --module-padding-md: 2.5rem;
+    --module-padding-sm: 2rem;
+    --module-padding-xs: 1.25rem;
+    
+    --module-padding: var(--module-padding-xxl);
+}
+
+@media (max-width: 640px) {
+    .sp-l {
+        --module-padding-xxl: 4rem;
+        --module-padding-xl: 2.75rem;
+        --module-padding-lg: 2rem;
+        --module-padding-md: 1.5rem;
+        --module-padding-sm: 1rem;
+        --module-padding-xs: 0.75rem;
+         
+        --module-padding: var(--module-padding-xxl);
+    }
+}

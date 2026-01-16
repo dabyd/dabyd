@@ -1,0 +1,87 @@
+.engineering-wellness {
+    position: relative;
+    padding: var(--space-xl) 0;
+    background-color: var(--color-bg-light); /* Slight contrast to Cream body */
+    overflow: hidden;
+}
+
+.engineering-wellness__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.engineering-wellness__constellation {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.engineering-wellness .container {
+    position: relative;
+    z-index: 2;
+}
+
+.engineering-wellness__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.engineering-wellness__title {
+    font-size: var(--fz-xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-primary-dark);
+}
+
+.engineering-wellness__text p {
+    font-size: var(--fz-md);
+    margin-bottom: var(--space-sm);
+    color: var(--text-main);
+    font-weight: 300; /* Lighter feel */
+}
+
+/* Visual Representation */
+.system-visual {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.system-layer {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--color-primary);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+
+.layer-1 { width: 100px; height: 100px; animation: orbit 10s infinite linear; border-style: dashed; }
+.layer-2 { width: 200px; height: 200px; animation: orbit 15s infinite reverse linear; }
+.layer-3 { width: 300px; height: 300px; animation: orbit 20s infinite linear; border-style: dotted; }
+
+@keyframes orbit {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .engineering-wellness__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .engineering-wellness__visual-col {
+        order: -1;
+        margin-bottom: var(--space-md);
+    }
+}

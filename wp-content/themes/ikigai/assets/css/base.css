@@ -1,0 +1,204 @@
+/* ============================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ============================================ */
+:root {
+    /* --- COLOR TOKENS --- */
+    --color-primary: #4A7C59;
+    --color-primary-light: #6B9B7F;
+    --color-primary-dark: #2F5940;
+    --color-accent: #D4A574;
+
+    --color-white: #FFFFFF;
+    --color-bg-cream: #F5F5F0;   /* Updated to Calm Tech Stone/Cream */
+    --color-bg-light: #F4F7F6;   
+    --color-border: #E2E7ED;
+    
+    --text-main: #2C3E50;        
+    --text-muted: #5A6C7D;       
+    --text-light: #8595A6;
+    
+    /* Variantes Hexadecimales para efectos */
+    --color-header-bg: #FDFDFD0D;       
+    --color-shadow-light: #F4F5F6;      
+    --color-shadow-nav: #E9ECEF;        
+    --color-shadow-glow: #C9D8CD;       
+
+    /* --- TYPOGRAPHY TOKENS --- */
+    --font-family-base: 'Inter', sans-serif; /* Modern Tech Sans */
+    --font-family-heading: 'Lora', serif;    /* Ancient Wisdom Serif */
+
+    /* Font Sizes */
+    --fz-xs: 0.75rem;   
+    --fz-sm: 0.875rem;  
+    --fz-base: 1rem;    
+    --fz-md: 1.25rem;   
+    --fz-lg: 1.5rem;    
+    --fz-xl: 2rem;      
+    --fz-xxl: 3rem;     
+    --fz-btn-large: 1.125rem;
+
+    /* Line Heights */
+    --lh-none: 1;          
+    --lh-tight: 1.2;       
+    --lh-heading: 1.3;     
+    --lh-base: 1.6;        
+    --lh-loose: 1.8;       
+
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* --- SPACING TOKENS (Base Desktop) --- */
+    --space-xs: 0.5rem;  
+    --space-sm: 1rem;    
+    --space-md: 2rem;    
+    --space-lg: 3rem;    
+    --space-xl: 4rem;    
+    --space-xxl: 6rem;
+
+    /* --- SHADOWS & RADIUS --- */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;   
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 2px 4px #0000000D; 
+    --shadow-md: 0 4px 20px #00000014; 
+    
+    /* --- TRANSITIONS --- */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+
+    /* --- COMPONENT TOKENS (Headers & Buttons) --- */
+    --header-height: 95px;
+    --wp-admin-bar-desktop: 32px;
+    --wp-admin-bar-mobile: 46px;
+
+    /* Variable de compensación dinámica para el header */
+    --header-offset: var(--header-height);
+
+    /* Padding Botones */
+    --space-btn-xs-x: 0.75rem; --space-btn-xs-y: 0.4rem;
+    --space-btn-sm-x: 1.5rem;  --space-btn-sm-y: 0.7rem;
+    --space-btn-md-x: 2rem;    --space-btn-md-y: 1rem;
+    --space-btn-lg-x: 2.5rem;  --space-btn-lg-y: 1.25rem;
+    --space-btn-xl-x: 3.5rem;  --space-btn-xl-y: 1.5rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--fz-md);
+    background-color: var(--color-bg-cream);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    word-break: normal;     /* Evita romper la palabra en cualquier punto */
+    overflow-wrap: normal; /* Opción estándar moderna para evitar saltos */
+    hyphens: none;         /* Desactiva los guiones automáticos de WordPress/Navegador */
+    white-space: normal;
+}
+
+/* LÓGICA DE EMPUJE DE HEADER: 
+   Usamos !important para que el sistema de compensación siempre gane 
+   al padding-top base de los módulos en la primera sección.
+*/
+main section:first-of-type,
+section:first-of-type {
+    padding-top: calc(var(--header-offset) + var(--space-lg)) !important;
+}
+
+/* Ajuste dinámico de la compensación si hay Admin Bar de WordPress */
+.logged-in {
+    --header-offset: calc(var(--header-height) + var(--wp-admin-bar-desktop));
+}
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    font-weight: var(--fw-semibold);
+    color: var(--text-main);
+}
+
+h1 { font-size: clamp(var(--fz-xl), 6vw, var(--fz-xxl)); margin-bottom: var(--space-md); line-height: var(--lh-tight); }
+h2 { font-size: clamp(var(--fz-lg), 5vw, var(--fz-xl)); margin-bottom: var(--space-md); line-height: var(--lh-tight); }
+h3 { font-size: clamp(var(--fz-md), 4vw, var(--fz-lg)); margin-bottom: var(--space-sm); line-height: var(--lh-heading); }
+
+p {
+    line-height: var(--lh-base);
+    margin-bottom: var(--space-sm);
+    color: var(--text-muted);
+}
+
+a { text-decoration: none; color: inherit; transition: var(--transition-normal); }
+strong { font-weight: var(--fw-bold); }
+em { font-style: italic; }
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.section-subtitle {
+    font-size: var(--fz-md);
+    color: var(--text-muted);
+    line-height: var(--lh-heading);
+    margin-bottom: var(--space-lg);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: var(--space-btn-md-y) var(--space-btn-md-x);
+    border-radius: var(--radius-full);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-none);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.btn-primary { background-color: var(--color-primary); color: var(--color-white); }
+.btn-primary:hover { background-color: var(--color-primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-secondary { background-color: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.btn-secondary:hover { background-color: var(--color-primary); color: var(--color-white); }
+
+/* Modificadores de Tamaño */
+.btn-xs { padding: var(--space-btn-xs-y) var(--space-btn-xs-x); font-size: var(--fz-xs); }
+.btn-sm { padding: var(--space-btn-sm-y) var(--space-btn-sm-x); font-size: var(--fz-sm); }
+.btn-lg { padding: var(--space-btn-lg-y) var(--space-btn-lg-x); font-size: var(--fz-btn-large); }
+.btn-xl { padding: var(--space-btn-xl-y) var(--space-btn-xl-x); font-size: var(--fz-md); font-weight: var(--fw-semibold); }
+
+/* ============================================
+   RESPONSIVE GENERAL
+   ============================================ */
+@media screen and (max-width: 782px) {
+    .logged-in {
+        --header-offset: calc(var(--header-height) + var(--wp-admin-bar-mobile));
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        /* Redefinición proporcional de espacios para móvil */
+        --space-xxl: var(--space-lg); 
+        --space-xl: var(--space-md);
+        --space-lg: var(--space-sm);
+    }
+    .btn { width: 100%; }
+}

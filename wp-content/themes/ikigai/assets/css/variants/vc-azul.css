@@ -1,0 +1,25 @@
+.vc-azul {
+    /* --- BLUE THEME TOKENS --- */
+    --color-primary: #3D7A9E;           /* Azul Océano */
+    --color-primary-light: #5A9BC0;     /* Para hovers claros */
+    --color-primary-dark: #2A5672;      /* Para hovers oscuros */
+    --color-primary-glare: #EBF3F7;     /* Fondo sutil azulado */
+    --color-primary-border: #BCD3E0;    /* Bordes suaves de marca */
+    --color-accent: #E5A172;            /* Complementario (Naranja tierra) */
+
+    --color-white: #FFFFFF;
+    --color-bg-cream: #F5F9FA;          /* Fondo principal */
+    --color-bg-light: #EDF4F7;          /* Fondo secundario */
+    --color-border: #D1DEE5;            /* Bordes generales */
+    
+    /* Text Colors: Ajustados a la gama azulada para armonía visual */
+    --text-main: #2C3E50;               /* Azul grisáceo muy oscuro (Legibilidad máxima) */
+    --text-muted: #546E7A;              /* Gris azulado medio para párrafos */
+    --text-light: #78909C;              /* Gris azulado claro para detalles */
+
+    /* Variantes Hexadecimales para efectos y sombras */
+    --color-header-bg: #F5F9FAF2;       /* Fondo crema azulado al 95% de opacidad */
+    --color-shadow-light: #2C3E500D;    /* Sombra sutil al 5% */
+    --color-shadow-nav: #2C3E501A;      /* Sombra menú al 10% */
+    --color-shadow-glow: #3D7A9E4D;     /* Sombra resplandor primaria al 30% */
+}

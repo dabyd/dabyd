@@ -1,124 +1,45 @@
-/* ============================================
-   BENEFICIS / PROCESS (SISTEMA ADAPTATIVO)
-   ============================================ */
-
 .process-section {
-    padding: var(--module-padding-xxl) 0;
-    background-color: var(--color-bg-cream); /* Negro en vc-negro, crema en base */
-    color: var(--text-main);
-    transition: background-color var(--transition-normal), color var(--transition-normal);
+    padding: var(--space-xl) 0;
 }
-
-/* --- CLASE DE UTILIDAD PARA CENTRAR TODO EL MÓDULO --- */
-.process-section.text-center .section-label,
-.process-section.text-center .section-title,
-.process-section.text-center .section-subtitle {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- CABECERA (Alineación izquierda por defecto) --- */
-
-.process-section .section-label {
-    display: block;
-    font-family: var(--font-family-base);
-    font-weight: var(--fw-bold);
-    font-size: var(--fz-xs);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: var(--space-sm);
-    color: var(--color-primary); /* Legible en cualquier fondo */
-}
-
-.process-section h2.section-title {
-    color: var(--text-main);
-    margin-bottom: var(--space-md);
-    font-family: var(--font-family-heading);
-}
-
-.process-section .section-subtitle {
-    max-width: 750px;
-    margin-bottom: var(--space-xl);
-    color: var(--text-muted);
-    font-size: var(--fz-md);
-    line-height: var(--lh-base);
-}
-
-/* --- GRID DE PASOS --- */
 
 .process-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--module-padding-lg);
+    gap: var(--space-md);
     margin-top: var(--space-xl);
 }
 
 .process-step {
-    /* Los elementos dentro de la caja de paso se mantienen centrados */
-    text-align: center; 
+    background-color: var(--color-white);
     padding: var(--space-lg);
-    transition: transform var(--transition-normal);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    position: relative;
+    border: 1px solid transparent;
 }
 
 .process-step:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border);
 }
-
-/* --- CÍRCULO CON NÚMERO (Siempre centrado internamente) --- */
 
 .step-number {
-    width: 60px;
-    height: 60px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: var(--radius-full);
-    display: flex; /* Centrado interno del número */
-    align-items: center;
-    justify-content: center;
-    font-size: var(--fz-lg);
+    font-family: var(--font-family-heading);
+    font-size: var(--fz-xl);
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
     font-weight: var(--fw-bold);
-    margin: 0 auto var(--space-md); /* Centra el círculo en la columna */
-    box-shadow: 0 0 20px var(--color-shadow-glow);
-    transition: all var(--transition-normal);
+    opacity: 0.8;
 }
-
-/* Inversión para modo negro */
-.vc-negro .step-number {
-    color: var(--text-on-primary);
-}
-
-/* --- TEXTOS DEL PASO --- */
 
 .process-step h3 {
-    color: var(--color-primary);
     margin-bottom: var(--space-sm);
-    font-family: var(--font-family-heading);
-    font-size: var(--fz-md);
+    color: var(--color-primary-dark);
 }
 
 .process-step p {
+    font-size: var(--fz-sm);
     color: var(--text-muted);
-    line-height: var(--lh-base);
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-@media (max-width: 968px) {
-    .process-steps {
-        gap: var(--module-padding-md);
-    }
-}
-
-@media (max-width: 640px) {
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-    
-    .process-step {
-        padding: var(--space-md) 0;
-    }
 }

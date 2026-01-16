@@ -1,0 +1,128 @@
+/* ============================================
+   PALETA NEGRA
+   ============================================ */
+
+/* PALETA 9: NEGRO (negre) */
+.paleta-negre {
+    background-color: #1A1A1A;
+    color: white;
+}
+
+.paleta-negre h1, 
+.paleta-negre h2, 
+.paleta-negre h3, 
+.paleta-negre h4, 
+.paleta-negre h5, 
+.paleta-negre h6 {
+    color: white;
+}
+
+.paleta-negre p, 
+.paleta-negre .footer-col p,
+.paleta-negre .section-subtitle,
+.paleta-negre .hero-description {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.paleta-negre .section-label {
+    color: #D4A574;
+}
+
+.paleta-negre a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.paleta-negre a:hover {
+    color: white;
+}
+
+.paleta-negre .footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.paleta-negre .btn-primary {
+    background-color: #D4A574;
+    color: #1A1A1A;
+}
+
+.paleta-negre .btn-primary:hover {
+    background-color: #E5C49A;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+.paleta-negre .btn-secondary {
+    color: white;
+    border-color: white;
+}
+
+.paleta-negre .btn-secondary:hover {
+    background-color: white;
+    color: #1A1A1A;
+}
+
+.paleta-negre .footer-col ul li a:hover {
+    padding-left: 5px;
+}
+
+.paleta-negre .pain-card, 
+.paleta-negre .service-card, 
+.paleta-negre .testimonial-card, 
+.paleta-negre .faq-item,
+.paleta-negre .condition-item {
+    background-color: #2A2A2A;
+}
+
+.paleta-negre .pain-card h3, 
+.paleta-negre .service-card h3, 
+.paleta-negre .feature-card h4, 
+.paleta-negre .service-link {
+    color: #D4A574;
+}
+
+.paleta-negre .service-card::before {
+    background-color: #D4A574;
+}
+
+.paleta-negre .service-number {
+    color: #E5C49A;
+}
+
+.paleta-negre .pain-conclusion {
+    background-color: #2A2A2A;
+    border-left-color: #D4A574;
+}
+
+.paleta-negre .faq-icon {
+    background-color: #D4A574;
+    color: #1A1A1A;
+}
+
+.paleta-negre .faq-item.active .faq-icon {
+    background-color: #E5C49A;
+}
+
+.paleta-negre .faq-question,
+.paleta-negre .testimonial-text,
+.paleta-negre .faq-answer-content {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.paleta-negre .faq-question:hover {
+    color: #D4A574;
+}
+
+.paleta-negre .condition-icon {
+    color: #D4A574;
+}
+
+.paleta-negre .testimonial-author strong {
+    color: white;
+}
+
+.paleta-negre .testimonial-author span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.paleta-negre .condition-item p {
+    color: rgba(255, 255, 255, 0.85);
+}

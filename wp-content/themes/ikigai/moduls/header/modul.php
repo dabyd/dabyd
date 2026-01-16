@@ -3,12 +3,20 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts: Inter (Sans) & Lora (Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
 <!-- Header/Navigation -->
-<header class="header <?php ikg_get_variant( 'header' ); ?>" id="header">
+<?php
+$header_solid = ikg_get_option('fondo_solido_o_translucido');
+$solid_class = $header_solid ? 'solid' : '';
+?>
+<header class="header <?php ikg_get_variant( 'header' ); ?> <?php echo esc_attr($solid_class); ?>" id="header">
     <nav class="nav container">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
             <?php

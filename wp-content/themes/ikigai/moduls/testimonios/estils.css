@@ -1,197 +1,148 @@
-/* ============================================
-   SECCIÓN TESTIMONIOS (Tokens Adaptados)
-   ============================================ */
-
 .testimonials {
-    padding: var(--module-padding-xxl) 0;
-    background-color: var(--color-bg-cream); /* Usamos el crema suave de fondo */
+    padding: var(--space-xl) 0;
+    /* overflow: hidden; Removed to prevent shadow clipping */
 }
 
-/* Contenedor del carrusel */
 .testimonials-carousel {
     position: relative;
-    margin-top: var(--space-lg);
-    overflow: hidden;
-    padding: 0 50px; /* Espacio para las flechas */
+    padding: var(--space-md) 0;
 }
 
-/* Grid del carrusel */
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-lg);
-    transition: transform var(--transition-normal);
+    display: flex;
+    gap: var(--space-md);
+    
+    /* Native Scroll & Snap */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    
+    /* Layout & Spacing */
+    padding: var(--space-md); /* Internal padding for shadows */
+    margin: 0 calc(var(--space-md) * -1); /* Negative margin to offset padding visually */
+    
+    /* Hide Scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
 }
+.testimonials-grid::-webkit-scrollbar { display: none; }
 
-/* Tarjeta de testimonio */
 .testimonial-card {
+    flex: 0 0 320px;
+    
+    /* Scroll Snap Alignment */
+    scroll-snap-align: center;
+    scroll-margin-inline: var(--space-md); /* Margin for snap alignment context */
+    
     background-color: var(--color-white);
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border-radius: 32px; /* Super rounded "Organic" feel */
     box-shadow: var(--shadow-sm);
-    min-width: 300px;
-    border-bottom: 3px solid var(--color-primary-glare);
-    transition: transform var(--transition-normal);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: var(--transition-normal);
 }
 
 .testimonial-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
     box-shadow: var(--shadow-md);
+    z-index: 1; /* Ensure hover state is on top */
 }
 
-/* Estrellas */
 .testimonial-stars {
-    color: var(--color-accent); /* Tu color dorado/verde de acento */
-    font-size: var(--fz-md);
-    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
 }
 
-/* Texto del testimonio */
-.testimonial-text {
-    font-style: italic;
-    color: var(--text-muted);
-    margin-bottom: var(--space-md);
-    line-height: var(--lh-base);
-}
-
-/* Comillas elegantes */
 .testimonial-quote {
-    display: inline;
-    quotes: "«" "»";
+    font-family: var(--font-family-heading);
     font-style: italic;
+    font-size: var(--fz-md);
+    color: var(--text-main);
+    margin-bottom: var(--space-md);
+    line-height: var(--lh-loose);
 }
 
-.testimonial-quote::before {
-    content: open-quote;
-    margin-right: 5px;
-    font-size: 1.3em;
-    font-weight: var(--fw-bold);
-    color: var(--color-primary);
-}
-
-.testimonial-quote::after {
-    content: close-quote;
-    margin-left: 5px;
-    font-size: 1.3em;
-    font-weight: var(--fw-bold);
-    color: var(--color-primary);
-}
-
-/* Autor */
 .testimonial-author {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    margin-top: var(--space-md);
+    font-size: var(--fz-sm);
 }
 
-.testimonial-author b,
 .testimonial-author strong {
-    color: var(--text-main);
-    font-weight: var(--fw-bold);
+    color: var(--color-primary-dark);
 }
 
 .testimonial-author span {
     color: var(--text-light);
-    font-size: var(--fz-sm);
 }
 
-/* --- ESTILOS DEL CARRUSEL (Controles) --- */
-
-/* Botones de navegación */
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--color-white);
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    width: 44px; /* Tamaño optimizado para clic */
-    height: 44px;
-    border-radius: var(--radius-full);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--fz-lg);
-    transition: all var(--transition-normal);
-    z-index: 10;
-    user-select: none;
-}
-
-.carousel-nav:hover {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 4px 12px var(--color-shadow-glow);
-}
-
-.carousel-nav:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.carousel-nav.prev { left: 0; }
-.carousel-nav.next { right: 0; }
-
-.carousel-nav:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    border-color: var(--color-border);
-    color: var(--color-border);
-}
-
-/* Indicadores (dots) */
+/* Dots Navigation */
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-top: var(--space-lg);
+    gap: 8px;
+    margin-top: var(--space-md);
 }
 
 .carousel-dot {
     width: 10px;
     height: 10px;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     background-color: var(--color-border);
     border: none;
     cursor: pointer;
-    transition: all var(--transition-normal);
     padding: 0;
-}
-
-.carousel-dot:hover {
-    background-color: var(--color-primary-light);
+    transition: var(--transition-fast);
 }
 
 .carousel-dot.active {
     background-color: var(--color-primary);
-    width: 28px; /* Efecto pastilla activa */
+    transform: scale(1.2);
 }
 
-/* ============================================
-   RESPONSIVE TESTIMONIALS
-   ============================================ */
+/* Navigation - Minimalist rounded buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    color: var(--text-main);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: serif;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.carousel-nav:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.carousel-nav.prev { left: -20px; }
+.carousel-nav.next { right: -20px; }
+
+/* Responsive */
 @media (max-width: 768px) {
-    .testimonials-carousel {
-        padding: 0 40px;
+    .testimonial-card {
+        flex: 0 0 85vw; /* Casi full width en móvil */
     }
-    
-    .carousel-nav {
-        width: 38px;
-        height: 38px;
-    }
+    .carousel-nav { display: none; } /* On mobile use swipe */
     
     .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonials-carousel {
-        padding: 0 var(--space-md);
-    }
-    
-    .carousel-nav {
-        display: none; /* Ocultamos flechas en móviles muy pequeños para dar espacio */
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+        scroll-snap-type: x mandatory;
     }
 }

@@ -1,0 +1,480 @@
+
+================================================================================
+[2026-01-16 09:07:05] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:07:05] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:10:26] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:10:26] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:10:47] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:10:47] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:28] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:28] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:40] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:40] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:43] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:43] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:52] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:15:52] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:17:22] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:17:22] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:20:42] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:20:42] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:21:25] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:21:25] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:23:38] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:23:38] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:24:53] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14236
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-September-07-2025-10_37AM.jpeg
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/big_hero/modul.php:17 - ikg_get_image()
+================================================================================
+
+================================================================================
+[2026-01-16 09:24:53] [Accesibilidad] Imagen sin texto alternativo (alt)
+--------------------------------------------------------------------------------
+(Array) [5 elementos]
+Array
+(
+    [image_id] => 14272
+    [url] => https://dabyd.local/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [file] => /Users/dabyd/www/dabyd/html/wp-content/uploads/2025/12/Generated-Image-October-11-2025-8_54AM.png
+    [page_id] => 13848
+    [page_url] => https://dabyd.local/
+)
+
+---------------------------------------- BACKTRACE ----------------------------
+  #0 ...wp-content/themes/ikigai/admin/classes/class-debug-handler.php:278 - IkigaiDebugLogger->log_accessibility()
+  #1 ...wp-content/themes/ikigai/admin/classes/class-media.php:590 - ikg_accessibility()
+  #2 ...wp-content/themes/ikigai/admin/classes/class-media.php:680 - IkigaiMediaClass->img()
+  #3 ...wp-content/themes/ikigai/moduls/hero/opcio0.php:22 - ikg_get_image()
+================================================================================

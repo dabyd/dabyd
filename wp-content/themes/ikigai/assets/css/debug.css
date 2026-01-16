@@ -1,0 +1,450 @@
+/* ============================================================
+   ESTILOS PARA DEBUG SHOW ALL METAS (VERSIÓN VENTANA FLOTANTE)
+   ============================================================ */
+
+/* Contenedor principal dentro de la ventana .fw-content */
+.sam-floating-content {
+    font-family: "Space Mono", monospace;
+    background-color: #f5d0f3;
+    color: #780c73;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.module-not-found {
+    margin: 100px 40px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #780c73;
+}
+
+/* Ajuste del header de la ventana flotante para que combine con tu marca */
+.sam-header-custom {
+    background: linear-gradient(135deg, #780c73 0%, #50054c 100%) !important;
+}
+
+/* Items individuales de metadatos */
+.meta-item {
+    padding: 15px 0;
+    /* Línea divisoria entre elementos (no se aplica al último) */
+    border-bottom: 1px dashed rgba(120, 12, 115, 0.3);
+}
+
+.meta-item:last-child {
+    border-bottom: none;
+}
+
+/* Títulos de los campos (Ej: aspecto, titulo, subtitulo) */
+.sam-floating-content h3 {
+    font-family: "Space Mono", monospace;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    color: #50054c;
+    display: block;
+}
+
+/* Control de desbordamiento de texto (Solución al problema de la imagen) */
+.sam-floating-content {
+    white-space: pre-wrap;      /* Respeta saltos de línea pero ajusta al ancho */
+    word-break: break-word;     /* Rompe palabras largas si es necesario */
+    overflow-wrap: break-word;
+}
+
+/* Estilo para los Arrays (print_r) */
+.fw-content .sam-floating-content pre {
+    font-family: "Space Mono", monospace !important;
+    background: rgba(120, 12, 115, 0.05); /* Fondo sutilmente morado */
+    color: #780c73 !important; /* Forzamos el color morado */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(120, 12, 115, 0.2);
+    margin: 5px 0 0 0;
+    white-space: pre-wrap; /* Para que los arrays largos no se salgan */
+}
+
+/* Ajuste de la tipografía dentro de la ventana de la clase IkigaiFloatingWindow */
+.fw-content.sam-content-debug {
+    padding: 0 20px !important; /* El padding lo manejamos nosotros */
+    background-color: #f5d0f3 !important; /* Fondo coherente con tu diseño */
+}
+
+/* Ajuste del contenedor de la clase IkigaiFloatingWindow */
+.fw-content {
+    background-color: #f5d0f3 !important;
+}
+
+/* Detalles expandibles del stack trace */
+.sam-floating-content details {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sam-floating-content details summary {
+    padding: 8px 12px;
+    background: rgba(120, 12, 115, 0.05);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background 0.2s;
+}
+
+.sam-floating-content details summary:hover {
+    background: rgba(120, 12, 115, 0.1);
+}
+
+.sam-floating-content details[open] summary {
+    background: rgba(120, 12, 115, 0.15);
+    margin-bottom: 10px;
+}
+
+/* Estilo para código inline */
+.sam-floating-content code {
+    font-family: "Space Mono", monospace;
+    background: rgba(120, 12, 115, 0.1);
+    color: #780c73;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Mejora de legibilidad para mensajes largos */
+.sam-floating-content .meta-item > div {
+    line-height: 1.6;
+}
+
+/* Separadores más visibles */
+.sam-floating-content .meta-item {
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(120, 12, 115, 0.2);
+}
+
+.sam-floating-content .meta-item:first-child {
+    padding-top: 10px;
+}
+
+.sam-floating-content .meta-item:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+/* Resaltar información importante */
+.sam-floating-content strong {
+    font-weight: 700;
+    color: #50054c;
+}
+
+/* Estilo para spans de información */
+.sam-floating-content span {
+    display: inline-block;
+}
+
+/* Box de información del archivo de log */
+.sam-floating-content > div:last-child {
+    position: sticky;
+    bottom: 0;
+    background: #f5d0f3;
+    padding-top: 20px;
+}
+
+/* Scrollbar personalizado para el contenido de errores */
+.sam-content-debug::-webkit-scrollbar {
+    width: 14px;
+}
+
+.sam-content-debug::-webkit-scrollbar-track {
+    background: rgba(120, 12, 115, 0.1);
+    border-radius: 7px;
+}
+
+.sam-content-debug::-webkit-scrollbar-thumb {
+    background: #780c73;
+    border-radius: 7px;
+    border: 2px solid #f5d0f3;
+}
+
+.sam-content-debug::-webkit-scrollbar-thumb:hover {
+    background: #50054c;
+}
+
+/* Animación sutil para items de error */
+@keyframes errorSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sam-floating-content .meta-item {
+    animation: errorSlideIn 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+.sam-floating-content .meta-item:nth-child(1) { animation-delay: 0.05s; }
+.sam-floating-content .meta-item:nth-child(2) { animation-delay: 0.1s; }
+.sam-floating-content .meta-item:nth-child(3) { animation-delay: 0.15s; }
+.sam-floating-content .meta-item:nth-child(4) { animation-delay: 0.2s; }
+.sam-floating-content .meta-item:nth-child(5) { animation-delay: 0.25s; }
+
+
+/*
+Adaptaciones para ikg media
+*/
+
+/* ============================================================
+   ESTILOS PARA DEBUG DE IKIGAI MEDIA CLASS
+   Añadir a tu CSS o archivo separado
+   ============================================================ */
+
+/* Contenedor principal dentro de la ventana .fw-content */
+.sam-floating-content {
+    font-family: "Space Mono", monospace;
+    background-color: #f5d0f3;
+    color: #780c73;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Ajuste del header de la ventana flotante para que combine con tu marca */
+.sam-header-custom {
+    background: linear-gradient(135deg, #780c73 0%, #50054c 100%) !important;
+}
+
+/* Items individuales de metadatos */
+.sam-floating-content .meta-item {
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(120, 12, 115, 0.2);
+}
+
+.sam-floating-content .meta-item:first-child {
+    padding-top: 10px;
+}
+
+.sam-floating-content .meta-item:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+/* Títulos de los campos */
+.sam-floating-content h3 {
+    font-family: "Space Mono", monospace;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    color: #50054c;
+    display: block;
+}
+
+/* Control de desbordamiento de texto */
+.sam-floating-content {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Estilo para los Arrays (print_r) y pre */
+.fw-content .sam-floating-content pre {
+    font-family: "Space Mono", monospace !important;
+    background: rgba(120, 12, 115, 0.05);
+    color: #780c73 !important;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid rgba(120, 12, 115, 0.2);
+    margin: 5px 0 0 0;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Ajuste del contenedor de la clase IkigaiFloatingWindow */
+.fw-content.sam-content-debug {
+    padding: 20px !important;
+    background-color: #f5d0f3 !important;
+}
+
+/* Detalles expandibles */
+.sam-floating-content details {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sam-floating-content details summary {
+    padding: 12px;
+    background: rgba(120, 12, 115, 0.08);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: all 0.2s;
+    font-weight: 600;
+    color: #50054c;
+}
+
+.sam-floating-content details summary:hover {
+    background: rgba(120, 12, 115, 0.15);
+    transform: translateX(5px);
+}
+
+.sam-floating-content details[open] summary {
+    background: rgba(120, 12, 115, 0.2);
+    margin-bottom: 10px;
+}
+
+/* Estilo para código inline */
+.sam-floating-content code {
+    font-family: "Space Mono", monospace;
+    background: rgba(120, 12, 115, 0.1);
+    color: #780c73;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 13px;
+    display: inline-block;
+    word-break: break-all;
+}
+
+/* Mejora de legibilidad */
+.sam-floating-content .meta-item > div {
+    line-height: 1.8;
+}
+
+/* Resaltar información importante */
+.sam-floating-content strong {
+    font-weight: 700;
+    color: #50054c;
+}
+
+/* Grid para dimensiones */
+.sam-floating-content [style*="grid-template-columns"] > div {
+    background: rgba(120, 12, 115, 0.05);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Badges para tipos MIME */
+.sam-floating-content span[style*="background: rgba(120, 12, 115, 0.1)"] {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Cajas de información especial */
+.sam-floating-content [style*="background: rgba(120, 12, 115, 0.1)"][style*="padding: 15px"] {
+    border-left: 4px solid #780c73;
+}
+
+.sam-floating-content [style*="background: rgba(74, 165, 116, 0.1)"] {
+    border-left: 4px solid #4AA574;
+}
+
+/* Preview de imagen */
+.sam-floating-content img[alt="Preview"] {
+    border: 3px solid rgba(120, 12, 115, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.sam-floating-content img[alt="Preview"]:hover {
+    transform: scale(1.02);
+    border-color: #780c73;
+}
+
+/* Scrollbar personalizado para el contenido de debug */
+.sam-content-debug::-webkit-scrollbar {
+    width: 14px;
+}
+
+.sam-content-debug::-webkit-scrollbar-track {
+    background: rgba(120, 12, 115, 0.1);
+    border-radius: 7px;
+}
+
+.sam-content-debug::-webkit-scrollbar-thumb {
+    background: #780c73;
+    border-radius: 7px;
+    border: 2px solid #f5d0f3;
+}
+
+.sam-content-debug::-webkit-scrollbar-thumb:hover {
+    background: #50054c;
+}
+
+/* Animación sutil para items */
+@keyframes debugSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sam-floating-content .meta-item {
+    animation: debugSlideIn 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+.sam-floating-content .meta-item:nth-child(1) { animation-delay: 0.05s; }
+.sam-floating-content .meta-item:nth-child(2) { animation-delay: 0.1s; }
+.sam-floating-content .meta-item:nth-child(3) { animation-delay: 0.15s; }
+
+/* Iconos de estado (✅ ❌) */
+.sam-floating-content div:has(> strong:first-child) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Enlaces en el debug */
+.sam-floating-content a {
+    color: #780c73;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.sam-floating-content a:hover {
+    color: #50054c;
+}
+
+.ikg-show-module {
+    border: 2px dashed #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sam-floating-content {
+        font-size: 14px;
+    }
+    
+    .sam-floating-content h3 {
+        font-size: 18px;
+    }
+    
+    .sam-floating-content code {
+        font-size: 11px;
+    }
+    
+    .sam-floating-content details summary {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sam-floating-content {
+        font-size: 16px;
+    }
+    
+    .sam-floating-content h3 {
+        font-size: 18px;
+    }
+    
+    .sam-floating-content code {
+        font-size: 14px;
+        word-break: break-all;
+    }
+}
