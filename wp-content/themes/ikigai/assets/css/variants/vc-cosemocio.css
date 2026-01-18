@@ -1,0 +1,36 @@
+/* --- GOOGLE FONTS IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400&display=swap');
+
+.vc-cosemocio {
+    /* --- COSEMOCIÓ THEME --- */
+    
+    /* Tipografías */
+	--font-family-base: 'Lato', sans-serif;         /* Cuerpo de texto: Legible y suave */
+    --font-family-heading: 'Montserrat', sans-serif; /* Títulos: Fuerza y modernidad */
+    --font-family-accent: 'Playfair Display', serif; /* Detalles elegantes o citas */
+
+
+    /* Brand Colors: Extraídos de la identidad de Cosemoció */
+    --color-primary: #8AB8B3;           /* Verde agua/Eucalipto (Calma y salud) */
+    --color-primary-light: #A7CECA;     
+    --color-primary-dark: #6D9691;      
+    
+    --color-accent: #E8A87C;            /* Salmón/Tierra suave (Empatía y calidez) */
+    --color-accent-dark: #C38D9E;       /* Malva apagado (Para contrastes secundarios) */
+
+    /* Neutrals: Basados en un entorno terapéutico */
+    --color-white: #FFFFFF;
+    --color-bg-light: #F9F7F2;          /* Crema muy suave (Fondo de página) */
+    --color-bg-soft: #F0EBE1;           /* Grisáceo cálido para módulos alternos */
+    --color-border: #E2DDD3;
+    
+    /* Text Colors */
+    --text-main: #4A4A4A;               /* Gris carbón suave (menos agresivo que el negro) */
+    --text-muted: #7E7E7E;
+    --text-on-primary: #FFFFFF;
+    --text-accent: #E8A87C;
+
+    /* UI Elements */
+    --radius-module: 8px;               /* Bordes ligeramente suavizados */
+    --shadow-soft: 0 4px 15px rgba(0,0,0,0.05);
+}

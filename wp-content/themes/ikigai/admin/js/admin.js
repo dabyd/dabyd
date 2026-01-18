@@ -46,6 +46,42 @@
             });
         });
     }
+
+    // =============================================================================
+    // EXPORT ACF BUTTON HANDLER
+    // =============================================================================
+
+    function initExportButton() {
+        $(document).on('click', '[data-name="exportar_acf_completo"] button', function(e) {
+            e.preventDefault();
+            
+            var $btn = $(this);
+            var originalText = $btn.text();
+            
+            $btn.prop('disabled', true).text('Exportando...');
+            
+            $.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'ikg_export_acf_completo',
+                    nonce: ikgAdmin.exportNonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert('✅ ' + response.data.message);
+                    } else {
+                        alert('❌ Error: ' + response.data);
+                    }
+                    $btn.prop('disabled', false).text(originalText);
+                },
+                error: function() {
+                    alert('❌ Error de conexión al exportar');
+                    $btn.prop('disabled', false).text(originalText);
+                }
+            });
+        });
+    }
     
     // =============================================================================
     // LOG VIEWER
@@ -235,6 +271,42 @@
     }
     
     // =============================================================================
+    // EXPORT PLUGINS BUTTON HANDLER
+    // =============================================================================
+
+    function initExportPluginsButton() {
+        $(document).on('click', '[data-name="exportar_plugins"] button', function(e) {
+            e.preventDefault();
+            
+            var $btn = $(this);
+            var originalText = $btn.text();
+            
+            $btn.prop('disabled', true).text('Exportando Plugins...');
+            
+            $.ajax({
+                url: ajaxurl,
+                type: 'POST',
+                data: {
+                    action: 'ikg_export_plugins',
+                    nonce: ikgAdmin.exportNonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        alert('✅ ' + response.data.message);
+                    } else {
+                        alert('❌ Error: ' + response.data);
+                    }
+                    $btn.prop('disabled', false).text(originalText);
+                },
+                error: function() {
+                    alert('❌ Error de conexión al exportar plugins');
+                    $btn.prop('disabled', false).text(originalText);
+                }
+            });
+        });
+    }
+
+    // =============================================================================
     // FORM DETAIL TOGGLE
     // =============================================================================
     
@@ -246,12 +318,38 @@
     };
     
     // =============================================================================
+    // RESTORE BUTTON HANDLER
+    // =============================================================================
+    
+    function initRestoreButton() {
+        var selector = '[data-name="centro_de_recuperacion_ikigai"] button, [data-name="centro_de_recuperacion_ikigai"] input[type="submit"], [data-name="centro_de_recuperacion_ikigai"] .acf-button';
+        
+        $(document).on('click', selector, function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            if (typeof ikgAdmin === 'undefined' || !ikgAdmin.ajaxurl) {
+                console.error('ikgAdmin no está definido');
+                return;
+            }
+
+            // Redireccionar en la misma pestaña
+            var url = ikgAdmin.ajaxurl.replace('admin-ajax.php', '') + 'admin.php?ikg_restore=1';
+            window.location.href = url;
+        });
+    }
+    
+    // =============================================================================
     // INITIALIZATION
     // =============================================================================
     
     $(document).ready(function() {
         // Inicializar cache button
         initCacheButton();
+        initExportButton();
+        initExportPluginsButton();
+        initRestoreButton();
         
         // Esperar a que ACF cargue para el log viewer
         setTimeout(initLogViewer, 500);

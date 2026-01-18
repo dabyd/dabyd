@@ -4,6 +4,50 @@
  * Funciones principales del tema Ikigai
  */
 
+/**
+ * Ikigai Core Functions
+ * Funciones principales del tema Ikigai
+ */
+ 
+// =============================================================================
+// ENTORNO Y ROBOTS
+// =============================================================================
+
+if (!function_exists('isDevelopedEnvironment')) {
+    function isDevelopedEnvironment() {
+        $is = false;
+        if ((isset($_SERVER['HTTP_HOST']) && ('.local' == strtolower(substr($_SERVER['HTTP_HOST'], -6)) || '.test' == strtolower(substr($_SERVER['HTTP_HOST'], -5)))) ||
+            (isset($_SERVER['HTTP_REFERER']) && (strpos(strtolower($_SERVER['HTTP_REFERER']), '/localhost'))) ||
+            (isset($_SERVER['HTTP_REFERER']) && (strpos(strtolower($_SERVER['HTTP_REFERER']), '.developedby.gold')))
+        ) {
+            $is = true;
+        }
+        return $is;
+    }
+}
+
+if (!function_exists('isLocalDevelopedEnvironmet')) {
+    function isLocalDevelopedEnvironmet() {
+        $is = false;
+        if ((isset($_SERVER['HTTP_HOST']) && ('.local' == strtolower(substr($_SERVER['HTTP_HOST'], -6)) || '.test' == strtolower(substr($_SERVER['HTTP_HOST'], -5)))) ||
+            (isset($_SERVER['HTTP_REFERER']) && (strpos(strtolower($_SERVER['HTTP_REFERER']), '/localhost')))
+        ) {
+            $is = true;
+        }
+        return $is;
+    }
+}
+
+function ikg_auto_disable_search_engines() {
+    if ( isDevelopedEnvironment() ) {
+        // Verifica si la opción ya es 0 para evitar escribir en DB en cada carga
+        if ( get_option('blog_public') != '0' ) {
+            update_option('blog_public', '0');
+        }
+    }
+}
+add_action('init', 'ikg_auto_disable_search_engines');
+
 // Inicializar el error handler
 add_action('init', 'ikigai_init_error_handler');
 // Encolar el CSS del error handler (debug.css)
@@ -26,6 +70,12 @@ $ikg_media_definition = array(
 );
 $ikg_media = new IkigaiMediaClass( $ikg_media_definition );
 $ikg_videos = new IkigaiVideoClass();
+
+// Restauración de Sistema
+require_once get_template_directory() . '/admin/classes/class-restore.php';
+$ikg_restore = new IkigaiRestore();
+
+
 
 function ikg_get_text( $id, $from_options = false ) {
     return  nl2br( ikg_get_acf_value( $id, $from_options ) );
@@ -777,7 +827,8 @@ function ikg_enqueue_admin_scripts() {
     wp_localize_script('ikg-admin-js', 'ikgAdmin', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
         'cacheNonce' => wp_create_nonce('ikg_clear_cache_nonce'),
-        'logViewerNonce' => wp_create_nonce('ikg_log_viewer_nonce')
+        'logViewerNonce' => wp_create_nonce('ikg_log_viewer_nonce'),
+        'exportNonce' => wp_create_nonce('ikg_export_nonce')
     ));
 }
 add_action('admin_enqueue_scripts', 'ikg_enqueue_admin_scripts');
@@ -993,3 +1044,176 @@ add_action( 'wp_ajax_ikg_delete_logs', 'ikg_ajax_delete_logs' );
  * Cargar el script del visor de logs en admin
  */
 // JS del log viewer movido a admin/js/admin.js
+
+/**
+ * Exportar configuración completa de ACF a JSON
+ * Hooked al botón de ACFE 'exportar_acf_completo'
+ */
+/**
+ * Exportar configuración completa de ACF a JSON (AJAX)
+ * Guarda los archivos JSON en admin/acf-json/ sin generar ZIP ni descarga.
+ */
+function ikg_ajax_export_acf_completo() {
+    // Comprobar nonce
+    if ( ! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'ikg_export_nonce') ) {
+        wp_send_json_error('Permiso denegado (Nonce)');
+    }
+
+    // Comprobar permisos
+    if ( ! current_user_can('manage_options') ) {
+        wp_send_json_error('Sin permisos');
+    }
+
+    // Comprobar si ACF está activo
+    if ( ! function_exists('acf_get_field_groups') ) {
+        wp_send_json_error('ACF no está activo.');
+    }
+
+    // Obtener todos los grupos de campos
+    $groups = acf_get_field_groups();
+    
+    // Directorio de guardado (admin/acf-json)
+    $relative_path = '/admin/acf-json/';
+    $save_dir = get_template_directory() . $relative_path;
+
+    if ( ! file_exists( $save_dir ) ) {
+        mkdir( $save_dir, 0755, true );
+    }
+
+    $count = 0;
+
+    if ( $groups ) {
+        foreach ( $groups as $group ) {
+            // Obtener campos para cada grupo
+            $fields = acf_get_fields( $group['key'] );
+
+            // Preparar grupo para exportación
+            if ( function_exists('acf_prepare_field_group_for_export') ) {
+                $group = acf_prepare_field_group_for_export( $group );
+            }
+
+            // Añadir campos al grupo
+            $group['fields'] = $fields;
+            
+            // Generar contenido JSON
+            $json_content = json_encode( $group, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
+            
+            // Generar nombre de archivo basado en el Título
+            $filename = sanitize_title( $group['title'] ) . '.json';
+            
+            // Guardar en servidor
+            file_put_contents( $save_dir . $filename, $json_content );
+            $count++;
+        }
+    }
+
+    wp_send_json_success([
+        'message' => "Exportación completada. $count archivos guardados en $relative_path"
+    ]);
+}
+add_action('wp_ajax_ikg_export_acf_completo', 'ikg_ajax_export_acf_completo');
+
+/**
+ * Exportar Plugins a ZIPs individuales (AJAX)
+ * Guarda los zips en admin/plugins/
+ */
+function ikg_ajax_export_plugins() {
+    // Comprobar nonce
+     /* Utilizaremos el mismo nonce de exportación por simplicidad, o podríamos crear uno nuevo.
+        Como en admin.js usan ikgAdmin.exportNonce para ACF, podemos reusarlo o registrar uno para plugins.
+        Mirando admin.js, se usa ikgAdmin.exportNonce. Reutilizaremos ese para "acciones de exportación". */
+    if ( ! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'ikg_export_nonce') ) {
+        wp_send_json_error('Permiso denegado (Nonce)');
+    }
+
+    if ( ! current_user_can('manage_values') && ! current_user_can('manage_options') ) {
+        wp_send_json_error('Sin permisos');
+    }
+
+    if ( ! function_exists( 'get_plugins' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+
+    $all_plugins = get_plugins();
+    $export_dir = get_template_directory() . '/admin/plugins/';
+    
+    if ( ! file_exists( $export_dir ) ) {
+        mkdir( $export_dir, 0755, true );
+    }
+
+    $count = 0;
+    $errors = [];
+
+    foreach ( $all_plugins as $path => $data ) {
+        // $path es algo como "akismet/akismet.php" o "hello.php"
+        $plugin_slug = dirname($path);
+        
+        // Si es ".", significa que es un archivo suelto en /plugins/ (ej: hello.php)
+        if ( $plugin_slug === '.' ) {
+            $plugin_slug = pathinfo($path, PATHINFO_FILENAME);
+            $source_path = WP_PLUGIN_DIR . '/' . $path;
+            $is_dir = false;
+        } else {
+            // Es una carpeta
+            $source_path = WP_PLUGIN_DIR . '/' . $plugin_slug;
+            $is_dir = true;
+        }
+
+        $zip_file = $export_dir . $plugin_slug . '.zip';
+        
+        $zip = new ZipArchive();
+        if ( $zip->open( $zip_file, ZipArchive::CREATE | ZipArchive::OVERWRITE ) === TRUE ) {
+            if ( $is_dir ) {
+                ikg_recursive_zip( $source_path, $zip, $plugin_slug ); // $plugin_slug como raíz interna
+            } else {
+                $zip->addFile( $source_path, basename($source_path) );
+            }
+            $zip->close();
+            $count++;
+        } else {
+            $errors[] = "No se pudo crear ZIP para $plugin_slug";
+        }
+    }
+
+    if ( $count > 0 ) {
+        wp_send_json_success([
+            'message' => "Se han exportado $count plugins en /admin/plugins/"
+        ]);
+    } else {
+        wp_send_json_error("No se exportó ningún plugin. " . implode(", ", $errors));
+    }
+}
+add_action('wp_ajax_ikg_export_plugins', 'ikg_ajax_export_plugins');
+
+/**
+ * Helper para zip recursivo
+ * @param string $source Ruta absoluta del directorio a comprimir
+ * @param ZipArchive $zip Instancia del zip
+ * @param string $prefix Prefijo dentro del zip (ej: nombre-plugin/)
+ */
+function ikg_recursive_zip( $source, $zip, $prefix = '' ) {
+    if ( ! is_dir( $source ) ) return;
+
+    $files = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($source, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::LEAVES_ONLY
+    );
+
+    foreach ( $files as $file ) {
+        // Ruta absoluta
+        $filePath = $file->getRealPath();
+        
+        // Ruta relativa desde la carpeta 'plugins' origen
+        // Si queremos que dentro del zip esté la carpeta contenedora 'nombre-plugin/ archivo.php':
+        // $relativePath = substr($filePath, strlen($source) + 1);
+        // $zip->addFile($filePath, $prefix . '/' . $relativePath);
+        
+        // Pero normalmente un zip de plugin WP:
+        // Si descomprimes, DEBE crear la carpeta. 
+        // Si el zip se llama 'akismet.zip', al descomprimir suele crear 'akismet/'.
+        // Así que sí, usamos el prefijo.
+        
+        $localPath = substr($filePath, strlen($source) + 1);
+        $zip->addFile($filePath, $prefix . '/' . $localPath);
+    }
+}

@@ -1,0 +1,312 @@
+:root {
+    --primary-color: #2196F3;
+    --primary-dark: #1976D2;
+    --secondary-color: #64B5F6;
+    --background-color: #F5F9FC;
+    --card-background: #FFFFFF;
+    --text-color: #1F2937;
+    --text-secondary: #6B7280;
+    --success-color: #10B981;
+    --error-color: #EF4444;
+    --warning-bg: #FEF3C7;
+    --warning-border: #F59E0B;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.ikg-backup-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+/* Header */
+.ikg-backup-header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    padding: 30px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.ikg-backup-btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.2s;
+}
+
+.ikg-backup-btn-back:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    transform: translateX(-2px);
+}
+
+.ikg-backup-header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.ikg-backup-header p {
+    margin: 10px 0 0;
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+/* Tabs */
+.ikg-backup-tabs {
+    display: flex;
+    border-bottom: 1px solid #E5E7EB;
+    background: #F9FAFB;
+}
+
+.ikg-backup-tab-btn {
+    flex: 1;
+    padding: 20px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.ikg-backup-tab-btn:hover {
+    color: var(--primary-color);
+    background: #F3F4F6;
+}
+
+.ikg-backup-tab-btn.ikg-backup-active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background: white;
+}
+
+/* Icons */
+.ikg-backup-icon {
+    margin-right: 8px;
+}
+
+/* Content */
+.ikg-backup-tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.ikg-backup-tab-content.ikg-backup-active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards & Sections */
+.ikg-backup-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--primary-dark);
+}
+
+.ikg-backup-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.ikg-backup-action-card {
+    background: #F3F8FC;
+    border: 1px solid #BFDBFE;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.ikg-backup-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+}
+
+.ikg-backup-action-card h3 {
+    margin-top: 0;
+    color: var(--primary-dark);
+}
+
+.ikg-backup-action-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.ikg-backup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.ikg-backup-btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.ikg-backup-btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.ikg-backup-btn-download {
+    background: white;
+    border: 1px solid #D1D5DB;
+    color: var(--text-color);
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.ikg-backup-btn-download:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* File List */
+.ikg-backup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--border-radius);
+}
+
+.ikg-backup-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.ikg-backup-item:last-child {
+    border-bottom: none;
+}
+
+.ikg-backup-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.ikg-backup-name {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.ikg-backup-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+/* Restore Form */
+.ikg-backup-restore-form {
+    background: white;
+}
+
+.ikg-backup-form-group {
+    margin-bottom: 20px;
+}
+
+.ikg-backup-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.ikg-backup-form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.ikg-backup-form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.ikg-backup-warning-box {
+    background: var(--warning-bg);
+    border-left: 4px solid var(--warning-border);
+    padding: 15px;
+    border-radius: 4px;
+    color: #92400E;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* Log / Terminal */
+.ikg-backup-log-container {
+    background: #1E1E1E;
+    color: #E0E0E0;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    border: 1px solid #333;
+}
+
+.ikg-backup-log-entry { margin-bottom: 4px; }
+.ikg-backup-log-info { color: #64B5F6; }
+.ikg-backup-log-success { color: #10B981; }
+.ikg-backup-log-warning { color: #FBBF24; }
+.ikg-backup-log-error { color: #EF4444; }
+
+/* Empty States */
+.ikg-backup-empty-state {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-style: italic;
+}

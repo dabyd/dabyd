@@ -5,6 +5,9 @@
     if (window.ikgHeroSliderInitialized) return;
     window.ikgHeroSliderInitialized = true;
 
+    // Configuración
+    const SLIDER_INTERVAL_SECONDS = 5;
+
     function initHeroSlider() {
         const sliders = document.querySelectorAll('.hero-slider');
         

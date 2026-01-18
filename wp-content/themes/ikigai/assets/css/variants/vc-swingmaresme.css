@@ -1,0 +1,58 @@
+/* --- GOOGLE FONTS IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Caveat:wght@600&display=swap');
+
+.vc-swingmaresme {
+    /* --- SWING MARESME THEME --- */
+    
+    /* Tipografías */
+    --font-family-base: 'Montserrat', sans-serif; /* Modern Tech Sans */
+    --font-family-heading: 'Playfair Display', serif;    /* Ancient Wisdom Serif */
+    --font-family-accent: 'Caveat', cursive;
+
+    /* Brand Colors: Paleta extraída del mockup */
+    --color-primary: #4DBCC4;           /* Turquesa de títulos y acentos */
+    --color-primary-light: #72CED4;     
+    --color-primary-dark: #3A8E94;      
+    --color-accent: #C19A25;            /* Dorado/Mostaza de las franjas */
+    --color-accent-hover: #D4AF37;
+
+    /* Neutrals & Layout Colors */
+    --color-white: #FFFFFF;
+    --color-bg-cream: #EAE3D5;          /* Fondo beige claro de la web */
+    --color-bg-dark: #2C3E50;           /* Fondo azul marino oscuro (sección texto) */
+    --color-border: #D1C7B7;
+    
+    /* Text Colors */
+    --text-main: #2C3E50;               /* Azul oscuro para texto base */
+    --text-muted: #5D6D7E;
+    --text-on-dark: #FFFFFF;            /* Texto blanco para fondos oscuros/dorados */
+    --text-accent: #C19A25;             /* Texto dorado */
+
+    /* UI Elements */
+    --color-header-bg: rgba(255, 255, 255, 0.95);
+    --color-shadow-light: rgba(0, 0, 0, 0.1);
+    --radius-button: 50px;              /* Botones muy redondeados tipo cápsula */
+}
+
+/* Ejemplo rápido de aplicación para mantener el estilo del mockup */
+.vc-swingmaresme h1, 
+.vc-swingmaresme h2 {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.vc-swingmaresme .script-text {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: var(--text-on-dark);
+}
+
+.vc-swingmaresme .btn-primary {
+    font-family: var(--font-main);
+    font-weight: 700;
+    border-radius: var(--radius-button);
+    background-color: var(--color-white);
+    color: var(--text-main);
+    text-transform: uppercase;
+}

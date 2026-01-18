@@ -26,6 +26,7 @@
     /* --- TYPOGRAPHY TOKENS --- */
     --font-family-base: 'Inter', sans-serif; /* Modern Tech Sans */
     --font-family-heading: 'Lora', serif;    /* Ancient Wisdom Serif */
+    --font-family-accent: 'Lora', serif;    /* Ancient Wisdom Serif */
 
     /* Font Sizes */
     --fz-xs: 0.75rem;   

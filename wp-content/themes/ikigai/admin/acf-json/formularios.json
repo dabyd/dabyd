@@ -1,0 +1,1176 @@
+{
+    "key": "group_695cd0b51d465",
+    "title": "Formularios",
+    "fields": [
+        {
+            "ID": 14696,
+            "key": "field_695cd0ff0e5f4",
+            "label": "Columna de texto",
+            "name": "",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "tab",
+            "value": false,
+            "menu_order": 0,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0,
+            "_name": "columna_de_texto",
+            "_valid": 1
+        },
+        {
+            "ID": 14697,
+            "key": "field_695cd0b50e5f3",
+            "label": "Tarjetas",
+            "name": "tarjetas",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "repeater",
+            "value": null,
+            "menu_order": 1,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_695cd14c0e5f8",
+            "button_label": "Agregar Fila",
+            "rows_per_page": 20,
+            "_name": "tarjetas",
+            "_valid": 1,
+            "sub_fields": [
+                {
+                    "ID": 14698,
+                    "key": "field_695cd13e0e5f7",
+                    "label": "Icono",
+                    "name": "icono",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "emoji_picker",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 14697,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "emoji",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "_name": "icono",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd0b50e5f3"
+                },
+                {
+                    "ID": 14699,
+                    "key": "field_695cd14c0e5f8",
+                    "label": "Título",
+                    "name": "titulo",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 14697,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "titulo",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd0b50e5f3"
+                },
+                {
+                    "ID": 14700,
+                    "key": "field_695cd1610e5f9",
+                    "label": "Elementos",
+                    "name": "elementos",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "repeater",
+                    "value": null,
+                    "menu_order": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 14697,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_repeater_stylised_button": 0,
+                    "layout": "block",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Agregar Fila",
+                    "rows_per_page": 20,
+                    "_name": "elementos",
+                    "_valid": 1,
+                    "sub_fields": [
+                        {
+                            "ID": 14701,
+                            "key": "field_695cd16d0e5fa",
+                            "label": "Tipo",
+                            "name": "tipo",
+                            "aria-label": "",
+                            "prefix": "acf",
+                            "type": "select",
+                            "value": null,
+                            "menu_order": 0,
+                            "instructions": "",
+                            "required": 0,
+                            "id": "",
+                            "class": "",
+                            "conditional_logic": 0,
+                            "parent": 14700,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": [
+                                "Texto",
+                                "E-Mail",
+                                "Teléfono",
+                                "Ubicación"
+                            ],
+                            "default_value": 0,
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_custom": 0,
+                            "placeholder": "",
+                            "search_placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "max": "",
+                            "allow_null": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "create_options": 0,
+                            "save_options": 0,
+                            "min": "",
+                            "_name": "tipo",
+                            "_valid": 1,
+                            "parent_repeater": "field_695cd1610e5f9"
+                        },
+                        {
+                            "ID": 14702,
+                            "key": "field_695cd1c00e5fb",
+                            "label": "Texto",
+                            "name": "texto",
+                            "aria-label": "",
+                            "prefix": "acf",
+                            "type": "wysiwyg",
+                            "value": null,
+                            "menu_order": 1,
+                            "instructions": "",
+                            "required": 0,
+                            "id": "",
+                            "class": "",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_695cd16d0e5fa",
+                                        "operator": "==",
+                                        "value": "0"
+                                    }
+                                ]
+                            ],
+                            "parent": 14700,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "acfe_wysiwyg_auto_init": 0,
+                            "acfe_wysiwyg_height": 300,
+                            "acfe_wysiwyg_max_height": "",
+                            "acfe_wysiwyg_valid_elements": "",
+                            "acfe_wysiwyg_custom_style": "",
+                            "acfe_wysiwyg_disable_wp_style": 0,
+                            "acfe_wysiwyg_autoresize": 0,
+                            "acfe_wysiwyg_disable_resize": 0,
+                            "acfe_wysiwyg_remove_path": 0,
+                            "acfe_wysiwyg_menubar": 0,
+                            "acfe_wysiwyg_transparent": 0,
+                            "acfe_wysiwyg_merge_toolbar": 0,
+                            "acfe_wysiwyg_custom_toolbar": 0,
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0,
+                            "acfe_wysiwyg_min_height": 300,
+                            "acfe_wysiwyg_toolbar_buttons": [],
+                            "_name": "texto",
+                            "_valid": 1,
+                            "parent_repeater": "field_695cd1610e5f9"
+                        },
+                        {
+                            "ID": 14703,
+                            "key": "field_695cd1de0e5fc",
+                            "label": "Ubicación",
+                            "name": "ubicacion",
+                            "aria-label": "",
+                            "prefix": "acf",
+                            "type": "google_map",
+                            "value": null,
+                            "menu_order": 2,
+                            "instructions": "",
+                            "required": 0,
+                            "id": "",
+                            "class": "",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_695cd16d0e5fa",
+                                        "operator": "==",
+                                        "value": "3"
+                                    }
+                                ]
+                            ],
+                            "parent": 14700,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "center_lat": "-50.75557178057975",
+                            "center_lng": "261.6876146459424",
+                            "height": 400,
+                            "acfe_google_map_zooms": {
+                                "zoom": "1",
+                                "min_zoom": "0",
+                                "max_zoom": "21"
+                            },
+                            "acfe_google_map_marker_icon": "",
+                            "acfe_google_map_marker_width": 50,
+                            "acfe_google_map_type": "roadmap",
+                            "acfe_google_map_disable_ui": 0,
+                            "acfe_google_map_disable_zoom_control": 0,
+                            "acfe_google_map_disable_map_type": 0,
+                            "acfe_google_map_disable_fullscreen": 0,
+                            "acfe_google_map_disable_streetview": 0,
+                            "acfe_google_map_style": "",
+                            "acfe_google_map_key": "AIzaSyBRjotKxfYlhqrJDN9CjURGnfrxKK5hGB0",
+                            "allow_in_bindings": 0,
+                            "zoom": "1",
+                            "acfe_google_map_marker_height": 50,
+                            "_name": "ubicacion",
+                            "_valid": 1,
+                            "parent_repeater": "field_695cd1610e5f9"
+                        },
+                        {
+                            "ID": 14704,
+                            "key": "field_695cd20c0e5fd",
+                            "label": "E-mail",
+                            "name": "e-mail",
+                            "aria-label": "",
+                            "prefix": "acf",
+                            "type": "email",
+                            "value": null,
+                            "menu_order": 3,
+                            "instructions": "",
+                            "required": 0,
+                            "id": "",
+                            "class": "",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_695cd16d0e5fa",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "parent": 14700,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "_name": "e-mail",
+                            "_valid": 1,
+                            "parent_repeater": "field_695cd1610e5f9"
+                        },
+                        {
+                            "ID": 14705,
+                            "key": "field_695cd2280e5fe",
+                            "label": "Teléfono",
+                            "name": "telefono",
+                            "aria-label": "",
+                            "prefix": "acf",
+                            "type": "acfe_phone_number",
+                            "value": null,
+                            "menu_order": 4,
+                            "instructions": "",
+                            "required": 0,
+                            "id": "",
+                            "class": "",
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_695cd16d0e5fa",
+                                        "operator": "==",
+                                        "value": "2"
+                                    }
+                                ]
+                            ],
+                            "parent": 14700,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "countries": "",
+                            "preferred_countries": [
+                                "es"
+                            ],
+                            "default_country": "es",
+                            "geolocation": 0,
+                            "native": 0,
+                            "national": 0,
+                            "dropdown": 0,
+                            "dial_code": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "return_format": "number",
+                            "allow_in_bindings": 0,
+                            "geolocation_token": "",
+                            "_name": "telefono",
+                            "_valid": 1,
+                            "parent_repeater": "field_695cd1610e5f9"
+                        }
+                    ],
+                    "parent_repeater": "field_695cd0b50e5f3"
+                }
+            ]
+        },
+        {
+            "ID": 14706,
+            "key": "field_695cd10c0e5f5",
+            "label": "Formulario",
+            "name": "",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "tab",
+            "value": false,
+            "menu_order": 2,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0,
+            "_name": "formulario",
+            "_valid": 1
+        },
+        {
+            "ID": 14707,
+            "key": "field_695cd2760e5ff",
+            "label": "Campos del formulario",
+            "name": "campos_del_formulario",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "repeater",
+            "value": null,
+            "menu_order": 3,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_695cd29a0e600",
+            "button_label": "Agregar Fila",
+            "rows_per_page": 20,
+            "_name": "campos_del_formulario",
+            "_valid": 1,
+            "sub_fields": [
+                {
+                    "ID": 14708,
+                    "key": "field_695cd29a0e600",
+                    "label": "Tipo de campo",
+                    "name": "tipo_de_campo",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "select",
+                    "value": null,
+                    "menu_order": 0,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": 0,
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": [
+                        "Cabecera (H2)",
+                        "Texto informativo (wysiwyg - sólo mostrar texto)",
+                        "Campo de Texto",
+                        "Campo de E-mail",
+                        "Campo de Teléfono",
+                        "Campo de Selector",
+                        "Campo oculto",
+                        "Campo de Area de Texto"
+                    ],
+                    "default_value": 2,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "max": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "min": "",
+                    "_name": "tipo_de_campo",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14709,
+                    "key": "field_695cd3070e601",
+                    "label": "Cabecera",
+                    "name": "cabecera",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "0"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "cabecera",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14710,
+                    "key": "field_695cd3260e603",
+                    "label": "Texto informativo",
+                    "name": "texto_informativo",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "wysiwyg",
+                    "value": null,
+                    "menu_order": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "acfe_wysiwyg_height": 300,
+                    "acfe_wysiwyg_max_height": "",
+                    "acfe_wysiwyg_valid_elements": "",
+                    "acfe_wysiwyg_custom_style": "",
+                    "acfe_wysiwyg_disable_wp_style": 0,
+                    "acfe_wysiwyg_autoresize": 0,
+                    "acfe_wysiwyg_disable_resize": 0,
+                    "acfe_wysiwyg_remove_path": 0,
+                    "acfe_wysiwyg_menubar": 0,
+                    "acfe_wysiwyg_transparent": 0,
+                    "acfe_wysiwyg_merge_toolbar": 0,
+                    "acfe_wysiwyg_custom_toolbar": 0,
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "acfe_wysiwyg_auto_init": 0,
+                    "acfe_wysiwyg_min_height": 300,
+                    "acfe_wysiwyg_toolbar_buttons": [],
+                    "_name": "texto_informativo",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14711,
+                    "key": "field_695cd3470e604",
+                    "label": "Etiqueta del campo",
+                    "name": "etiqueta_del_campo",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 3,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "3"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "4"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "7"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "etiqueta_del_campo",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14712,
+                    "key": "field_695cd3800e609",
+                    "label": "Placeholder",
+                    "name": "placeholder",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 4,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "3"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "4"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "7"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "placeholder",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14713,
+                    "key": "field_695cd3a60e60a",
+                    "label": "Obligatorio?",
+                    "name": "obligatorio",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "true_false",
+                    "value": null,
+                    "menu_order": 5,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "3"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "4"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "7"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1,
+                    "style": "",
+                    "_name": "obligatorio",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14714,
+                    "key": "field_695cd3c70e60b",
+                    "label": "Instrucciones",
+                    "name": "instrucciones",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "textarea",
+                    "value": null,
+                    "menu_order": 6,
+                    "instructions": "",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "3"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "4"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "7"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "acfe_textarea_code": 0,
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "_name": "instrucciones",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14715,
+                    "key": "field_695cd3e80e60c",
+                    "label": "Opción por defecto",
+                    "name": "opcion_por_defecto",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "text",
+                    "value": null,
+                    "menu_order": 7,
+                    "instructions": "Aquí se indicará la opción por defecto del selector, si se usa la opción sin valores diferenciados (por ejemplo):\r\n\r\nAgua\r\nTierra\r\nAire\r\n\r\nSe deberá indicar el valor (por ejemplo Tierra) tal y como aparece (es sensitivo a mayúsculas y minúsculas), en cambio si se usa la opción con valor de referencia (por ejemplo):\r\n\r\n0 : Agua\r\n1 : Tierra\r\n2 : Aire\r\n\r\nEn este caso se deberá indicar el valor de referencia (tomando el caso anterior, sería \"1\"), si el valor de referencia es texto, se aplica la misma norma que en el caso anterior, se debe poner tal y como aparece (es sensitivo a mayúsculas y minúsculas).",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "_name": "opcion_por_defecto",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                },
+                {
+                    "ID": 14716,
+                    "key": "field_695cd4050e60d",
+                    "label": "Opciones",
+                    "name": "opciones",
+                    "aria-label": "",
+                    "prefix": "acf",
+                    "type": "textarea",
+                    "value": null,
+                    "menu_order": 8,
+                    "instructions": "Debes añadir una opción en cada línea, si el campo selector tiene tres opciones, por ejemplo agua, tierra y aire, debería estar relleno así:\r\n\r\nAgua\r\nTierra\r\nAire\r\n\r\nSi a cada opción le precede un valor separado de dos puntos (con espacios delante y detrás de los dos puntos), se considerará lo que está antes de los dos puntos el valor que pondrá en el \"Value\" y lo que hay después de los dos puntos, la etiqueta, por ejemplo:\r\n\r\n0 : Agua\r\n1 : Tierra\r\n2 : Aire\r\n\r\nEn este caso si se selecciona \"Tierra\" en lugar de devolver \"Tierra\" devolvería \"1\".",
+                    "required": 0,
+                    "id": "",
+                    "class": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695cd29a0e600",
+                                "operator": "==",
+                                "value": "5"
+                            }
+                        ]
+                    ],
+                    "parent": 14707,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "acfe_textarea_code": 0,
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "",
+                    "_name": "opciones",
+                    "_valid": 1,
+                    "parent_repeater": "field_695cd2760e5ff"
+                }
+            ]
+        },
+        {
+            "ID": 14717,
+            "key": "field_695cd11a0e5f6",
+            "label": "Botón y footer del formulario",
+            "name": "",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "tab",
+            "value": false,
+            "menu_order": 4,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0,
+            "_name": "boton_y_footer_del_formulario",
+            "_valid": 1
+        },
+        {
+            "ID": 14718,
+            "key": "field_695cd5990e610",
+            "label": "Icono del botón",
+            "name": "icono_del_boton",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "emoji_picker",
+            "value": null,
+            "menu_order": 5,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "emoji",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "_name": "icono_del_boton",
+            "_valid": 1
+        },
+        {
+            "ID": 14719,
+            "key": "field_695cd5900e60f",
+            "label": "Título del botón",
+            "name": "titulo_del_boton",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "text",
+            "value": null,
+            "menu_order": 6,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "_name": "titulo_del_boton",
+            "_valid": 1
+        },
+        {
+            "ID": 14720,
+            "key": "field_695cd5b50e611",
+            "label": "Texto del final del formulario",
+            "name": "texto_del_final_del_formulario",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "wysiwyg",
+            "value": null,
+            "menu_order": 7,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_wysiwyg_height": 300,
+            "acfe_wysiwyg_max_height": "",
+            "acfe_wysiwyg_valid_elements": "",
+            "acfe_wysiwyg_custom_style": "",
+            "acfe_wysiwyg_disable_wp_style": 0,
+            "acfe_wysiwyg_autoresize": 0,
+            "acfe_wysiwyg_disable_resize": 0,
+            "acfe_wysiwyg_remove_path": 0,
+            "acfe_wysiwyg_menubar": 0,
+            "acfe_wysiwyg_transparent": 0,
+            "acfe_wysiwyg_merge_toolbar": 0,
+            "acfe_wysiwyg_custom_toolbar": 0,
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
+            "acfe_wysiwyg_auto_init": 0,
+            "acfe_wysiwyg_min_height": 300,
+            "acfe_wysiwyg_toolbar_buttons": [],
+            "_name": "texto_del_final_del_formulario",
+            "_valid": 1
+        },
+        {
+            "ID": 14808,
+            "key": "field_6969e58848533",
+            "label": "Destinatarios",
+            "name": "",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "tab",
+            "value": false,
+            "menu_order": 8,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "selected": 0,
+            "_name": "destinatarios",
+            "_valid": 1
+        },
+        {
+            "ID": 14809,
+            "key": "field_6969e59848534",
+            "label": "Email del destinatario",
+            "name": "email_destinatario",
+            "aria-label": "",
+            "prefix": "acf",
+            "type": "email",
+            "value": null,
+            "menu_order": 9,
+            "instructions": "",
+            "required": 0,
+            "id": "",
+            "class": "",
+            "conditional_logic": 0,
+            "parent": 14695,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "_name": "email_destinatario",
+            "_valid": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "formularios"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "page_attributes",
+        "block_editor",
+        "categories",
+        "comments",
+        "discussion",
+        "the_content",
+        "excerpt"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": "",
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": ""
+}
