@@ -543,14 +543,39 @@ class IkigaiInstaller {
             }
         }
         
+        // Configuración completa para ACFE
+        $acf_content = array(
+            "page_title" => "Ikigai",
+            "menu_slug" => "ikigai",
+            "parent_slug" => "none",
+            "advanced_configuration" => 0,
+            "icon_url" => "",
+            "menu_title" => "",
+            "position" => "",
+            "redirect" => 0,
+            "description" => "",
+            "menu_icon" => array(
+                "type" => "dashicons",
+                "value" => "dashicons-admin-generic"
+            ),
+            "update_button" => "Actualitza",
+            "updated_message" => "S’han actualitzat les opcions",
+            "capability" => "edit_posts",
+            "data_storage" => "options",
+            "post_id" => "",
+            "autoload" => 0
+        );
+        
         $post_data = [
             'post_title'    => 'Ikigai',
             'post_excerpt'  => 'ikigai', // ACFE usa esto a veces como slug interno o identificador
             'post_name'     => 'ikigai',
+            'post_content'  => serialize($acf_content),
             'post_type'     => 'acf-ui-options-page',
             'post_status'   => 'publish',
             'comment_status'=> 'closed',
-            'ping_status'   => 'closed'
+            'ping_status'   => 'closed',
+            'post_author'   => get_current_user_id()
         ];
 
         if ($target_id) {
@@ -571,12 +596,13 @@ class IkigaiInstaller {
 
     private function step_import_acf_groups() {
         // Fail-safe: Try to load ACF manual if missing
-        if (!function_exists('acf_import_field_group')) {
+        if (!function_exists('acf_import_field_group') && !function_exists('acf_import_internal_post_type')) {
              $this->force_load_acf();
         }
 
-        if (!function_exists('acf_import_field_group')) {
-             return ['success' => false, 'message' => "❌ Error: La función 'acf_import_field_group' no existe. ACF no se pudo cargar."];
+        // Check again if we have ANY import function
+        if (!function_exists('acf_import_field_group') && !function_exists('acf_import_internal_post_type')) {
+             return ['success' => false, 'message' => "❌ Error: Funciones de importación ACF no disponibles."];
         }
 
         $acf_dir = dirname(dirname(__FILE__)) . '/acf-json/';
@@ -587,16 +613,73 @@ class IkigaiInstaller {
         }
 
         $log = [];
+        $imported_count = 0;
+
         foreach ($files as $file) {
-            $json = json_decode(file_get_contents($file), true);
-            if ($json && isset($json['key'])) {
-                $res = acf_import_field_group($json);
-                if ($res) $log[] = "✅ Importado: {$json['title']}";
-                else $log[] = "❌ Falló: {$json['title']}";
+            $json_content = file_get_contents($file);
+            $json = json_decode($json_content, true);
+            
+            if (!$json) {
+                $log[] = "⚠️ Error decodificando " . basename($file);
+                continue;
+            }
+
+            // Normalizar a Array de Posts (Logic from ACF_Admin_Tool_Import::submit)
+            // Ensure $json is an array of posts.
+            if ( isset( $json['key'] ) ) {
+                $json = array( $json );
+            }
+
+            foreach ($json as $to_import) {
+                $title = isset($to_import['title']) ? $to_import['title'] : (isset($to_import['key']) ? $to_import['key'] : 'Desconocido');
+                
+                // Intento 1: Usar lógica moderna de ACF (v6+)
+                if ( function_exists('acf_determine_internal_post_type') && function_exists('acf_import_internal_post_type') ) {
+                    try {
+                        // Search database for existing post.
+                        $post_type = acf_determine_internal_post_type( $to_import['key'] );
+                        $post      = acf_get_internal_post_type_post( $to_import['key'], $post_type );
+    
+                        if ( $post ) {
+                            $to_import['ID'] = $post->ID;
+                        }
+    
+                        // Import the post.
+                        $result = acf_import_internal_post_type( $to_import, $post_type );
+                        
+                         if ($result && !is_wp_error($result)) {
+                             $log[] = "✅ Importado (v6): $title";
+                             $imported_count++;
+                         } else {
+                             $err = is_wp_error($result) ? $result->get_error_message() : 'Error desconocido';
+                             $log[] = "❌ Falló (v6) $title: $err";
+                         }
+
+                    } catch (Exception $e) {
+                         $log[] = "❌ Excepción (v6) $title: " . $e->getMessage();
+                    }
+                } 
+                // Intento 2: Fallback clásico (v5)
+                elseif ( function_exists('acf_import_field_group') ) {
+                     // Solo para Field Groups
+                     $res = acf_import_field_group($to_import);
+                     if ($res) {
+                         $log[] = "✅ Importado (v5): $title";
+                         $imported_count++;
+                     } else {
+                         $log[] = "❌ Falló (v5): $title";
+                     }
+                } else {
+                     $log[] = "❌ No se encontró función de importación compatible para $title";
+                }
             }
         }
         
-        return ['success' => true, 'message' => "Proceso ACF Finalizado.\n" . implode("\n", $log)];
+        if ($imported_count === 0 && !empty($files)) {
+             return ['success' => false, 'message' => "⚠️ Proceso finalizado pero no se importó nada.\n" . implode("\n", $log)];
+        }
+        
+        return ['success' => true, 'message' => "Proceso ACF Finalizado ($imported_count elementos).\n" . implode("\n", $log)];
     }
 
     private function force_load_acf() {
@@ -777,6 +860,11 @@ class IkigaiInstaller {
              foreach ($group['fields'] as $key => $field) {
                  $val = isset($_POST[$key]) ? $_POST[$key] : $field['default'];
                  $val = trim($val);
+
+                 // Override WP_DEBUG_LOG default to custom path if just 'true'
+                 if ($key === 'WP_DEBUG_LOG' && (strtolower($val) === 'true' || $val === '1')) {
+                     $val = 'wp-content/uploads/error-logs/general_php_error_log.log';
+                 }
 
                  if (isset($field['is_var']) && $field['is_var']) {
                      $content .= "$key = '$val';\n";

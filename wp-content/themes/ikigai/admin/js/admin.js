@@ -88,7 +88,7 @@
     // =============================================================================
     
     function initLogViewer() {
-        var $container = $('.acf-field[data-name="log_viewer_container"]');
+        var $container = $('.acf-field[data-name="log_viewer_container"], .acf-field[data-key="field_ikg_log_viewer_container"]');
         if (!$container.length) return;
         
         var html = `

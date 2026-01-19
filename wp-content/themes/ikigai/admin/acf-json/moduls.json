@@ -354,7 +354,7 @@
                                 "preview_size": "medium"
                             },
                             {
-                                "key": "field_6958c539307e2_field_6958c2cceb2a2",
+                                "key": "field_6958c539307e2_field_6958c2cceb2a2_field_6958c2cceb2a2",
                                 "label": "Botons",
                                 "name": "botons",
                                 "aria-label": "",
@@ -472,7 +472,7 @@
                                         "parent_repeater": "field_6958c2cceb2a2"
                                     }
                                 ],
-                                "_clone": "field_6958c539307e2",
+                                "_clone": "field_6958c539307e2_field_6958c2cceb2a2",
                                 "__key": "field_6958c2cceb2a2",
                                 "__name": "botons",
                                 "__label": "Botons"
@@ -1277,7 +1277,7 @@
                                 "min": ""
                             },
                             {
-                                "key": "field_69691dd30c7d9_field_6958c2cceb2a2",
+                                "key": "field_69691dd30c7d9_field_6958c2cceb2a2_field_6958c2cceb2a2",
                                 "label": "Botons",
                                 "name": "botons",
                                 "aria-label": "",
@@ -1395,7 +1395,7 @@
                                         "parent_repeater": "field_6958c2cceb2a2"
                                     }
                                 ],
-                                "_clone": "field_69691dd30c7d9",
+                                "_clone": "field_69691dd30c7d9_field_6958c2cceb2a2",
                                 "__key": "field_6958c2cceb2a2",
                                 "__name": "botons",
                                 "__label": "Botons"
@@ -1738,7 +1738,7 @@
                                 "max": ""
                             },
                             {
-                                "key": "field_696a1fca85477_field_6958c2cceb2a2",
+                                "key": "field_696a1fca85477_field_6958c2cceb2a2_field_6958c2cceb2a2",
                                 "label": "Botons",
                                 "name": "botons",
                                 "aria-label": "",
@@ -1856,7 +1856,7 @@
                                         "parent_repeater": "field_6958c2cceb2a2"
                                     }
                                 ],
-                                "_clone": "field_696a1fca85477",
+                                "_clone": "field_696a1fca85477_field_6958c2cceb2a2",
                                 "__key": "field_6958c2cceb2a2",
                                 "__name": "botons",
                                 "__label": "Botons"
@@ -2739,9 +2739,13 @@
                                         "acfe_seamless_style": 0,
                                         "acfe_group_modal": 0,
                                         "acfe_settings": "",
+                                        "acfe_group_modal_close": 0,
+                                        "acfe_group_modal_button": "",
+                                        "acfe_group_modal_size": "large",
+                                        "parent_repeater": "field_6958cbf545adb",
                                         "sub_fields": [
                                             {
-                                                "key": "field_6958d208cdf92_field_6958c2cceb2a2",
+                                                "key": "field_6958d208cdf92_field_6958c2cceb2a2_field_6958c2cceb2a2",
                                                 "label": "Botons",
                                                 "name": "botons",
                                                 "aria-label": "",
@@ -2859,16 +2863,12 @@
                                                         "parent_repeater": "field_6958c2cceb2a2"
                                                     }
                                                 ],
-                                                "_clone": "field_6958d208cdf92",
+                                                "_clone": "field_6958d208cdf92_field_6958c2cceb2a2",
                                                 "__key": "field_6958c2cceb2a2",
                                                 "__name": "botons",
                                                 "__label": "Botons"
                                             }
-                                        ],
-                                        "acfe_group_modal_close": 0,
-                                        "acfe_group_modal_button": "",
-                                        "acfe_group_modal_size": "large",
-                                        "parent_repeater": "field_6958cbf545adb"
+                                        ]
                                     }
                                 ]
                             }

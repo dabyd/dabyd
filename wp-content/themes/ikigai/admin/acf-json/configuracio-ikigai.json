@@ -1169,7 +1169,7 @@
             {
                 "key": "field_ikg_log_viewer_container",
                 "label": "Visor de Logs",
-                "name": "log_viewer_container",
+                "name": "",
                 "aria-label": "",
                 "type": "message",
                 "instructions": "",

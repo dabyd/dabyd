@@ -107,6 +107,7 @@
                         "collapsed": "",
                         "button_label": "Agregar Fila",
                         "rows_per_page": 20,
+                        "parent_repeater": "field_695cd0b50e5f3",
                         "sub_fields": [
                             {
                                 "key": "field_695cd16d0e5fa",
@@ -305,8 +306,7 @@
                                 "geolocation_token": "",
                                 "parent_repeater": "field_695cd1610e5f9"
                             }
-                        ],
-                        "parent_repeater": "field_695cd0b50e5f3"
+                        ]
                     }
                 ]
             },
