@@ -1,185 +1,151 @@
-{
-    "key": "group_6958c2b1e983f",
-    "title": "Botons per clonar",
-    "fields": [
-        {
-            "ID": 14424,
-            "key": "field_6958c2cceb2a2",
-            "label": "Botons",
-            "name": "botons",
-            "aria-label": "",
-            "prefix": "acf",
-            "type": "repeater",
-            "value": null,
-            "menu_order": 0,
-            "instructions": "",
-            "required": 0,
-            "id": "",
-            "class": "",
-            "conditional_logic": 0,
-            "parent": 14423,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_repeater_stylised_button": 0,
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Agregar Fila",
-            "rows_per_page": 20,
-            "_name": "botons",
-            "_valid": 1,
-            "sub_fields": [
-                {
-                    "ID": 14425,
-                    "key": "field_6958c2eaeb2a3",
-                    "label": "Tipus",
-                    "name": "tipus",
-                    "aria-label": "",
-                    "prefix": "acf",
-                    "type": "select",
-                    "value": null,
-                    "menu_order": 0,
-                    "instructions": "",
-                    "required": 0,
-                    "id": "",
+[
+    {
+        "key": "group_6958c2b1e983f",
+        "title": "Botons per clonar",
+        "fields": [
+            {
+                "key": "field_6958c2cceb2a2",
+                "label": "Botons",
+                "name": "botons",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
                     "class": "",
-                    "conditional_logic": 0,
-                    "parent": 14424,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "btn-primary": "Primario",
-                        "btn-secondary": "Secundario",
-                        "btn-outline": "Esquema (Transparente con sólo borde)"
-                    },
-                    "default_value": "btn-primary",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "max": "",
-                    "prepend": "",
-                    "append": "",
-                    "allow_null": 0,
-                    "allow_in_bindings": 1,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "allow_custom": 0,
-                    "search_placeholder": "",
-                    "min": "",
-                    "_name": "tipus",
-                    "_valid": 1,
-                    "parent_repeater": "field_6958c2cceb2a2"
+                    "id": ""
                 },
+                "acfe_repeater_stylised_button": 0,
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Agregar Fila",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6958c2eaeb2a3",
+                        "label": "Tipus",
+                        "name": "tipus",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "btn-primary": "Primario",
+                            "btn-secondary": "Secundario",
+                            "btn-outline": "Esquema (Transparente con sólo borde)"
+                        },
+                        "default_value": "btn-primary",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "max": "",
+                        "prepend": "",
+                        "append": "",
+                        "allow_null": 0,
+                        "allow_in_bindings": 1,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "allow_custom": 0,
+                        "search_placeholder": "",
+                        "min": "",
+                        "parent_repeater": "field_6958c2cceb2a2"
+                    },
+                    {
+                        "key": "field_6958c2b2eb2a1",
+                        "label": "Botó",
+                        "name": "boto",
+                        "aria-label": "",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "allow_in_bindings": 0,
+                        "parent_repeater": "field_6958c2cceb2a2"
+                    },
+                    {
+                        "key": "field_6958c35aeb2a4",
+                        "label": "Modificacions",
+                        "name": "modificacions",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "-": "Sin modificación",
+                            "btn-xs": "Botón Extra Pequeño (Especial etiquetas)",
+                            "btn-sm": "Botón Pequeño (Acciones secundarias)",
+                            "btn-md": "Botón Mediano (Tamaño estándar)",
+                            "btn-lg": "Botón Grande (Destacados)",
+                            "btn-xl": "Botón Extra Grande (Hero \/ Call to Action)"
+                        },
+                        "default_value": "-",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "max": "",
+                        "prepend": "",
+                        "append": "",
+                        "allow_null": 0,
+                        "allow_in_bindings": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "allow_custom": 0,
+                        "search_placeholder": "",
+                        "min": "",
+                        "parent_repeater": "field_6958c2cceb2a2"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
                 {
-                    "ID": 14426,
-                    "key": "field_6958c2b2eb2a1",
-                    "label": "Botó",
-                    "name": "boto",
-                    "aria-label": "",
-                    "prefix": "acf",
-                    "type": "link",
-                    "value": null,
-                    "menu_order": 1,
-                    "instructions": "",
-                    "required": 0,
-                    "id": "",
-                    "class": "",
-                    "conditional_logic": 0,
-                    "parent": 14424,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0,
-                    "_name": "boto",
-                    "_valid": 1,
-                    "parent_repeater": "field_6958c2cceb2a2"
-                },
-                {
-                    "ID": 14427,
-                    "key": "field_6958c35aeb2a4",
-                    "label": "Modificacions",
-                    "name": "modificacions",
-                    "aria-label": "",
-                    "prefix": "acf",
-                    "type": "select",
-                    "value": null,
-                    "menu_order": 2,
-                    "instructions": "",
-                    "required": 0,
-                    "id": "",
-                    "class": "",
-                    "conditional_logic": 0,
-                    "parent": 14424,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "-": "Sin modificación",
-                        "btn-xs": "Botón Extra Pequeño (Especial etiquetas)",
-                        "btn-sm": "Botón Pequeño (Acciones secundarias)",
-                        "btn-md": "Botón Mediano (Tamaño estándar)",
-                        "btn-lg": "Botón Grande (Destacados)",
-                        "btn-xl": "Botón Extra Grande (Hero \/ Call to Action)"
-                    },
-                    "default_value": "-",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "max": "",
-                    "prepend": "",
-                    "append": "",
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "allow_custom": 0,
-                    "search_placeholder": "",
-                    "min": "",
-                    "_name": "modificacions",
-                    "_valid": 1,
-                    "parent_repeater": "field_6958c2cceb2a2"
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
                 }
             ]
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "left",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "acfe_autosync": "",
-    "acfe_form": 0,
-    "acfe_display_title": "",
-    "acfe_meta": "",
-    "acfe_note": ""
-}
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "acfe_autosync": "",
+        "acfe_form": 0,
+        "acfe_display_title": "",
+        "acfe_meta": "",
+        "acfe_note": ""
+    }
+]

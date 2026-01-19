@@ -1,120 +1,95 @@
-{
-    "key": "group_6947c014b39dd",
-    "title": "Testimonios",
-    "fields": [
-        {
-            "ID": 14201,
-            "key": "field_6947c0149774b",
-            "label": "Nombre",
-            "name": "nombre",
-            "aria-label": "",
-            "prefix": "acf",
-            "type": "text",
-            "value": null,
-            "menu_order": 0,
-            "instructions": "",
-            "required": 0,
-            "id": "",
-            "class": "",
-            "conditional_logic": 0,
-            "parent": 14200,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "_name": "nombre",
-            "_valid": 1
-        },
-        {
-            "ID": 14202,
-            "key": "field_6947c0219774c",
-            "label": "Localidad",
-            "name": "localidad",
-            "aria-label": "",
-            "prefix": "acf",
-            "type": "text",
-            "value": null,
-            "menu_order": 1,
-            "instructions": "",
-            "required": 0,
-            "id": "",
-            "class": "",
-            "conditional_logic": 0,
-            "parent": 14200,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "_name": "localidad",
-            "_valid": 1
-        },
-        {
-            "ID": 14203,
-            "key": "field_6947c0289774d",
-            "label": "Puntuación",
-            "name": "puntuacion",
-            "aria-label": "",
-            "prefix": "acf",
-            "type": "range",
-            "value": null,
-            "menu_order": 2,
-            "instructions": "",
-            "required": 0,
-            "id": "",
-            "class": "",
-            "conditional_logic": 0,
-            "parent": 14200,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 5,
-            "min": 0,
-            "max": 5,
-            "allow_in_bindings": 0,
-            "step": "",
-            "prepend": "",
-            "append": "",
-            "_name": "puntuacion",
-            "_valid": 1
-        }
-    ],
-    "location": [
-        [
+[
+    {
+        "key": "group_6947c014b39dd",
+        "title": "Testimonios",
+        "fields": [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "testimonios"
+                "key": "field_6947c0149774b",
+                "label": "Nombre",
+                "name": "nombre",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6947c0219774c",
+                "label": "Localidad",
+                "name": "localidad",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6947c0289774d",
+                "label": "Puntuación",
+                "name": "puntuacion",
+                "aria-label": "",
+                "type": "range",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 5,
+                "min": 0,
+                "max": 5,
+                "allow_in_bindings": 0,
+                "step": "",
+                "prepend": "",
+                "append": ""
             }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "left",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
-    "show_in_rest": 0,
-    "acfe_autosync": "",
-    "acfe_form": 0,
-    "acfe_display_title": "",
-    "acfe_meta": "",
-    "acfe_note": ""
-}
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "testimonios"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "acfe_autosync": "",
+        "acfe_form": 0,
+        "acfe_display_title": "",
+        "acfe_meta": "",
+        "acfe_note": ""
+    }
+]

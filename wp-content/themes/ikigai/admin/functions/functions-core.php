@@ -1054,25 +1054,19 @@ add_action( 'wp_ajax_ikg_delete_logs', 'ikg_ajax_delete_logs' );
  * Guarda los archivos JSON en admin/acf-json/ sin generar ZIP ni descarga.
  */
 function ikg_ajax_export_acf_completo() {
-    // Comprobar nonce
+    // 1. Comprobaciones de seguridad (se mantienen igual)
     if ( ! isset($_POST['nonce']) || ! wp_verify_nonce($_POST['nonce'], 'ikg_export_nonce') ) {
         wp_send_json_error('Permiso denegado (Nonce)');
     }
 
-    // Comprobar permisos
     if ( ! current_user_can('manage_options') ) {
         wp_send_json_error('Sin permisos');
     }
 
-    // Comprobar si ACF está activo
     if ( ! function_exists('acf_get_field_groups') ) {
         wp_send_json_error('ACF no está activo.');
     }
 
-    // Obtener todos los grupos de campos
-    $groups = acf_get_field_groups();
-    
-    // Directorio de guardado (admin/acf-json)
     $relative_path = '/admin/acf-json/';
     $save_dir = get_template_directory() . $relative_path;
 
@@ -1080,35 +1074,41 @@ function ikg_ajax_export_acf_completo() {
         mkdir( $save_dir, 0755, true );
     }
 
+    $groups = acf_get_field_groups();
     $count = 0;
 
     if ( $groups ) {
         foreach ( $groups as $group ) {
-            // Obtener campos para cada grupo
+            // --- CAMBIO 1: Obtener campos originales ---
             $fields = acf_get_fields( $group['key'] );
 
-            // Preparar grupo para exportación
-            if ( function_exists('acf_prepare_field_group_for_export') ) {
-                $group = acf_prepare_field_group_for_export( $group );
-            }
+            // --- CAMBIO 2: Limpiar el Grupo para exportación ---
+            // Esto elimina IDs de base de datos y prepara la estructura
+            $group = acf_prepare_field_group_for_export( $group );
 
-            // Añadir campos al grupo
+            // --- CAMBIO 3: Limpiar los Campos para exportación ---
+            // ¡ESTA ES LA CLAVE! Esto convierte los campos expandidos en Clones 
+            // si así están configurados y elimina los IDs únicos de la DB.
+            $fields = acf_prepare_fields_for_export( $fields );
+
+            // Añadir campos limpios al grupo
             $group['fields'] = $fields;
             
+            // --- CAMBIO 4: Envolver en un Array ---
+            // El modo manual de ACF siempre exporta un array [ { grupo } ]
+            $export_data = array( $group );
+            
             // Generar contenido JSON
-            $json_content = json_encode( $group, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
+            $json_content = json_encode( $export_data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE );
             
-            // Generar nombre de archivo basado en el Título
             $filename = sanitize_title( $group['title'] ) . '.json';
-            
-            // Guardar en servidor
             file_put_contents( $save_dir . $filename, $json_content );
             $count++;
         }
     }
 
     wp_send_json_success([
-        'message' => "Exportación completada. $count archivos guardados en $relative_path"
+        'message' => "Exportación manual simulada con éxito. $count archivos guardados en $relative_path"
     ]);
 }
 add_action('wp_ajax_ikg_export_acf_completo', 'ikg_ajax_export_acf_completo');
